@@ -37,12 +37,12 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
 <h2 id="第一种方法">第一种方法</h2>
 <p>此时我在<strong>source</strong>文件夹下新建了一个名为
 “Article_Picture” 的文件夹用来存放图片。
-此时只需要按照以下格式在.md文件中写入即可。 </p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">图片加载失败时的描述</span>](<span class="token url">图片链接</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="Article_Picture/测试截图1.png" alt="这其实是一张图片"><p></p>
+此时只需要按照以下格式在.md文件中写入即可。 </p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">图片加载失败时的描述</span>](<span class="token url">图片链接</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="/2023/05/28/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0/测试截图1.png" alt="这其实是一张图片"><p></p>
 <h2 id="第二种方法">第二种方法</h2>
 <p>略</p>
 <h1 id="插件的查看与卸载">插件的查看与卸载</h1>
 <h2 id="查看已安装插件">查看已安装插件</h2>
-<p>在blog目录下输入以下命令即可查看已安装插件 </p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">npm <span class="token function">ls</span> <span class="token operator">-</span>dept 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="Article_Picture/mingling.png" alt="这其实是一张图片"><p></p>
+<p>在blog目录下输入以下命令即可查看已安装插件 </p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">npm <span class="token function">ls</span> <span class="token operator">-</span>dept 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="/2023/05/28/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0/mingling.png" alt="这其实是一张图片"><p></p>
 <h2 id="卸载插件">卸载插件</h2>
 <p>在blog目录下输入以下命令即可卸载已安装插件 </p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">npm uninstall hexo-asset-image@0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>5 <span class="token operator">--</span>save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> 其中
 <strong>hexo-asset-image@0.0.5</strong> 为要卸载的插件的名称
@@ -74,6 +74,7 @@ npm install hexo-renderer-pandoc <span class="token operator">--</span>save<span
 ]]></content>
       <categories>
         <category>Life</category>
+        <category>article</category>
       </categories>
       <tags>
         <tag>测试</tag>
