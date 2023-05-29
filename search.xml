@@ -74,7 +74,6 @@ npm install hexo-renderer-pandoc <span class="token operator">--</span>save<span
 ]]></content>
       <categories>
         <category>Life</category>
-        <category>article</category>
       </categories>
       <tags>
         <tag>测试</tag>
