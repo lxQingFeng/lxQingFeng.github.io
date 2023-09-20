@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>//post/hello-world.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-cc7xnxlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-cc7xnxlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></div></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-ctg2bmlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-ctg2bmlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></div></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-cvdw7nlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-cvdw7nlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></div></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-qii4z0lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-qii4z0lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></div></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>开始</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>imgTP图床测试</title>
     <url>//post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html</url>
     <content><![CDATA[<h1 id="使用URL外链插入图片"><a href="#使用URL外链插入图片" class="headerlink" title="使用URL外链插入图片"></a>使用URL外链插入图片</h1><p>以下是一张二次元油墨画</p>
@@ -38,36 +14,86 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>//post/hello-world.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-6nm6n4lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-6nm6n4lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></div></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-qgxjxolmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-qgxjxolmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></div></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-6zyxftlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-6zyxftlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></div></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-l6ok1zlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-l6ok1zlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></div></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>开始</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>华为交换机基础配置</title>
+    <url>//post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html</url>
+    <content><![CDATA[<h1 id="基础配置命令"><a href="#基础配置命令" class="headerlink" title="基础配置命令"></a>基础配置命令</h1><p>启动后进入交换机</p>
+<h2 id="设置中文提示"><a href="#设置中文提示" class="headerlink" title="设置中文提示"></a>设置中文提示</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-onk3z4lmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-onk3z4lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">language-mode Chinese<br></code></pre></td></tr></table></div></figure>
+<h2 id="进入系统视图"><a href="#进入系统视图" class="headerlink" title="进入系统视图"></a>进入系统视图</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-lyd7filmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-lyd7filmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">system-view<br></code></pre></td></tr></table></div></figure>
+<h2 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-ktcuhjlmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-ktcuhjlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">user privilege level 15<br></code></pre></td></tr></table></div></figure>
+<h2 id="进入console配置"><a href="#进入console配置" class="headerlink" title="进入console配置"></a>进入console配置</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-trednzlmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-trednzlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">user-interface console 0<br></code></pre></td></tr></table></div></figure>
+<h2 id="设置console密码"><a href="#设置console密码" class="headerlink" title="设置console密码"></a>设置console密码</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-nii4qflmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-nii4qflmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">authentication-mode password<br>set authentication password simple Huawei<br></code></pre></td></tr></table></div></figure>
+<h2 id="设置登录前后标语"><a href="#设置登录前后标语" class="headerlink" title="设置登录前后标语"></a>设置登录前后标语</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-s92g82lmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-s92g82lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">header login information &quot;This is SW1&quot;<br>header shell information &quot;login succeed&quot;<br></code></pre></td></tr></table></div></figure>
+
+<h2 id="创建与划分vlan"><a href="#创建与划分vlan" class="headerlink" title="创建与划分vlan"></a>创建与划分vlan</h2><h3 id="创建vlan"><a href="#创建vlan" class="headerlink" title="创建vlan"></a>创建vlan</h3><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-qlkl9wlmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-qlkl9wlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">vlan batch 10 20<br></code></pre></td></tr></table></div></figure>
+
+<h3 id="进入端口并划分vlan"><a href="#进入端口并划分vlan" class="headerlink" title="进入端口并划分vlan"></a>进入端口并划分vlan</h3><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-kehhzxlmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-kehhzxlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">interface GigabitEthernet 0/0/1<br>port link-type access<br>port default vlan 10<br></code></pre></td></tr></table></div></figure>
+
+<h2 id="设置vlan-IP"><a href="#设置vlan-IP" class="headerlink" title="设置vlan IP"></a>设置vlan IP</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-11bolblmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-11bolblmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">interface vlanif 10<br>ip address 192.168.10.1 24<br></code></pre></td></tr></table></div></figure>
+
+<h2 id="查看配置结果"><a href="#查看配置结果" class="headerlink" title="查看配置结果"></a>查看配置结果</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-kd1wbulmrv6tj9"></i><span>switch</span><div class="collapse show" id="collapse-kd1wbulmrv6tj9"><table><tr><td class="code"><pre><code class="hljs switch">display current-configuration<br></code></pre></td></tr></table></div></figure>
+]]></content>
+      <categories>
+        <category>网络设备</category>
+      </categories>
+      <tags>
+        <tag>eNSP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>地毯模组（Carpet）的使用教程</title>
     <url>//post/%E5%9C%B0%E6%AF%AF%E6%A8%A1%E7%BB%84%EF%BC%88Carpet%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html</url>
     <content><![CDATA[<p>Carpet中文百科</p>
 <p><a href="https://www.mcmod.cn/class/2361.html">Carpet - MC百科|最大的Minecraft中文MOD百科 (mcmod.cn)</a></p>
 <p>本文仅从以上链接中的教程总结出较为常用的命令</p>
 <h1 id="player"><a href="#player" class="headerlink" title="&#x2F;player"></a>&#x2F;player</h1><p>&#x2F;player命令可以控制在线玩家或者假玩家。</p>
-<h2 id="生成与清除"><a href="#生成与清除" class="headerlink" title="生成与清除"></a>生成与清除</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-sv29nslmruzpce"></i><span>MC-CMD</span><div class="collapse show" id="collapse-sv29nslmruzpce"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; spawn<br></code></pre></td></tr></table></div></figure>
+<h2 id="生成与清除"><a href="#生成与清除" class="headerlink" title="生成与清除"></a>生成与清除</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-tyere7lmrv6tj9"></i><span>MC-CMD</span><div class="collapse show" id="collapse-tyere7lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; spawn<br></code></pre></td></tr></table></div></figure>
 
 <p>该命令会在玩家所在位置生成一个名为<target>的玩家，无论是否真实存在，并且保持与执行者一样的视角和游戏模式。</target></p>
 <p>如果生成的玩家真实存在，则该玩家上线时将顶替掉生成的假玩家，并恢复原先的游戏模式。</p>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-6xeo0llmruzpce"></i><span>MC-CMD</span><div class="collapse show" id="collapse-6xeo0llmruzpce"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; kill<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-f8zl3rlmrv6tj9"></i><span>MC-CMD</span><div class="collapse show" id="collapse-f8zl3rlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; kill<br></code></pre></td></tr></table></div></figure>
 
 <p>该命令会使假玩家退出当前存档或者服务器，同时保留他身上的物品。</p>
 <p>该命令只对假玩家有效。</p>
 <p>如果原版游戏规则keepInventory设为false，击杀生存模式的假玩家会使该玩家掉落身上的所有物品。</p>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-mezg2ilmruzpce"></i><span>MC-CMD</span><div class="collapse show" id="collapse-mezg2ilmruzpce"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; shadow<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-sk55r7lmrv6tj9"></i><span>MC-CMD</span><div class="collapse show" id="collapse-sk55r7lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; shadow<br></code></pre></td></tr></table></div></figure>
 
 <p>该命令会将目标玩家踢出存档或服务器，并在他的相同位置生成一个名称相同的假玩家。</p>
 <p>该命令只对当前正在游玩的真玩家有效。</p>
-<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-tx7k31lmruzpce"></i><span>MC-CMD</span><div class="collapse show" id="collapse-tx7k31lmruzpce"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; look &lt;direction&gt;<br></code></pre></td></tr></table></div></figure>
+<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-gm4k9flmrv6tj9"></i><span>MC-CMD</span><div class="collapse show" id="collapse-gm4k9flmrv6tj9"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; look &lt;direction&gt;<br></code></pre></td></tr></table></div></figure>
 
 <p>该命令会让玩家看向一定的方向。&lt;direction&gt;可以是：</p>
 <ul>
 <li>north（北）、south（南）、west（西）、east（东）、up（上）、down（下）；</li>
 <li>at：让玩家看向某个位置。后面还需要跟玩家要看向的位置的坐标。</li>
 </ul>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-qlyx31lmruzpce"></i><span>MC-CMD</span><div class="collapse show" id="collapse-qlyx31lmruzpce"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; move &lt;direction&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-1elz4blmrv6tj9"></i><span>MC-CMD</span><div class="collapse show" id="collapse-1elz4blmrv6tj9"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; move &lt;direction&gt;<br></code></pre></td></tr></table></div></figure>
 
 <p>该命令会让玩家按照指定的方向持续移动。&lt;direction&gt;可以是backward（后），forward（前），left（左），right（右）。</p>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-y5t461lmruzpce"></i><span>MC-CMD</span><div class="collapse show" id="collapse-y5t461lmruzpce"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; jump [&lt;option&gt;]<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-hvpyqvlmrv6tj9"></i><span>MC-CMD</span><div class="collapse show" id="collapse-hvpyqvlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; jump [&lt;option&gt;]<br></code></pre></td></tr></table></div></figure>
 
 <p>该命令会让玩家跳跃一次。</p>
 <p>可以使用[&lt;option&gt;]参数指定跳跃模式。[&lt;option&gt;]可以是：</p>
@@ -76,13 +102,13 @@
 <li>interval：让玩家每隔一定游戏刻跳跃一次。该参数要求后面再跟一个参数，指定跳跃间隔的游戏刻数。</li>
 <li>once：让玩家跳跃一次，与默认情况相同。</li>
 </ul>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-nzspm7lmruzpce"></i><span>MC-CMD</span><div class="collapse show" id="collapse-nzspm7lmruzpce"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; sneak<br>/player &lt;target&gt; unsneak<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-w6sukelmrv6tj9"></i><span>MC-CMD</span><div class="collapse show" id="collapse-w6sukelmrv6tj9"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; sneak<br>/player &lt;target&gt; unsneak<br></code></pre></td></tr></table></div></figure>
 
 <p>这两个命令可以分别让玩家潜行和取消潜行。</p>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-w8jojvlmruzpce"></i><span>MC-CMD</span><div class="collapse show" id="collapse-w8jojvlmruzpce"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; sprint<br>/player &lt;target&gt; unsprint<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-2i8c79lmrv6tj9"></i><span>MC-CMD</span><div class="collapse show" id="collapse-2i8c79lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; sprint<br>/player &lt;target&gt; unsprint<br></code></pre></td></tr></table></div></figure>
 
 <p>这两个命令可以分别让玩家疾跑和停止疾跑。</p>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-3bzsgulmruzpce"></i><span>MC-CMD</span><div class="collapse show" id="collapse-3bzsgulmruzpce"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; turn &lt;option&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-7jlurllmrv6tj9"></i><span>MC-CMD</span><div class="collapse show" id="collapse-7jlurllmrv6tj9"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; turn &lt;option&gt;<br></code></pre></td></tr></table></div></figure>
 
 <p>该命令可以让玩家的视角旋转。&lt;option&gt;可以是：</p>
 <ul>
@@ -100,94 +126,6 @@
       </tags>
   </entry>
   <entry>
-    <title>华为交换机基础配置</title>
-    <url>//post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html</url>
-    <content><![CDATA[<h1 id="基础配置命令"><a href="#基础配置命令" class="headerlink" title="基础配置命令"></a>基础配置命令</h1><p>启动后进入交换机</p>
-<h2 id="设置中文提示"><a href="#设置中文提示" class="headerlink" title="设置中文提示"></a>设置中文提示</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-32allnlmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-32allnlmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">language-mode Chinese<br></code></pre></td></tr></table></div></figure>
-<h2 id="进入系统视图"><a href="#进入系统视图" class="headerlink" title="进入系统视图"></a>进入系统视图</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-3krog2lmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-3krog2lmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">system-view<br></code></pre></td></tr></table></div></figure>
-<h2 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-teiv1plmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-teiv1plmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">user privilege level 15<br></code></pre></td></tr></table></div></figure>
-<h2 id="进入console配置"><a href="#进入console配置" class="headerlink" title="进入console配置"></a>进入console配置</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-sdwlqzlmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-sdwlqzlmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">user-interface console 0<br></code></pre></td></tr></table></div></figure>
-<h2 id="设置console密码"><a href="#设置console密码" class="headerlink" title="设置console密码"></a>设置console密码</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-mzl0ullmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-mzl0ullmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">authentication-mode password<br>set authentication password simple Huawei<br></code></pre></td></tr></table></div></figure>
-<h2 id="设置登录前后标语"><a href="#设置登录前后标语" class="headerlink" title="设置登录前后标语"></a>设置登录前后标语</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-mk7xsylmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-mk7xsylmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">header login information &quot;This is SW1&quot;<br>header shell information &quot;login succeed&quot;<br></code></pre></td></tr></table></div></figure>
-
-<h2 id="创建与划分vlan"><a href="#创建与划分vlan" class="headerlink" title="创建与划分vlan"></a>创建与划分vlan</h2><h3 id="创建vlan"><a href="#创建vlan" class="headerlink" title="创建vlan"></a>创建vlan</h3><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-fvzakjlmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-fvzakjlmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">vlan batch 10 20<br></code></pre></td></tr></table></div></figure>
-
-<h3 id="进入端口并划分vlan"><a href="#进入端口并划分vlan" class="headerlink" title="进入端口并划分vlan"></a>进入端口并划分vlan</h3><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-n0le2ilmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-n0le2ilmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">interface GigabitEthernet 0/0/1<br>port link-type access<br>port default vlan 10<br></code></pre></td></tr></table></div></figure>
-
-<h2 id="设置vlan-IP"><a href="#设置vlan-IP" class="headerlink" title="设置vlan IP"></a>设置vlan IP</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-81j1lglmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-81j1lglmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">interface vlanif 10<br>ip address 192.168.10.1 24<br></code></pre></td></tr></table></div></figure>
-
-<h2 id="查看配置结果"><a href="#查看配置结果" class="headerlink" title="查看配置结果"></a>查看配置结果</h2><figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-s2i45jlmruzpce"></i><span>switch</span><div class="collapse show" id="collapse-s2i45jlmruzpce"><table><tr><td class="code"><pre><code class="hljs switch">display current-configuration<br></code></pre></td></tr></table></div></figure>
-]]></content>
-      <categories>
-        <category>网络设备</category>
-      </categories>
-      <tags>
-        <tag>eNSP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>这是一篇用来测试的文章</title>
-    <url>//post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0.html</url>
-    <content><![CDATA[<p>此篇文章用来记录一些hexo的基本操作（纯新手）</p>
-<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><h2 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h2><p><del>此时我在<strong>source</strong>文件夹下新建了一个名为 “Article_Picture” 的文件夹用来存放图片。</del><br><del>此时只需要按照以下格式在.md文件中写入即可。</del></p>
-<p>不用看以上方法了，没用。</p>
-<p>首先在hexo的配置文件<code>config.yaml</code>更改一下配置：</p>
-<figure class="highlight yaml"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-i83ixplmruzpce"></i><span>yaml</span><div class="collapse show" id="collapse-i83ixplmruzpce"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></div></figure>
-
-<p>随后使用命令新建一篇文章时，hexo会在<code>_posts</code>中生成相同名字的文件夹，此时将图片放在该文件夹下，而后按照以下格式进行插入即可。</p>
-<figure class="highlight markdown"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-mosgwnlmruzpce"></i><span>markdown</span><div class="collapse show" id="collapse-mosgwnlmruzpce"><table><tr><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">图片加载失败时的描述</span>](<span class="hljs-link">图片链接</span>)<br></code></pre></td></tr></table></div></figure>
-<p><img src="/post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0/%E6%B5%8B%E8%AF%95%E6%88%AA%E5%9B%BE2.png" alt="这其实是一张图片"></p>
-<h2 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h2><p>略</p>
-<h1 id="插件的查看与卸载"><a href="#插件的查看与卸载" class="headerlink" title="插件的查看与卸载"></a>插件的查看与卸载</h1><h2 id="查看已安装插件"><a href="#查看已安装插件" class="headerlink" title="查看已安装插件"></a>查看已安装插件</h2><p>在blog目录下输入以下命令即可查看已安装插件</p>
-<figure class="highlight powershell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-4fuhi2lmruzpce"></i><span>powershell</span><div class="collapse show" id="collapse-4fuhi2lmruzpce"><table><tr><td class="code"><pre><code class="hljs powershell">npm <span class="hljs-built_in">ls</span> <span class="hljs-literal">-dept</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></div></figure>
-<p><img src="/post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0/mingling.png" alt="这其实是一张图片"></p>
-<h2 id="卸载插件"><a href="#卸载插件" class="headerlink" title="卸载插件"></a>卸载插件</h2><p>在blog目录下输入以下命令即可卸载已安装插件</p>
-<figure class="highlight powershell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-cpaq82lmruzpce"></i><span>powershell</span><div class="collapse show" id="collapse-cpaq82lmruzpce"><table><tr><td class="code"><pre><code class="hljs powershell">npm uninstall hexo<span class="hljs-literal">-asset-image</span>@<span class="hljs-number">0.0</span>.<span class="hljs-number">5</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></div></figure>
-<p>其中 <strong><a href="mailto:&#104;&#101;&#x78;&#x6f;&#45;&#97;&#x73;&#115;&#101;&#116;&#45;&#105;&#109;&#x61;&#103;&#101;&#64;&#x30;&#x2e;&#48;&#x2e;&#53;">&#104;&#101;&#x78;&#x6f;&#45;&#97;&#x73;&#115;&#101;&#116;&#45;&#105;&#109;&#x61;&#103;&#101;&#64;&#x30;&#x2e;&#48;&#x2e;&#53;</a></strong> 为要卸载的插件的名称</p>
-<p>最后还需前往 <strong>node_modules</strong> 文件夹删除相关配置和文件</p>
-<h1 id="插入数学公式"><a href="#插入数学公式" class="headerlink" title="插入数学公式"></a>插入数学公式</h1><h2 id="安装所需插件"><a href="#安装所需插件" class="headerlink" title="安装所需插件"></a>安装所需插件</h2><p>卸载 Hexo 自带的 renderer，安装 Pandoc renderer<br><a href="https://github.com/jgm/pandoc">下载pandoc并安装</a></p>
-<figure class="highlight powershell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-6de8snlmruzpce"></i><span>powershell</span><div class="collapse show" id="collapse-6de8snlmruzpce"><table><tr><td class="code"><pre><code class="hljs powershell">npm uninstall hexo<span class="hljs-literal">-renderer-marked</span> <span class="hljs-literal">--save</span><br>npm install hexo<span class="hljs-literal">-renderer-pandoc</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></div></figure>
-
-<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p><a href="https://corner430.github.io/2021/07/02/%E7%94%A8markdown%E4%B9%A6%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/#:~:text=%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%9C%AC%E8%A1%8C%E5%86%85%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz,%E7%8B%AC%E8%A1%8C%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%96%B0%E7%9A%84%E4%B8%80%E8%A1%8C%E5%86%85%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%B1%85%E4%B8%AD%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz">具体请参考这篇文章</a></p>
-<p>所有公式都应该包括在一对 “$” 符号中，例如：</p>
-<figure class="highlight markdown"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-pdwu8slmruzpce"></i><span>markdown</span><div class="collapse show" id="collapse-pdwu8slmruzpce"><table><tr><td class="code"><pre><code class="hljs markdown">$里面是公式内容$<br></code></pre></td></tr></table></div></figure>
-<p>$5^5-ads$</p>
-<h1 id="如何使用-Emoji-表情"><a href="#如何使用-Emoji-表情" class="headerlink" title="如何使用 Emoji 表情"></a>如何使用 Emoji 表情</h1><h2 id="使用表情符号简码"><a href="#使用表情符号简码" class="headerlink" title="使用表情符号简码"></a>使用表情符号简码</h2><p>一些Markdown应用程序允许您通过键入表情符号短代码来插入表情符号。这些以冒号开头和结尾，并包含表情符号的名称。</p>
-<figure class="highlight markdown"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-wlx51ulmruzpce"></i><span>markdown</span><div class="collapse show" id="collapse-wlx51ulmruzpce"><table><tr><td class="code"><pre><code class="hljs markdown">去露营了！ :tent: 很快回来。<br>真好笑！ :joy:<br></code></pre></td></tr></table></div></figure>
-<p>呈现的输出如下所示：<br>去露营了！ :tent: 很快回来。<br>真好笑！ :joy:</p>
-<p><a href="https://markdown.com.cn/extended-syntax/emoji.html">请参考Markdown的官方教程</a></p>
-<p><a href="https://gist.github.com/rxaviers/7360908">这是表情符号简码列表</a></p>
-<h1 id="插入表格"><a href="#插入表格" class="headerlink" title="插入表格"></a>插入表格</h1><h2 id="Markdown默认方法"><a href="#Markdown默认方法" class="headerlink" title="Markdown默认方法"></a>Markdown默认方法</h2><p>表头内容默认居中对齐，单元格内容默认左对齐，Markdown 代码:</p>
-<figure class="highlight markdown"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-62g4ellmruzpce"></i><span>markdown</span><div class="collapse show" id="collapse-62g4ellmruzpce"><table><tr><td class="code"><pre><code class="hljs markdown">| 标题1 | 标题2 | 标题3 |<br>| ------ | ------ | ------ |<br>| 文本好短 | 文本不短也不长 | 文本好长文本好长文本好长 |<br>| 文本好长文本好长文本好长 | 文本好短 | 文本不短也不长 |<br></code></pre></td></tr></table></div></figure>
-<p>显示效果：</p>
-<table>
-<thead>
-<tr>
-<th>标题1</th>
-<th>标题2</th>
-<th>标题3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>123</td>
-<td>123</td>
-<td>123</td>
-</tr>
-<tr>
-<td>123</td>
-<td>123</td>
-<td>123</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何使用tmux（终端工具）</title>
     <url>//post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8tmux%EF%BC%88%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%89.html</url>
     <content><![CDATA[<h1 id="什么是tmux"><a href="#什么是tmux" class="headerlink" title="什么是tmux"></a>什么是tmux</h1><p>Tmux 是一个终端复用器（terminal multiplexer）</p>
@@ -196,15 +134,15 @@
 <li>分屏。既可以同时使用多个命令行；</li>
 <li>会话与窗口解绑。当窗口意外关闭时，会话并不会终止，后面需要的时候，会话可以再次绑定窗口。尤其当使用SSH远程登录计算机时，可以不受断网的影响。</li>
 </ol>
-<h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><h2 id="安装tmux"><a href="#安装tmux" class="headerlink" title="安装tmux"></a>安装tmux</h2><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-wsez2rlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-wsez2rlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Ubantu or Debian</span><br>sudo apt-get install tmux<br><br><span class="hljs-comment"># Centos or Fedora</span><br>sudo yum install tmux<br><br><span class="hljs-comment"># Mac</span><br>brew install tmux<br></code></pre></td></tr></table></div></figure>
+<h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><h2 id="安装tmux"><a href="#安装tmux" class="headerlink" title="安装tmux"></a>安装tmux</h2><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-rv330klmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-rv330klmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Ubantu or Debian</span><br>sudo apt-get install tmux<br><br><span class="hljs-comment"># Centos or Fedora</span><br>sudo yum install tmux<br><br><span class="hljs-comment"># Mac</span><br>brew install tmux<br></code></pre></td></tr></table></div></figure>
 
-<h2 id="启动、退出"><a href="#启动、退出" class="headerlink" title="启动、退出"></a>启动、退出</h2><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-dy7sfhlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-dy7sfhlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">tmux<br></code></pre></td></tr></table></div></figure>
+<h2 id="启动、退出"><a href="#启动、退出" class="headerlink" title="启动、退出"></a>启动、退出</h2><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-4m6qvwlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-4m6qvwlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">tmux<br></code></pre></td></tr></table></div></figure>
 
 <p>在终端输入以上命令即可启动tmux，启动后终端底部会显示一个状态栏。</p>
 <p>左侧是窗口信息（编号和名称），右侧是系统信息。</p>
 <p><img src="/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8tmux%EF%BC%88%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%89/image-20230606181115946.png" alt="image-20230606181115946"></p>
 <p>按下<code>Ctrl + d</code>或者在终端输入<code>exit</code>即可退出tmux。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-dc2ihxlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-dc2ihxlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">exit</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-ewprn5lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-ewprn5lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">exit</span><br></code></pre></td></tr></table></div></figure>
 
 <h2 id="tmux术语"><a href="#tmux术语" class="headerlink" title="tmux术语"></a>tmux术语</h2><p>tmux 采用 client&#x2F;server模型，主要有四个模块：</p>
 <ul>
@@ -219,34 +157,34 @@
 <p>然后，按下 ESC 键或<code>q</code>键，就可以退出帮助。</p>
 <h1 id="Tmux会话管理"><a href="#Tmux会话管理" class="headerlink" title="Tmux会话管理"></a>Tmux会话管理</h1><h2 id="新建会话"><a href="#新建会话" class="headerlink" title="新建会话"></a>新建会话</h2><p>第一个启动的 Tmux 窗口，编号是 <code>0</code>，第二个窗口的编号是 <code>1</code>，以此类推。这些窗口对应的会话，就是 0 号会话、1 号会话。</p>
 <p>使用编号区分会话，不太直观，更好的方法是为会话起名。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-y2ykn8lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-y2ykn8lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">tmux new -s &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-3n1m0llmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-3n1m0llmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">tmux new -s &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
 
 <p>上面命令新建一个指定名称的会话。</p>
 <h2 id="分离会话"><a href="#分离会话" class="headerlink" title="分离会话"></a>分离会话</h2><p>在 Tmux 窗口中，按下 <code>Ctrl+b d</code> 或者输入 <code>tmux detach</code> 命令，就会将当前会话与窗口分离。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-nim2bslmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-nim2bslmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">tmux detach<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-72a6xzlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-72a6xzlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">tmux detach<br></code></pre></td></tr></table></div></figure>
 
 <p>上面命令执行后，就会退出当前 Tmux 窗口，但是会话和里面的进程仍然在后台运行。</p>
 <p><code>tmux ls</code> 命令可以查看当前所有的 Tmux 会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-hcmp2qlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-hcmp2qlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">tmux <span class="hljs-built_in">ls</span><br><span class="hljs-comment"># or</span><br>tmux list-session<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-pz43eblmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-pz43eblmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">tmux <span class="hljs-built_in">ls</span><br><span class="hljs-comment"># or</span><br>tmux list-session<br></code></pre></td></tr></table></div></figure>
 
 <p><img src="/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8tmux%EF%BC%88%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%89/image-20230606182214934.png" alt="image-20230606182214934"></p>
 <h2 id="接入会话"><a href="#接入会话" class="headerlink" title="接入会话"></a>接入会话</h2><p>在终端输入<code>tmux attach</code>用于重新接入某个已存在的会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-2bixfwlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-2bixfwlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号接入会话</span><br>tmux attach -t 0<br><br><span class="hljs-comment"># 使用会话名称接入会话</span><br>tmux attach -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-in0p24lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-in0p24lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号接入会话</span><br>tmux attach -t 0<br><br><span class="hljs-comment"># 使用会话名称接入会话</span><br>tmux attach -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
 
 <h2 id="kill会话"><a href="#kill会话" class="headerlink" title="kill会话"></a>kill会话</h2><p>在终端输入<code>tmux kill-session</code>用于杀死某个已存在的会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-my8pxilmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-my8pxilmruzpce"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号结束会话</span><br>tmux kill-sesion -t 0<br><br><span class="hljs-comment"># 使用会话名称结束会话</span><br>tmux kill-sesion -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-tm3d4ilmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-tm3d4ilmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号结束会话</span><br>tmux kill-sesion -t 0<br><br><span class="hljs-comment"># 使用会话名称结束会话</span><br>tmux kill-sesion -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
 
 <h2 id="切换会话"><a href="#切换会话" class="headerlink" title="切换会话"></a>切换会话</h2><p>在终端输入<code>tmux switch</code>以切换会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-s2oruclmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-s2oruclmruzpce"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号切换会话</span><br>tmux switch -t 0<br><br><span class="hljs-comment"># 使用会话名称切换会话</span><br>tmux switch -t &lt;session-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-k31yh8lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-k31yh8lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号切换会话</span><br>tmux switch -t 0<br><br><span class="hljs-comment"># 使用会话名称切换会话</span><br>tmux switch -t &lt;session-name&gt;<br></code></pre></td></tr></table></div></figure>
 
 <h2 id="重命名会话"><a href="#重命名会话" class="headerlink" title="重命名会话"></a>重命名会话</h2><p>在终端输入<code>tmux rename-session</code>以重命名会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-3k7ki8lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-3k7ki8lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">tmux rename-session -t 0 &lt;new-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-do0t91lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-do0t91lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">tmux rename-session -t 0 &lt;new-name&gt;<br></code></pre></td></tr></table></div></figure>
 
 <p>以上命令会将<code>0</code>号会话重命名。</p>
 <h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><p>tmux大部分操作都可以用快捷键来代替。</p>
 <p>使用快捷键的前提是先按下了<code>Ctrl + b</code></p>
 <p>使用<code>tmux list-keys</code>可以列出所有快捷键。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-jgzcb6lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-jgzcb6lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">tmux list-keys<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-sgv3i2lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-sgv3i2lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">tmux list-keys<br></code></pre></td></tr></table></div></figure>
 
 <h2 id="会话快捷键"><a href="#会话快捷键" class="headerlink" title="会话快捷键"></a>会话快捷键</h2><ul>
 <li>s ：列出所有会话，也可以在列表中用鼠标或上下键切换会话</li>
@@ -290,7 +228,7 @@
 <li>开启窗口&#x2F;窗格里面的鼠标支持，用鼠标回滚显示窗口内容，按下shift的同时用鼠标选取文本，使用 ctrl+shift+c、ctrl+shift+v 的方式进行复制粘贴。</li>
 </ul>
 <p>配置方式为在 ~&#x2F;.tmux.conf 文件中，增加：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-spvz4ylmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-spvz4ylmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">set-option -g mouse on<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-c3cbcmlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-c3cbcmlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">set-option -g mouse on<br></code></pre></td></tr></table></div></figure>
 
 
 
@@ -333,74 +271,74 @@
 </ul>
 <p>Docker 可以安装在 64 位的 x86 平台或 ARM 平台上。Ubuntu 发行版中，LTS（Long-Term-Support）长期支持版本，会获得 5 年的升级维护支持，这样的版本会更稳定，因此在生产环境中推荐使用 LTS 版本。</p>
 <h3 id="卸载旧版本Docker"><a href="#卸载旧版本Docker" class="headerlink" title="卸载旧版本Docker"></a>卸载旧版本Docker</h3><p>旧版本的 Docker 称为 <code>docker</code> 或者 <code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-28ryxjlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-28ryxjlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get remove docker \<br>             docker-engine \<br>             docker.io<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-hzrd83lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-hzrd83lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get remove docker \<br>             docker-engine \<br>             docker.io<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="使用-APT-安装"><a href="#使用-APT-安装" class="headerlink" title="使用 APT 安装"></a>使用 APT 安装</h3><p>由于 <code>apt</code> 源使用 HTTPS 以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS 传输的软件包以及 CA 证书。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-snvgixlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-snvgixlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get udate<br><br>sudo apt-get install \<br>	apt-transport-https \<br>    ca-certificates \<br>    curl \<br>    gnupg \<br>    lsb-release<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-6pdq1dlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-6pdq1dlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get udate<br><br>sudo apt-get install \<br>	apt-transport-https \<br>    ca-certificates \<br>    curl \<br>    gnupg \<br>    lsb-release<br></code></pre></td></tr></table></div></figure>
 
 <p>为了确认所下载软件包的合法性，需要添加软件源的 <code>GPG</code> 密钥。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-tef6jhlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-tef6jhlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br><br><span class="hljs-comment"># 官方源</span><br>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-r454h2lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-r454h2lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br><br><span class="hljs-comment"># 官方源</span><br>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br></code></pre></td></tr></table></div></figure>
 
 <p>向<code>sources.list</code>中添加 Docker 软件源</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-hfve9blmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-hfve9blmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> \<br>  <span class="hljs-string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span><br><span class="hljs-string">  <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null<br><br><span class="hljs-comment"># 官方源</span><br><span class="hljs-comment"># $ echo \</span><br><span class="hljs-comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-lg3bsvlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-lg3bsvlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> \<br>  <span class="hljs-string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span><br><span class="hljs-string">  <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null<br><br><span class="hljs-comment"># 官方源</span><br><span class="hljs-comment"># $ echo \</span><br><span class="hljs-comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></code></pre></td></tr></table></div></figure>
 
 <h3 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h3><p>更新 apt 软件包缓存，并安装 <code>docker-ce</code>：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-kwwnzolmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-kwwnzolmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-w2zv1dlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-w2zv1dlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></div></figure>
 
-<h3 id="启动-Docker"><a href="#启动-Docker" class="headerlink" title="启动 Docker"></a>启动 Docker</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-wrwfp2lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-wrwfp2lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></div></figure>
+<h3 id="启动-Docker"><a href="#启动-Docker" class="headerlink" title="启动 Docker"></a>启动 Docker</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-usgleclmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-usgleclmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="建立-Docker-用户组"><a href="#建立-Docker-用户组" class="headerlink" title="建立 Docker 用户组"></a>建立 Docker 用户组</h3><p>默认情况下，<code>docker</code> 命令会使用 <a href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a> 与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code> 组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux 系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用 <code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
 <p>建立<code>docker</code>组：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-e5du78lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-e5du78lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-zyses4lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-zyses4lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></div></figure>
 
 <p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-78yu0flmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-78yu0flmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docker <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-a4v9mglmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-a4v9mglmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docker <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></div></figure>
 
 <h2 id="在CentOS安装Docker"><a href="#在CentOS安装Docker" class="headerlink" title="在CentOS安装Docker"></a>在CentOS安装Docker</h2><p>切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker</p>
 <p>Docker 支持 64 位版本 CentOS 7&#x2F;8，并且要求内核版本不低于 3.10。 CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 <code>overlay2</code> 存储层驱动）无法使用，并且部分功能可能不太稳定。</p>
 <h3 id="卸载旧版本Docker-1"><a href="#卸载旧版本Docker-1" class="headerlink" title="卸载旧版本Docker"></a>卸载旧版本Docker</h3><p>旧版本的 Docker 称为 <code>docker</code> 或者 <code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-j4pu3blmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-j4pu3blmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum remove docker \<br>                docker-client \<br>                docker-client-latest \<br>                docker-common \<br>                docker-latest \<br>                docker-latest-logrotate \<br>                docker-logrotate \<br>                docker-selinux \<br>                docker-engine-selinux \<br>                docker-engine<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-nwkyczlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-nwkyczlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum remove docker \<br>                docker-client \<br>                docker-client-latest \<br>                docker-common \<br>                docker-latest \<br>                docker-latest-logrotate \<br>                docker-logrotate \<br>                docker-selinux \<br>                docker-engine-selinux \<br>                docker-engine<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="使用-yum-安装"><a href="#使用-yum-安装" class="headerlink" title="使用 yum 安装"></a>使用 yum 安装</h3><p>安装依赖包：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-80dd0tlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-80dd0tlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install -y yum-utils<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-tyhkwclmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-tyhkwclmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install -y yum-utils<br></code></pre></td></tr></table></div></figure>
 
 <p>添加<code>yum</code>软件源：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-99eej1lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-99eej1lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager \<br>	--add-repp \<br>	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br>sudo sed -i <span class="hljs-string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo<br><br><span class="hljs-comment"># 官方源</span><br>sudo yum-config-manager \<br>	--add-repp<br>	https://download.docker.com/linux/centos/docker-ce.repo<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-3umlptlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-3umlptlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager \<br>	--add-repp \<br>	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br>sudo sed -i <span class="hljs-string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo<br><br><span class="hljs-comment"># 官方源</span><br>sudo yum-config-manager \<br>	--add-repp<br>	https://download.docker.com/linux/centos/docker-ce.repo<br></code></pre></td></tr></table></div></figure>
 
 <p>如需测试版本的Docker：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-z0t097lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-z0t097lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager --<span class="hljs-built_in">enable</span> docker-ce-test<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-0rpya1lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-0rpya1lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager --<span class="hljs-built_in">enable</span> docker-ce-test<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="安装-Docker-1"><a href="#安装-Docker-1" class="headerlink" title="安装 Docker"></a>安装 Docker</h3><p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-x1hnrylmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-x1hnrylmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-g0osnelmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-g0osnelmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="CentOS8的额外设置"><a href="#CentOS8的额外设置" class="headerlink" title="CentOS8的额外设置"></a>CentOS8的额外设置</h3><p>由于 CentOS8 防火墙使用了 <code>nftables</code>，但 Docker 尚未支持 <code>nftables</code>， 我们可以使用如下设置使用 <code>iptables</code>：</p>
 <p>更改 <code>/etc/firewalld/firewalld.conf</code></p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-9k8282lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-9k8282lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># FirewallBackend=nftables</span><br>FirewallBackend=iptables<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-0knfo9lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-0knfo9lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># FirewallBackend=nftables</span><br>FirewallBackend=iptables<br></code></pre></td></tr></table></div></figure>
 
 <p>或执行以下命令：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-ha6q17lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-ha6q17lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">firewall-cmd --permanent --zone=trusted --add-interface=docker0<br>firewall-cmd --reload<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-wc7vhflmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-wc7vhflmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">firewall-cmd --permanent --zone=trusted --add-interface=docker0<br>firewall-cmd --reload<br></code></pre></td></tr></table></div></figure>
 
-<h3 id="启动-Docker-1"><a href="#启动-Docker-1" class="headerlink" title="启动 Docker"></a>启动 Docker</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-hztadslmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-hztadslmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></div></figure>
+<h3 id="启动-Docker-1"><a href="#启动-Docker-1" class="headerlink" title="启动 Docker"></a>启动 Docker</h3><figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-7s5v38lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-7s5v38lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="建立-Docker-用户组-1"><a href="#建立-Docker-用户组-1" class="headerlink" title="建立 Docker 用户组"></a>建立 Docker 用户组</h3><p>默认情况下，<code>docker</code> 命令会使用 <a href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a> 与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code> 组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux 系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用 <code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
 <p>建立 <code>docker</code> 组：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-cgzvl1lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-cgzvl1lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-ifb38nlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-ifb38nlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></div></figure>
 
 <p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-kf4wiflmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-kf4wiflmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docekr <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-m5tm8dlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-m5tm8dlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docekr <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></div></figure>
 
 <h3 id="添加内核参数"><a href="#添加内核参数" class="headerlink" title="添加内核参数"></a>添加内核参数</h3><p>如果在 CentOS 使用 Docker 看到下面的这些警告信息：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-07wsx4lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-07wsx4lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">WARNING: bridge-nf-call-iptables is disabled<br>WARNING: bridge-nf-call-ip6tables is disabled<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-be8wxklmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-be8wxklmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">WARNING: bridge-nf-call-iptables is disabled<br>WARNING: bridge-nf-call-ip6tables is disabled<br></code></pre></td></tr></table></div></figure>
 
 <p>添加内核配置参数以启用这些功能</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-sq0livlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-sq0livlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="hljs-string">EOF</span><br><span class="hljs-string">net.bridge.bridge-nf-call-ip6tables = 1</span><br><span class="hljs-string">net.bridge.bridge-nf-call-iptables = 1</span><br><span class="hljs-string">EOF</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-f4pu5rlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-f4pu5rlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="hljs-string">EOF</span><br><span class="hljs-string">net.bridge.bridge-nf-call-ip6tables = 1</span><br><span class="hljs-string">net.bridge.bridge-nf-call-iptables = 1</span><br><span class="hljs-string">EOF</span><br></code></pre></td></tr></table></div></figure>
 
 <p>重新加载<code>sysctl.conf</code>即可</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-zfrh23lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-zfrh23lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">sudo sysctl -p<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-vgwtl6lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-vgwtl6lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">sudo sysctl -p<br></code></pre></td></tr></table></div></figure>
 
 <h1 id="Docker食用指南"><a href="#Docker食用指南" class="headerlink" title="Docker食用指南"></a>Docker食用指南</h1><h2 id="镜像使用指南"><a href="#镜像使用指南" class="headerlink" title="镜像使用指南"></a>镜像使用指南</h2><p>Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker 会从镜像仓库下载该镜像。</p>
 <h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><p>从 Docker 镜像仓库获取镜像的命令是 <code>docker pull</code>。命令格式是：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-kf78sglmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-kf78sglmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">docker pull [OPTIONS] NAME[:TAG|@DIGEST]<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-qo53o9lmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-qo53o9lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">docker pull [OPTIONS] NAME[:TAG|@DIGEST]<br></code></pre></td></tr></table></div></figure>
 
 <p> <strong>参数说明：</strong></p>
 <ul>
@@ -416,7 +354,7 @@
 </ul>
 <p>具体选项可以通过<code>docker pull --help</code>命令查看。</p>
 <p><strong>例子如下：</strong></p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-sx4nrvlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-sx4nrvlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ docker pull ubuntu:18.04<br>18.04: Pulling from library/ubuntu<br>92dc2a97ff99: Pull complete<br>be13a9d27eb8: Pull complete<br>c8299583700a: Pull complete<br>Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26<br>Status: Downloaded newer image <span class="hljs-keyword">for</span> ubuntu:18.04<br>docker.io/library/ubuntu:18.04<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-jpni3tlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-jpni3tlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ docker pull ubuntu:18.04<br>18.04: Pulling from library/ubuntu<br>92dc2a97ff99: Pull complete<br>be13a9d27eb8: Pull complete<br>c8299583700a: Pull complete<br>Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26<br>Status: Downloaded newer image <span class="hljs-keyword">for</span> ubuntu:18.04<br>docker.io/library/ubuntu:18.04<br></code></pre></td></tr></table></div></figure>
 
 <p>上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub （<code>docker.io</code>）获取镜像。而镜像名称是 <code>ubuntu:18.04</code>，因此将会获取官方镜像 <code>library/ubuntu</code> 仓库中标签为 <code>18.04</code> 的镜像。<code>docker pull</code> 命令的输出结果最后一行给出了镜像的完整名称，即： <code>docker.io/library/ubuntu:18.04</code>。</p>
 <ul>
@@ -424,7 +362,7 @@
 <li>仓库名：仓库名是两段式名称，即<code>&lt;用户名&gt;/&lt;软件名&gt;</code>。对于 Docker Hub，如果没有指定用户名，则默认是<code>library</code>，也就是官方镜像。</li>
 </ul>
 <h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><p>有了镜像后，可以以这个镜像为基础启动并运行一个容器。以上面的<code>Ubuntu:18.04</code>为例，如果打算启动里面的<code>bash</code>并且进行交互式操作的话，可以执行以下命令：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-jppnyxlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-jppnyxlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ docker run -it --<span class="hljs-built_in">rm</span> ubuntu:18:04 bash<br><br><span class="hljs-comment"># 以下是容器内操作</span><br>root@e7009c6ce357:/<span class="hljs-comment"># cat /etc/os-release</span><br>NAME=<span class="hljs-string">&quot;Ubuntu&quot;</span><br>VERSION=<span class="hljs-string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span><br>ID=ubuntu<br>ID_LIKE=debian<br>PRETTY_NAME=<span class="hljs-string">&quot;Ubuntu 18.04.1 LTS&quot;</span><br>VERSION_ID=<span class="hljs-string">&quot;18.04&quot;</span><br>HOME_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/&quot;</span><br>SUPPORT_URL=<span class="hljs-string">&quot;https://help.ubuntu.com/&quot;</span><br>BUG_REPORT_URL=<span class="hljs-string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span><br>PRIVACY_POLICY_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span><br>VERSION_CODENAME=bionic<br>UBUNTU_CODENAME=bionic<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-r1jh8plmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-r1jh8plmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ docker run -it --<span class="hljs-built_in">rm</span> ubuntu:18:04 bash<br><br><span class="hljs-comment"># 以下是容器内操作</span><br>root@e7009c6ce357:/<span class="hljs-comment"># cat /etc/os-release</span><br>NAME=<span class="hljs-string">&quot;Ubuntu&quot;</span><br>VERSION=<span class="hljs-string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span><br>ID=ubuntu<br>ID_LIKE=debian<br>PRETTY_NAME=<span class="hljs-string">&quot;Ubuntu 18.04.1 LTS&quot;</span><br>VERSION_ID=<span class="hljs-string">&quot;18.04&quot;</span><br>HOME_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/&quot;</span><br>SUPPORT_URL=<span class="hljs-string">&quot;https://help.ubuntu.com/&quot;</span><br>BUG_REPORT_URL=<span class="hljs-string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span><br>PRIVACY_POLICY_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span><br>VERSION_CODENAME=bionic<br>UBUNTU_CODENAME=bionic<br></code></pre></td></tr></table></div></figure>
 
 <p><code>docker run</code>就是要运行容器的命令，这里简单说明一下上面用到的参数</p>
 <ul>
@@ -436,24 +374,24 @@
 <p>进入容器后就可以在 Shell 下操作执行任何所需的命令。例如，上面就执行了<code>cat /etc/os-release</code>，这是Linux常用的查看当前系统版本的命令，从返回的结果可以看到容器内是<code>Ubuntu 18.04.1 LTS</code>系统。</p>
 <p>最后可以通过<code>exit</code>退出这个容器。</p>
 <h3 id="列出镜像"><a href="#列出镜像" class="headerlink" title="列出镜像"></a>列出镜像</h3><p>要想列出已经下载下来的镜像，可以使用 <code>docker image ls</code> 命令。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-rk0syvlmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-rk0syvlmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span><br>REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE<br>redis                latest              5f515359c7f8        5 days ago          183 MB<br>nginx                latest              05a60462f8ba        5 days ago          181 MB<br>mongo                3.2                 fe9198c04d62        5 days ago          342 MB<br>&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB<br>ubuntu               18.04               329ed837d508        3 days ago          63.3MB<br>ubuntu               bionic              329ed837d508        3 days ago          63.3MB<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-ijbhlnlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-ijbhlnlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span><br>REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE<br>redis                latest              5f515359c7f8        5 days ago          183 MB<br>nginx                latest              05a60462f8ba        5 days ago          181 MB<br>mongo                3.2                 fe9198c04d62        5 days ago          342 MB<br>&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB<br>ubuntu               18.04               329ed837d508        3 days ago          63.3MB<br>ubuntu               bionic              329ed837d508        3 days ago          63.3MB<br></code></pre></td></tr></table></div></figure>
 
 <p>列表包含了 <code>仓库名</code>、<code>标签</code>、<code>镜像 ID</code>、<code>创建时间</code> 以及 <code>所占用的空间</code>。</p>
 <p>其中仓库名、标签在之前的基础概念章节已经介绍过了。<strong>镜像 ID</strong> 则是镜像的唯一标识，一个镜像可以对应多个 <strong>标签</strong>。因此，在上面的例子中，我们可以看到 <code>ubuntu:18.04</code> 和 <code>ubuntu:bionic</code> 拥有相同的 ID，因为它们对应的是同一个镜像。</p>
 <h4 id="镜像体积"><a href="#镜像体积" class="headerlink" title="镜像体积"></a>镜像体积</h4><p>Docker Hub上显示的镜像体积是压缩后的体积大小，在镜像上传和下载的过程中镜像是保持压缩状态的。而使用命令<code>docker image ls</code>显示的是镜像下载到本地后展开的大小，准确说，是展开后的各层所占空间的总和。</p>
 <p>另外一个需要注意的问题是，<code>docker image ls</code> 列表中的镜像体积总和并非是所有镜像实际硬盘消耗。由于 Docker 镜像是多层存储结构，并且可以继承、复用，因此不同镜像可能会因为使用相同的基础镜像，从而拥有共同的层。相同的层只需要保存一份即可。</p>
 <p>通过<code>docker system df</code>命令来查看镜像、容器、数据卷所占用的空间。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-om7szflmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-om7szflmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ docker system <span class="hljs-built_in">df</span><br>TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE<br>Images          2         1         390.2MB   390.2MB (99%)<br>Containers      1         0         0B        0B<br>Local Volumes   0         0         0B        0B<br>Build Cache     18        0         789B      789B<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-prlmholmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-prlmholmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ docker system <span class="hljs-built_in">df</span><br>TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE<br>Images          2         1         390.2MB   390.2MB (99%)<br>Containers      1         0         0B        0B<br>Local Volumes   0         0         0B        0B<br>Build Cache     18        0         789B      789B<br></code></pre></td></tr></table></div></figure>
 
 <h4 id="列出部分镜像"><a href="#列出部分镜像" class="headerlink" title="列出部分镜像"></a>列出部分镜像</h4><p>不加任何参数的情况下，<code>docker image ls</code> 会列出所有顶层镜像，但是有时候我们只希望列出部分镜像。<code>docker image ls</code> 有好几个参数可以帮助做到这个事情。</p>
 <p>根据仓库名列出仓库</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-g77mx7lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-g77mx7lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       latest    ba6acccedd29   23 months ago   72.8MB<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-2255tmlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-2255tmlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       latest    ba6acccedd29   23 months ago   72.8MB<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></div></figure>
 
 <p>列出特定的某个镜像，也就是说指定仓库名和标签</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-opsmq9lmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-opsmq9lmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu:18.04<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-c0osghlmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-c0osghlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu:18.04<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></div></figure>
 
 <h3 id="删除本地镜像"><a href="#删除本地镜像" class="headerlink" title="删除本地镜像"></a>删除本地镜像</h3><p>如果要删除本地的镜像，可以使用 <code>docker image rm</code> 命令，其格式为：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-gl3fiulmruzpce"></i><span>bash</span><div class="collapse show" id="collapse-gl3fiulmruzpce"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-owyowflmrv6tj9"></i><span>bash</span><div class="collapse show" id="collapse-owyowflmrv6tj9"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]<br></code></pre></td></tr></table></div></figure>
 
 <p>其中，<code>&lt;镜像&gt;</code> 可以是 <code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者 <code>镜像摘要</code>。</p>
 <p>我们可以用镜像的完整 ID，也称为 <code>长 ID</code>，来删除镜像。使用脚本的时候可能会用长 ID，但是人工输入就太累了，所以更多的时候是用 <code>短 ID</code> 来删除镜像。<code>docker image ls</code> 默认列出的就已经是短 ID 了，一般取前3个字符以上，只要足够区分于别的镜像就可以了。</p>
@@ -471,6 +409,68 @@
       <tags>
         <tag>笔记</tag>
         <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>这是一篇用来测试的文章</title>
+    <url>//post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0.html</url>
+    <content><![CDATA[<p>此篇文章用来记录一些hexo的基本操作（纯新手）</p>
+<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><h2 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h2><p><del>此时我在<strong>source</strong>文件夹下新建了一个名为 “Article_Picture” 的文件夹用来存放图片。</del><br><del>此时只需要按照以下格式在.md文件中写入即可。</del></p>
+<p>不用看以上方法了，没用。</p>
+<p>首先在hexo的配置文件<code>config.yaml</code>更改一下配置：</p>
+<figure class="highlight yaml"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-5sas8klmrv6tj9"></i><span>yaml</span><div class="collapse show" id="collapse-5sas8klmrv6tj9"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></div></figure>
+
+<p>随后使用命令新建一篇文章时，hexo会在<code>_posts</code>中生成相同名字的文件夹，此时将图片放在该文件夹下，而后按照以下格式进行插入即可。</p>
+<figure class="highlight markdown"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-s4pacwlmrv6tj9"></i><span>markdown</span><div class="collapse show" id="collapse-s4pacwlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">图片加载失败时的描述</span>](<span class="hljs-link">图片链接</span>)<br></code></pre></td></tr></table></div></figure>
+<p><img src="/post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0/%E6%B5%8B%E8%AF%95%E6%88%AA%E5%9B%BE2.png" alt="这其实是一张图片"></p>
+<h2 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h2><p>略</p>
+<h1 id="插件的查看与卸载"><a href="#插件的查看与卸载" class="headerlink" title="插件的查看与卸载"></a>插件的查看与卸载</h1><h2 id="查看已安装插件"><a href="#查看已安装插件" class="headerlink" title="查看已安装插件"></a>查看已安装插件</h2><p>在blog目录下输入以下命令即可查看已安装插件</p>
+<figure class="highlight powershell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-ot53ldlmrv6tj9"></i><span>powershell</span><div class="collapse show" id="collapse-ot53ldlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs powershell">npm <span class="hljs-built_in">ls</span> <span class="hljs-literal">-dept</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></div></figure>
+<p><img src="/post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0/mingling.png" alt="这其实是一张图片"></p>
+<h2 id="卸载插件"><a href="#卸载插件" class="headerlink" title="卸载插件"></a>卸载插件</h2><p>在blog目录下输入以下命令即可卸载已安装插件</p>
+<figure class="highlight powershell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-w8fkk5lmrv6tj9"></i><span>powershell</span><div class="collapse show" id="collapse-w8fkk5lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs powershell">npm uninstall hexo<span class="hljs-literal">-asset-image</span>@<span class="hljs-number">0.0</span>.<span class="hljs-number">5</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></div></figure>
+<p>其中 <strong><a href="mailto:&#104;&#x65;&#120;&#x6f;&#x2d;&#x61;&#x73;&#115;&#101;&#116;&#45;&#x69;&#x6d;&#97;&#103;&#101;&#x40;&#48;&#46;&#48;&#46;&#x35;">&#104;&#x65;&#120;&#x6f;&#x2d;&#x61;&#x73;&#115;&#101;&#116;&#45;&#x69;&#x6d;&#97;&#103;&#101;&#x40;&#48;&#46;&#48;&#46;&#x35;</a></strong> 为要卸载的插件的名称</p>
+<p>最后还需前往 <strong>node_modules</strong> 文件夹删除相关配置和文件</p>
+<h1 id="插入数学公式"><a href="#插入数学公式" class="headerlink" title="插入数学公式"></a>插入数学公式</h1><h2 id="安装所需插件"><a href="#安装所需插件" class="headerlink" title="安装所需插件"></a>安装所需插件</h2><p>卸载 Hexo 自带的 renderer，安装 Pandoc renderer<br><a href="https://github.com/jgm/pandoc">下载pandoc并安装</a></p>
+<figure class="highlight powershell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-jtnpqtlmrv6tj9"></i><span>powershell</span><div class="collapse show" id="collapse-jtnpqtlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs powershell">npm uninstall hexo<span class="hljs-literal">-renderer-marked</span> <span class="hljs-literal">--save</span><br>npm install hexo<span class="hljs-literal">-renderer-pandoc</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></div></figure>
+
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p><a href="https://corner430.github.io/2021/07/02/%E7%94%A8markdown%E4%B9%A6%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/#:~:text=%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%9C%AC%E8%A1%8C%E5%86%85%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz,%E7%8B%AC%E8%A1%8C%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%96%B0%E7%9A%84%E4%B8%80%E8%A1%8C%E5%86%85%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%B1%85%E4%B8%AD%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz">具体请参考这篇文章</a></p>
+<p>所有公式都应该包括在一对 “$” 符号中，例如：</p>
+<figure class="highlight markdown"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-ad4v1plmrv6tj9"></i><span>markdown</span><div class="collapse show" id="collapse-ad4v1plmrv6tj9"><table><tr><td class="code"><pre><code class="hljs markdown">$里面是公式内容$<br></code></pre></td></tr></table></div></figure>
+<p>$5^5-ads$</p>
+<h1 id="如何使用-Emoji-表情"><a href="#如何使用-Emoji-表情" class="headerlink" title="如何使用 Emoji 表情"></a>如何使用 Emoji 表情</h1><h2 id="使用表情符号简码"><a href="#使用表情符号简码" class="headerlink" title="使用表情符号简码"></a>使用表情符号简码</h2><p>一些Markdown应用程序允许您通过键入表情符号短代码来插入表情符号。这些以冒号开头和结尾，并包含表情符号的名称。</p>
+<figure class="highlight markdown"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-b4s7y1lmrv6tj9"></i><span>markdown</span><div class="collapse show" id="collapse-b4s7y1lmrv6tj9"><table><tr><td class="code"><pre><code class="hljs markdown">去露营了！ :tent: 很快回来。<br>真好笑！ :joy:<br></code></pre></td></tr></table></div></figure>
+<p>呈现的输出如下所示：<br>去露营了！ :tent: 很快回来。<br>真好笑！ :joy:</p>
+<p><a href="https://markdown.com.cn/extended-syntax/emoji.html">请参考Markdown的官方教程</a></p>
+<p><a href="https://gist.github.com/rxaviers/7360908">这是表情符号简码列表</a></p>
+<h1 id="插入表格"><a href="#插入表格" class="headerlink" title="插入表格"></a>插入表格</h1><h2 id="Markdown默认方法"><a href="#Markdown默认方法" class="headerlink" title="Markdown默认方法"></a>Markdown默认方法</h2><p>表头内容默认居中对齐，单元格内容默认左对齐，Markdown 代码:</p>
+<figure class="highlight markdown"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-w4tx5dlmrv6tj9"></i><span>markdown</span><div class="collapse show" id="collapse-w4tx5dlmrv6tj9"><table><tr><td class="code"><pre><code class="hljs markdown">| 标题1 | 标题2 | 标题3 |<br>| ------ | ------ | ------ |<br>| 文本好短 | 文本不短也不长 | 文本好长文本好长文本好长 |<br>| 文本好长文本好长文本好长 | 文本好短 | 文本不短也不长 |<br></code></pre></td></tr></table></div></figure>
+<p>显示效果：</p>
+<table>
+<thead>
+<tr>
+<th>标题1</th>
+<th>标题2</th>
+<th>标题3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>123</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>123</td>
+<td>123</td>
+<td>123</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
       </tags>
   </entry>
 </search>
