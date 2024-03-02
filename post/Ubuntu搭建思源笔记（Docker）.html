@@ -24,7 +24,7 @@
 <meta property="og:description" content="安装docker和docker-compose的过程不再赘叙 编写docker-compose.yaml 在任意位置新建docker-compose.yaml文件 shell12mkdir &#x2F;siyuan &amp;&amp; cd &#x2F;siyuanvim docker-compose.yaml 写入以下信息（授权码自己修改） yaml123456789101112131415versio">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-02T08:31:01.000Z">
-<meta property="article:modified_time" content="2024-03-02T08:40:59.217Z">
+<meta property="article:modified_time" content="2024-03-02T08:45:58.979Z">
 <meta property="article:author" content="融化的巧克力">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
@@ -304,79 +304,47 @@
                 <p>安装docker和docker-compose的过程不再赘叙</p>
 <h2 id="编写docker-compose.yaml">编写docker-compose.yaml</h2>
 <p>在任意位置新建<code>docker-compose.yaml</code>文件</p>
-<figure class="highlight shell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-4lce9clt9u3ilm"></i><span>shell</span><div class="collapse show" id="collapse-4lce9clt9u3ilm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir /siyuan &amp;&amp; cd /siyuan<br>vim docker-compose.yaml<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight shell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-82lk09lt9ua3ts"></i><span>shell</span><div class="collapse show" id="collapse-82lk09lt9ua3ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir /siyuan &amp;&amp; cd /siyuan<br>vim docker-compose.yaml<br></code></pre></td></tr></table></div></figure>
 <p>写入以下信息（授权码自己修改）</p>
-<figure class="highlight yaml"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-5vx63slt9u3iln"></i><span>yaml</span><div class="collapse show" id="collapse-5vx63slt9u3iln"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3&#x27;</span><br><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">siyuan:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">b3log/siyuan:latest</span><br>    <span class="hljs-attr">command:</span> [<span class="hljs-string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="hljs-string">&#x27;--accessAuthCode=授权码&#x27;</span>]<br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">siyuan</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">TZ=Asia/Shanghai</span><br>    <span class="hljs-attr">user:</span> <span class="hljs-string">&#x27;1000:1000&#x27;</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">6806</span><span class="hljs-string">:6806</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/siyuan/workspace:/siyuan/workspace</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight yaml"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-19rx4wlt9ua3ts"></i><span>yaml</span><div class="collapse show" id="collapse-19rx4wlt9ua3ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3&#x27;</span><br><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">siyuan:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">b3log/siyuan:latest</span><br>    <span class="hljs-attr">command:</span> [<span class="hljs-string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="hljs-string">&#x27;--accessAuthCode=授权码&#x27;</span>]<br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">siyuan</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">TZ=Asia/Shanghai</span><br>    <span class="hljs-attr">user:</span> <span class="hljs-string">&#x27;1000:1000&#x27;</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">6806</span><span class="hljs-string">:6806</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/siyuan/workspace:/siyuan/workspace</span><br></code></pre></td></tr></table></div></figure>
 <p>保存退出后通过<code>docker-compose up -d</code>启动</p>
 <p>随后就可以通过<code>http://&lt;your_ip:6806&gt;</code>查看服务</p>
 <h2 id="自定义域名">自定义域名</h2>
 <p>使用<code>docker</code>安装运行<code>Nginx Proxy Manager</code></p>
 <p>在任意位置新建<code>docker-compose.yaml</code>文件并写入以下内容</p>
-<figure class="highlight yaml"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-7dzx2clt9u3iln"></i><span>yaml</span><div class="collapse show" id="collapse-7dzx2clt9u3iln"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&quot;3&quot;</span><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">app:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">jc21/nginx-proxy-manager:latest</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">80</span><span class="hljs-string">:80</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">81</span><span class="hljs-string">:81</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">443</span><span class="hljs-string">:443</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-attr">DB_MYSQL_HOST:</span> <span class="hljs-string">db</span><br>      <span class="hljs-attr">DB_MYSQL_PORT:</span> <span class="hljs-number">3306</span><br>      <span class="hljs-attr">DB_MYSQL_USER:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">DB_MYSQL_PASSWORD:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">DB_MYSQL_NAME:</span> <span class="hljs-string">npm</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./data:/data</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./letsencrypt:/etc/letsencrypt</span><br>  <span class="hljs-attr">db:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">yobasystems/alpine-mariadb:latest</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-attr">MYSQL_ROOT_PASSWORD:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">MYSQL_DATABASE:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">MYSQL_USER:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">MYSQL_PASSWORD:</span> <span class="hljs-string">npm</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./data/mysql:/var/lib/mysql</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight yaml"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-uxhot0lt9ua3ts"></i><span>yaml</span><div class="collapse show" id="collapse-uxhot0lt9ua3ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&quot;3&quot;</span><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">app:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">jc21/nginx-proxy-manager:latest</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">80</span><span class="hljs-string">:80</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">81</span><span class="hljs-string">:81</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">443</span><span class="hljs-string">:443</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-attr">DB_MYSQL_HOST:</span> <span class="hljs-string">db</span><br>      <span class="hljs-attr">DB_MYSQL_PORT:</span> <span class="hljs-number">3306</span><br>      <span class="hljs-attr">DB_MYSQL_USER:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">DB_MYSQL_PASSWORD:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">DB_MYSQL_NAME:</span> <span class="hljs-string">npm</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./data:/data</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./letsencrypt:/etc/letsencrypt</span><br>  <span class="hljs-attr">db:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">yobasystems/alpine-mariadb:latest</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-attr">MYSQL_ROOT_PASSWORD:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">MYSQL_DATABASE:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">MYSQL_USER:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">MYSQL_PASSWORD:</span> <span class="hljs-string">npm</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./data/mysql:/var/lib/mysql</span><br></code></pre></td></tr></table></div></figure>
 <p>保存退出后通过<code>docker-compose up -d</code>启动</p>
 <p>随后就可以通过<code>http://&lt;your_ip:81&gt;</code>查看服务</p>
 <h3 id="配置nginx-proxy-manager">配置Nginx Proxy Manager</h3>
 <p>通过<code>http://&lt;your_ip:81&gt;</code>打开浏览器查看服务</p>
 <p>输入默认账号密码登录服务</p>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-q7rrgult9u3iln"></i><span>plain</span><div class="collapse show" id="collapse-q7rrgult9u3iln"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">账号：admin@example.com<br>密码：changeme<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-7e76holt9ua3ts"></i><span>plain</span><div class="collapse show" id="collapse-7e76holt9ua3ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">账号：admin@example.com<br>密码：changeme<br></code></pre></td></tr></table></div></figure>
 <p>登录后点击界面上的<code>SSL Certificates</code>给服务添加证书</p>
-<figure>
-<img
-src="https://s2.51cto.com/images/blog/front/202403/97e847c93aa2cb06df372139aa314c716e699f.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=,x-oss-process=image/resize,m_fixed,w_1184" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" srcset="/img/loading.gif" lazyload /></p>
 <p>随后依次点击<code>Add SSL Certificates</code> --&gt;
 <code>Let's Encrypt</code></p>
-<figure>
-<img
-src="https://s2.51cto.com/images/blog/front/202403/71e3f0f25ef4da4e94b3582f94819dbfe9c242.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=,x-oss-process=image/resize,m_fixed,w_1184" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/71e3f0f25ef4da4e94b3582f94819dbfe9c242.webp" srcset="/img/loading.gif" lazyload /></p>
 <p>输入自己的域名并同意条款后点击<code>Save</code>等待几分钟即可</p>
-<figure>
-<img
-src="https://s2.51cto.com/images/blog/front/202403/e128f87851b254bd1943900b3708b35dd30bb5.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=,x-oss-process=image/resize,m_fixed,w_1184" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/e128f87851b254bd1943900b3708b35dd30bb5.webp" srcset="/img/loading.gif" lazyload /></p>
 <p>随后点击<code>Hosts</code> --&gt; <code>Proxy Hosts</code></p>
-<figure>
-<img
-src="https://s2.51cto.com/images/blog/front/202403/61571b806083cfc0474401d4d6f6de63220c19.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=,x-oss-process=image/resize,m_fixed,w_1184" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/61571b806083cfc0474401d4d6f6de63220c19.webp" srcset="/img/loading.gif" lazyload /></p>
 <p>点击<code>Add Proxy Host</code></p>
-<figure>
-<img
-src="https://s2.51cto.com/images/blog/front/202403/224784b392b7bf57bdd1724d0d6641f12a6e72.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=,x-oss-process=image/resize,m_fixed,w_1184" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b392b7bf57bdd1724d0d6641f12a6e72.webp" srcset="/img/loading.gif" lazyload /></p>
 <p>根据自己的情况依次填入信息</p>
-<figure>
-<img
-src="https://s2.51cto.com/images/blog/front/202403/d546ee5692d745a8fa5341161a9ec9b3c5701a.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=,x-oss-process=image/resize,m_fixed,w_1184" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" srcset="/img/loading.gif" lazyload /></p>
 <p>其中<code>172.21.0.2</code>是容器IP 可以参考以下内容查看容器IP</p>
-<figure class="highlight shell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-pvyubrlt9u3iln"></i><span>shell</span><div class="collapse show" id="collapse-pvyubrlt9u3iln"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker inspect [容器ID] | grep IPAddress<br></code></pre></td></tr></table></div></figure>
-<figure>
-<img
-src="https://s2.51cto.com/images/blog/front/202403/41d033b249351c9c96d721a9525c7a3853aa9f.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=,x-oss-process=image/resize,m_fixed,w_1184" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<figure class="highlight shell"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-qirggwlt9ua3ts"></i><span>shell</span><div class="collapse show" id="collapse-qirggwlt9ua3ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker inspect [容器ID] | grep IPAddress<br></code></pre></td></tr></table></div></figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" srcset="/img/loading.gif" lazyload /></p>
 <p>随后点击<code>SSL</code>添加刚刚申请的证书并启用<code>Force SSL</code>与<code>HTTP/2 Support</code></p>
-<figure>
-<img
-src="https://s2.51cto.com/images/blog/front/202403/0709b45547909dab5d903002d26bce5b801f6a.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=,x-oss-process=image/resize,m_fixed,w_1184" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b45547909dab5d903002d26bce5b801f6a.webp" srcset="/img/loading.gif" lazyload /></p>
 <p>再点击<code>Save</code>保存即可通过域名访问思源笔记</p>
 <p>当然 前提是你的域名已经解析到了你的服务器</p>
 
