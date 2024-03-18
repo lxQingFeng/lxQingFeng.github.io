@@ -16,24 +16,24 @@
   <meta name="author" content="融化的巧克力">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基础配置命令 启动后进入交换机 设置中文提示 switch1language-mode Chinese 进入系统视图 switch1system-view 用户权限 switch1user privilege level 15 进入console配置 switch1user-interface console 0 设置console密码 switch12authenticat">
+    <meta name="description" content="1.连接数据库 mysql -u用户名 -p密码 2.显示已有数据库 show databases; 3.创建数据库 create database sqlname; 4.选择数据库 use database sqlname; 5.显示数据库中的表（先选择数据库） show tables; 6.显示当前数据库的版本信息以及连接用户名 select version(),user(); 7.删">
 <meta property="og:type" content="article">
-<meta property="og:title" content="华为交换机基础配置">
-<meta property="og:url" content="http://example.com/post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html">
+<meta property="og:title" content="mysql常用命令">
+<meta property="og:url" content="http://example.com/post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">
 <meta property="og:site_name" content="宇宙无敌至尊神龙牛逼大王">
-<meta property="og:description" content="基础配置命令 启动后进入交换机 设置中文提示 switch1language-mode Chinese 进入系统视图 switch1system-view 用户权限 switch1user privilege level 15 进入console配置 switch1user-interface console 0 设置console密码 switch12authenticat">
+<meta property="og:description" content="1.连接数据库 mysql -u用户名 -p密码 2.显示已有数据库 show databases; 3.创建数据库 create database sqlname; 4.选择数据库 use database sqlname; 5.显示数据库中的表（先选择数据库） show tables; 6.显示当前数据库的版本信息以及连接用户名 select version(),user(); 7.删">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-30T09:35:26.000Z">
-<meta property="article:modified_time" content="2023-05-30T09:40:48.546Z">
+<meta property="article:published_time" content="2024-03-18T14:44:32.000Z">
+<meta property="article:modified_time" content="2024-03-18T14:47:48.933Z">
 <meta property="article:author" content="融化的巧克力">
-<meta property="article:tag" content="eNSP">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>华为交换机基础配置 - 宇宙无敌至尊神龙牛逼大王</title>
+  <title>mysql常用命令 - 宇宙无敌至尊神龙牛逼大王</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="华为交换机基础配置"></span>
+            <span id="subtitle" data-typed-text="mysql常用命令"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-30 17:35" pubdate>
-          2023年5月30日 下午
+        <time datetime="2024-03-18 22:44" pubdate>
+          2024年3月18日 晚上
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          547 字
+          988 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          5 分钟
+          9 分钟
         
       </span>
     
@@ -296,34 +296,66 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">华为交换机基础配置</h1>
+            <h1 style="display: none">mysql常用命令</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="基础配置命令">基础配置命令</h1>
-<p>启动后进入交换机</p>
-<h2 id="设置中文提示">设置中文提示</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-c23cu4ltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-c23cu4ltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">language-mode Chinese<br></code></pre></td></tr></table></div></figure>
-<h2 id="进入系统视图">进入系统视图</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-vtt7eyltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-vtt7eyltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">system-view<br></code></pre></td></tr></table></div></figure>
-<h2 id="用户权限">用户权限</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-r8q6ndltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-r8q6ndltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">user privilege level 15<br></code></pre></td></tr></table></div></figure>
-<h2 id="进入console配置">进入console配置</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-2be1j7ltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-2be1j7ltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">user-interface console 0<br></code></pre></td></tr></table></div></figure>
-<h2 id="设置console密码">设置console密码</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-gr7s2gltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-gr7s2gltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs switch">authentication-mode password<br>set authentication password simple Huawei<br></code></pre></td></tr></table></div></figure>
-<h2 id="设置登录前后标语">设置登录前后标语</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-7nduefltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-7nduefltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs switch">header login information &quot;This is SW1&quot;<br>header shell information &quot;login succeed&quot;<br></code></pre></td></tr></table></div></figure>
-<h2 id="创建与划分vlan">创建与划分vlan</h2>
-<h3 id="创建vlan">创建vlan</h3>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-xap9ifltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-xap9ifltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">vlan batch 10 20<br></code></pre></td></tr></table></div></figure>
-<h3 id="进入端口并划分vlan">进入端口并划分vlan</h3>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-qh0nqfltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-qh0nqfltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs switch">interface GigabitEthernet 0/0/1<br>port link-type access<br>port default vlan 10<br></code></pre></td></tr></table></div></figure>
-<h2 id="设置vlan-ip">设置vlan IP</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-w2kzfeltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-w2kzfeltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs switch">interface vlanif 10<br>ip address 192.168.10.1 24<br></code></pre></td></tr></table></div></figure>
-<h2 id="查看配置结果">查看配置结果</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-0dvuytltx28sqm"></i><span>switch</span><div class="collapse show" id="collapse-0dvuytltx28sqm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">display current-configuration<br></code></pre></td></tr></table></div></figure>
+                <p>1.连接数据库 mysql -u用户名 -p密码 2.显示已有数据库 show databases;
+3.创建数据库 create database sqlname; 4.选择数据库 use database sqlname;
+5.显示数据库中的表（先选择数据库） show tables;
+6.显示当前数据库的版本信息以及连接用户名 select version(),user();
+7.删除数据库(删除时没有提示直接删除) drop database sqlname;</p>
+<p>delete from user where uesr='' [删除匿名用户] create user
+'用户名'@'IP地址' identified by '密码' [创建新用户] grant all privileges
+on 数据库.数据表 to '用户名'@'IP地址' identified by '密码'
+[赋予用户权限，all=全部] grant select,insert,update,delete on
+数据库.数据表 to '用户名'@'地址' identified by '密码' [赋予用户指定权限]
+drop user 用户@IP地址; [删除用户] msfdb init （初始化数据库）</p>
+<p>insert into 表名(字段1,字段2,......)
+values(数据1,数据2,......)[插入数据] update 表名 set
+列=列('要修改的内容') where 对应列='对应列内容'</p>
+<p>select * from 表名（查看数据表内容） create tables 表名;
+(创建表)<br />
+show tables;（查看数据表） show create table 表名;（查看数据表创建语句）
+desc 表名;（查看表的字段信息） alter table 表名 rename
+新表名;（修改表名） alter table 表名 change 字段名 新字段名
+属性;（修改字段名） alter table 表名 modify id
+int(20);（修改字段的数据类型） alter table 表名 add 字段名
+属性;（添加字段） alter table 表名 drop 字段名;（删除字段） alter table
+表名 modify 字段名 属性 字段;（修改字段的位置） drop table
+表名;（删除数据表）</p>
+<p>表的约束：</p>
+<table>
+<thead>
+<tr class="header">
+<th>约束条件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PRIMARY KEY</td>
+<td>主键约束，用于唯一标识对应的记录</td>
+</tr>
+<tr class="even">
+<td>FOREIGN KEY</td>
+<td>外键约束</td>
+</tr>
+<tr class="odd">
+<td>NOT NULL</td>
+<td>非空约束</td>
+</tr>
+<tr class="even">
+<td>UNIQUE</td>
+<td>唯一性约束</td>
+</tr>
+<tr class="odd">
+<td>DEFAULT</td>
+<td>默认值约束，用于设置字段的默认值</td>
+</tr>
+</tbody>
+</table>
 
                 
               </div>
@@ -342,7 +374,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87/" class="category-chain-item">网络设备</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
   
 
@@ -357,7 +389,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/eNSP/">#eNSP</a>
+        <a href="/tags/mysql/">#mysql</a>
       
     </div>
   
@@ -369,8 +401,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>华为交换机基础配置</div>
-      <div>http://example.com/post/华为交换机基础配置.html</div>
+      <div>mysql常用命令</div>
+      <div>http://example.com/post/mysql常用命令.html</div>
     </div>
     <div class="license-meta">
       
@@ -382,7 +414,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月30日</div>
+          <div>2024年3月18日</div>
         </div>
       
       
@@ -414,18 +446,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/%E5%9C%B0%E6%AF%AF%E6%A8%A1%E7%BB%84%EF%BC%88Carpet%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html" title="地毯模组（Carpet）的使用教程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">地毯模组（Carpet）的使用教程</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html" title="imgTP图床测试">
-                        <span class="hidden-mobile">imgTP图床测试</span>
+                      <a href="/post/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%90%84%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8.html" title="Linux根目录下的各个目录的作用及各颜色类型">
+                        <span class="hidden-mobile">Linux根目录下的各个目录的作用及各颜色类型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
