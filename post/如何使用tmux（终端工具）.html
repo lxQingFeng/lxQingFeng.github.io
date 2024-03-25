@@ -310,9 +310,9 @@
 </ol>
 <h1 id="基本使用">基本使用</h1>
 <h2 id="安装tmux">安装tmux</h2>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-5su29slu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-5su29slu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Ubantu or Debian</span><br>sudo apt-get install tmux<br><br><span class="hljs-comment"># Centos or Fedora</span><br>sudo yum install tmux<br><br><span class="hljs-comment"># Mac</span><br>brew install tmux<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-sisz06lu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-sisz06lu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Ubantu or Debian</span><br>sudo apt-get install tmux<br><br><span class="hljs-comment"># Centos or Fedora</span><br>sudo yum install tmux<br><br><span class="hljs-comment"># Mac</span><br>brew install tmux<br></code></pre></td></tr></table></div></figure>
 <h2 id="启动退出">启动、退出</h2>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-ga1xuflu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-ga1xuflu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-7vs4r2lu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-7vs4r2lu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux<br></code></pre></td></tr></table></div></figure>
 <p>在终端输入以上命令即可启动tmux，启动后终端底部会显示一个状态栏。</p>
 <p>左侧是窗口信息（编号和名称），右侧是系统信息。</p>
 <figure>
@@ -322,7 +322,7 @@ alt="image-20230606181115946" />
 <figcaption aria-hidden="true">image-20230606181115946</figcaption>
 </figure>
 <p>按下<code>Ctrl + d</code>或者在终端输入<code>exit</code>即可退出tmux。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-5fstwklu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-5fstwklu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">exit</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-szdikulu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-szdikulu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">exit</span><br></code></pre></td></tr></table></div></figure>
 <h2 id="tmux术语">tmux术语</h2>
 <p>tmux 采用 client/server模型，主要有四个模块：</p>
 <ul>
@@ -346,16 +346,16 @@ Tmux
 <code>1</code>，以此类推。这些窗口对应的会话，就是 0 号会话、1
 号会话。</p>
 <p>使用编号区分会话，不太直观，更好的方法是为会话起名。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-loc6lrlu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-loc6lrlu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux new -s &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-5jf72blu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-5jf72blu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux new -s &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
 <p>上面命令新建一个指定名称的会话。</p>
 <h2 id="分离会话">分离会话</h2>
 <p>在 Tmux 窗口中，按下 <code>Ctrl+b d</code> 或者输入
 <code>tmux detach</code> 命令，就会将当前会话与窗口分离。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-nu3jiulu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-nu3jiulu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux detach<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-vovw2klu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-vovw2klu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux detach<br></code></pre></td></tr></table></div></figure>
 <p>上面命令执行后，就会退出当前 Tmux
 窗口，但是会话和里面的进程仍然在后台运行。</p>
 <p><code>tmux ls</code> 命令可以查看当前所有的 Tmux 会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-rlqv6ilu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-rlqv6ilu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux <span class="hljs-built_in">ls</span><br><span class="hljs-comment"># or</span><br>tmux list-session<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-fjf41ulu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-fjf41ulu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux <span class="hljs-built_in">ls</span><br><span class="hljs-comment"># or</span><br>tmux list-session<br></code></pre></td></tr></table></div></figure>
 <figure>
 <img
 src="%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8tmux%EF%BC%88%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%89/image-20230606182214934.png" srcset="/img/loading.gif" lazyload
@@ -364,22 +364,22 @@ alt="image-20230606182214934" />
 </figure>
 <h2 id="接入会话">接入会话</h2>
 <p>在终端输入<code>tmux attach</code>用于重新接入某个已存在的会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-r26nm4lu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-r26nm4lu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号接入会话</span><br>tmux attach -t 0<br><br><span class="hljs-comment"># 使用会话名称接入会话</span><br>tmux attach -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-9dhinulu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-9dhinulu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号接入会话</span><br>tmux attach -t 0<br><br><span class="hljs-comment"># 使用会话名称接入会话</span><br>tmux attach -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
 <h2 id="kill会话">kill会话</h2>
 <p>在终端输入<code>tmux kill-session</code>用于杀死某个已存在的会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-c4fdrelu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-c4fdrelu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号结束会话</span><br>tmux kill-sesion -t 0<br><br><span class="hljs-comment"># 使用会话名称结束会话</span><br>tmux kill-sesion -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-x90ypalu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-x90ypalu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号结束会话</span><br>tmux kill-sesion -t 0<br><br><span class="hljs-comment"># 使用会话名称结束会话</span><br>tmux kill-sesion -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></div></figure>
 <h2 id="切换会话">切换会话</h2>
 <p>在终端输入<code>tmux switch</code>以切换会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-04u7lalu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-04u7lalu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号切换会话</span><br>tmux switch -t 0<br><br><span class="hljs-comment"># 使用会话名称切换会话</span><br>tmux switch -t &lt;session-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-h4kifblu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-h4kifblu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号切换会话</span><br>tmux switch -t 0<br><br><span class="hljs-comment"># 使用会话名称切换会话</span><br>tmux switch -t &lt;session-name&gt;<br></code></pre></td></tr></table></div></figure>
 <h2 id="重命名会话">重命名会话</h2>
 <p>在终端输入<code>tmux rename-session</code>以重命名会话。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-69tks9lu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-69tks9lu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux rename-session -t 0 &lt;new-name&gt;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-y94lkslu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-y94lkslu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux rename-session -t 0 &lt;new-name&gt;<br></code></pre></td></tr></table></div></figure>
 <p>以上命令会将<code>0</code>号会话重命名。</p>
 <h1 id="快捷键">快捷键</h1>
 <p>tmux大部分操作都可以用快捷键来代替。</p>
 <p>使用快捷键的前提是先按下了<code>Ctrl + b</code></p>
 <p>使用<code>tmux list-keys</code>可以列出所有快捷键。</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-3vj172lu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-3vj172lu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux list-keys<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-hc7sf8lu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-hc7sf8lu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tmux list-keys<br></code></pre></td></tr></table></div></figure>
 <h2 id="会话快捷键">会话快捷键</h2>
 <ul>
 <li>s ：列出所有会话，也可以在列表中用鼠标或上下键切换会话</li>
@@ -434,7 +434,7 @@ alt="image-20230606184635853" />
 ctrl+shift+c、ctrl+shift+v 的方式进行复制粘贴。</li>
 </ul>
 <p>配置方式为在 ~/.tmux.conf 文件中，增加：</p>
-<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-0dty26lu5obpg4"></i><span>bash</span><div class="collapse show" id="collapse-0dty26lu5obpg4"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">set-option -g mouse on<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-kimiaelu6cm304"></i><span>bash</span><div class="collapse show" id="collapse-kimiaelu6cm304"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">set-option -g mouse on<br></code></pre></td></tr></table></div></figure>
 <h1 id="参考文章">参考文章</h1>
 <ol type="1">
 <li><a
