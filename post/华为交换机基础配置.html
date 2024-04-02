@@ -16,12 +16,12 @@
   <meta name="author" content="融化的巧克力">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基础配置命令 启动后进入交换机 设置中文提示 switch1language-mode Chinese 进入系统视图 switch1system-view 用户权限 switch1user privilege level 15 进入console配置 switch1user-interface console 0 设置console密码 switch12authenticat">
+    <meta name="description" content="基础配置命令 启动后进入交换机 设置中文提示 1language-mode Chinese 进入系统视图 1system-view 用户权限 1user privilege level 15 进入console配置 1user-interface console 0 设置console密码 12authentication-mode passwordset authentic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="华为交换机基础配置">
-<meta property="og:url" content="https://ptz191610.cn/post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html">
+<meta property="og:url" content="https://lxqingfeng.github.io/post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html">
 <meta property="og:site_name" content="宇宙无敌至尊神龙牛逼大王">
-<meta property="og:description" content="基础配置命令 启动后进入交换机 设置中文提示 switch1language-mode Chinese 进入系统视图 switch1system-view 用户权限 switch1user privilege level 15 进入console配置 switch1user-interface console 0 设置console密码 switch12authenticat">
+<meta property="og:description" content="基础配置命令 启动后进入交换机 设置中文提示 1language-mode Chinese 进入系统视图 1system-view 用户权限 1user privilege level 15 进入console配置 1user-interface console 0 设置console密码 12authentication-mode passwordset authentic">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-30T09:35:26.000Z">
 <meta property="article:modified_time" content="2023-05-30T09:40:48.546Z">
@@ -76,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"ptz191610.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"lxqingfeng.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -89,7 +89,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 
 
 <body>
@@ -120,7 +120,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -180,7 +180,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Links/">
+              <a class="nav-link" href="/Links/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          547 字
+          88 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          5 分钟
+          1 分钟
         
       </span>
     
@@ -295,8 +295,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">华为交换机基础配置</h1>
+            <h1 id="seo-header">华为交换机基础配置</h1>
             
             
               <div class="markdown-body">
@@ -304,26 +303,26 @@
                 <h1 id="基础配置命令">基础配置命令</h1>
 <p>启动后进入交换机</p>
 <h2 id="设置中文提示">设置中文提示</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-trep0nlu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-trep0nlu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">language-mode Chinese<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">language-mode Chinese<br></code></pre></td></tr></table></figure>
 <h2 id="进入系统视图">进入系统视图</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-fjri1mlu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-fjri1mlu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">system-view<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">system-view<br></code></pre></td></tr></table></figure>
 <h2 id="用户权限">用户权限</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-n4n2pqlu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-n4n2pqlu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">user privilege level 15<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">user privilege level 15<br></code></pre></td></tr></table></figure>
 <h2 id="进入console配置">进入console配置</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-b30fr0lu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-b30fr0lu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">user-interface console 0<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">user-interface console 0<br></code></pre></td></tr></table></figure>
 <h2 id="设置console密码">设置console密码</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-tm7x61lu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-tm7x61lu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs switch">authentication-mode password<br>set authentication password simple Huawei<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs switch">authentication-mode password<br>set authentication password simple Huawei<br></code></pre></td></tr></table></figure>
 <h2 id="设置登录前后标语">设置登录前后标语</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-fqwruxlu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-fqwruxlu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs switch">header login information &quot;This is SW1&quot;<br>header shell information &quot;login succeed&quot;<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs switch">header login information &quot;This is SW1&quot;<br>header shell information &quot;login succeed&quot;<br></code></pre></td></tr></table></figure>
 <h2 id="创建与划分vlan">创建与划分vlan</h2>
 <h3 id="创建vlan">创建vlan</h3>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-z2ka6elu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-z2ka6elu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">vlan batch 10 20<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">vlan batch 10 20<br></code></pre></td></tr></table></figure>
 <h3 id="进入端口并划分vlan">进入端口并划分vlan</h3>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-61vi0slu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-61vi0slu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs switch">interface GigabitEthernet 0/0/1<br>port link-type access<br>port default vlan 10<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs switch">interface GigabitEthernet 0/0/1<br>port link-type access<br>port default vlan 10<br></code></pre></td></tr></table></figure>
 <h2 id="设置vlan-ip">设置vlan IP</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-l28s03lu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-l28s03lu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs switch">interface vlanif 10<br>ip address 192.168.10.1 24<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs switch">interface vlanif 10<br>ip address 192.168.10.1 24<br></code></pre></td></tr></table></figure>
 <h2 id="查看配置结果">查看配置结果</h2>
-<figure class="highlight plaintext"><i class="iconfont icon-icon-down" type="button" data-toggle="collapse" data-target="#collapse-djcyk8lu8fforo"></i><span>switch</span><div class="collapse show" id="collapse-djcyk8lu8fforo"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">display current-configuration<br></code></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs switch">display current-configuration<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -357,7 +356,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/eNSP/">#eNSP</a>
+        <a href="/tags/eNSP/" class="print-no-link">#eNSP</a>
       
     </div>
   
@@ -370,7 +369,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>华为交换机基础配置</div>
-      <div>https://ptz191610.cn/post/华为交换机基础配置.html</div>
+      <div>https://lxqingfeng.github.io/post/华为交换机基础配置.html</div>
     </div>
     <div class="license-meta">
       
@@ -393,7 +392,7 @@
             
               
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
                   </span>
