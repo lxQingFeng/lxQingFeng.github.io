@@ -8,66 +8,66 @@
 <p>这个程序的目标是打印出1到30之间的所有素数。为了实现这个目标，我们首先需要一个函数来判断一个数是否为素数。这就是<code>is_prime</code>函数的作用。它接受一个整数作为参数，然后通过一个for循环来检查这个数是否可以被2到它的平方根之间的任何整数整除。如果可以，那么这个数就不是素数，函数返回0；否则，这个数就是素数，函数返回1。</p>
 <p>然后在<code>main</code>函数中，我们使用一个for循环来遍历1到30的所有整数。对于每一个整数，我们都调用<code>is_prime</code>函数来检查它是否为素数。如果是，我们就使用<code>printf</code>函数将它打印出来。</p>
 <h2 id="代码">代码</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">is_prime</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span> &#123;<br>    <span class="hljs-keyword">if</span> (num &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i * i &lt;= num; i++) &#123;<br>        <span class="hljs-keyword">if</span> (num % i == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">30</span>; i++) &#123;<br>        <span class="hljs-keyword">if</span> (is_prime(i)) &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, i);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">is_prime</span><span class="params">(<span class="type">int</span> num)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (num &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i * i &lt;= num; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (num % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">30</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (is_prime(i)) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1
 id="输入6个整数仅用指针法实现按由大到小的顺序输出">输入6个整数，仅用指针法实现按由大到小的顺序输出</h1>
 <h2 id="思路-1">思路</h2>
 <p>这个程序的目标是接收用户输入的6个整数，并按照由大到小的顺序输出这些整数。为了实现这个目标，我们首先需要一个函数来对数组进行排序。这就是<code>sort</code>函数的作用。它接受一个整数指针和一个整数作为参数，整数指针指向我们要排序的数组，整数表示数组的长度。<code>sort</code>函数使用了冒泡排序算法，通过两层循环来比较并交换数组中的元素，从而实现排序。</p>
 <p>然后在<code>main</code>函数中，我们首先定义了一个长度为6的整数数组。然后，我们使用一个for循环和<code>scanf</code>函数来接收用户输入的6个整数，并将这些整数存储在数组中。接着，我们调用<code>sort</code>函数来对数组进行排序。最后，我们使用一个for循环和<code>printf</code>函数来按照由大到小的顺序输出这6个整数。</p>
 <h2 id="代码-1">代码</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">void</span> <span class="hljs-title function_">sort</span><span class="hljs-params">(<span class="hljs-type">int</span> *arr, <span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = i + <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>            <span class="hljs-keyword">if</span> (*(arr + i) &lt; *(arr + j)) &#123;<br>                <span class="hljs-type">int</span> temp = *(arr + i);<br>                *(arr + i) = *(arr + j);<br>                *(arr + j) = temp;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">int</span> arr[<span class="hljs-number">6</span>];<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;请输入6个整数：\n&quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++) &#123;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, arr + i);<br>    &#125;<br>    sort(arr, <span class="hljs-number">6</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;由大到小的顺序输出为：\n&quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++) &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, *(arr + i));<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (*(arr + i) &lt; *(arr + j)) &#123;</span><br><span class="line">                <span class="type">int</span> temp = *(arr + i);</span><br><span class="line">                *(arr + i) = *(arr + j);</span><br><span class="line">                *(arr + j) = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> arr[<span class="number">6</span>];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入6个整数：\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, arr + i);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(arr, <span class="number">6</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;由大到小的顺序输出为：\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, *(arr + i));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h1 id="解释">解释</h1>
 <h2 id="section">1</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>这行代码包含了<code>stdio.h</code>头文件，它是C语言中提供输入/输出功能的库。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">is_prime</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span> &#123;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">is_prime</span><span class="params">(<span class="type">int</span> num)</span> &#123;</span><br></pre></td></tr></table></figure>
 <p>这行代码定义了一个名为<code>is_prime</code>的函数，它接受一个整数<code>num</code>作为参数。这个函数用于检查<code>num</code>是否为素数。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">if</span> (num &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (num &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 <p>如果<code>num</code>小于或等于1，那么它就不是素数，所以我们返回0。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i * i &lt;= num; i++) &#123;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i * i &lt;= num; i++) &#123;</span><br></pre></td></tr></table></figure>
 <p>这行代码是一个for循环，用于检查<code>num</code>是否可以被2到<code>sqrt(num)</code>之间的任何整数整除。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">if</span> (num % i == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (num % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 <p>如果<code>num</code>可以被<code>i</code>整除，那么<code>num</code>就不是素数，所以我们返回0。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c">    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果<code>num</code>不能被2到<code>sqrt(num)</code>之间的任何整数整除，那么<code>num</code>就是素数，所以我们返回1。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br></pre></td></tr></table></figure>
 <p>这行代码定义了程序的主函数<code>main</code>。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">30</span>; i++) &#123;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">30</span>; i++) &#123;</span><br></pre></td></tr></table></figure>
 <p>这行代码是一个for循环，用于遍历1到30的所有整数。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">if</span> (is_prime(i)) &#123;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (is_prime(i)) &#123;</span><br></pre></td></tr></table></figure>
 <p>这行代码调用我们之前定义的<code>is_prime</code>函数，检查当前的整数<code>i</code>是否为素数。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, i);<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i);</span><br></pre></td></tr></table></figure>
 <p>如果<code>i</code>是素数，我们就打印出来。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c">        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这些是闭合前面的if语句和for循环的大括号，以及表示<code>main</code>函数的结束，<code>return 0;</code>表示程序执行成功。</p>
 <h2 id="section-1">2</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>这行代码包含了<code>stdio.h</code>头文件，它是C语言中提供输入/输出功能的库。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">sort</span><span class="hljs-params">(<span class="hljs-type">int</span> *arr, <span class="hljs-type">int</span> n)</span> &#123;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">sort</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> n)</span> &#123;</span><br></pre></td></tr></table></figure>
 <p>这行代码定义了一个名为<code>sort</code>的函数，它接受一个整数指针<code>arr</code>和一个整数<code>n</code>作为参数。<code>arr</code>指向我们要排序的数组，<code>n</code>是数组的长度。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = i + <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br></pre></td></tr></table></figure>
 <p>这两行代码是两个嵌套的for循环，用于遍历数组中的每一对元素。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">if</span> (*(arr + i) &lt; *(arr + j)) &#123;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (*(arr + i) &lt; *(arr + j)) &#123;</span><br></pre></td></tr></table></figure>
 <p>这行代码检查当前的两个元素是否满足我们的排序条件（即第一个元素是否小于第二个元素）。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> temp = *(arr + i);<br>*(arr + i) = *(arr + j);<br>*(arr + j) = temp;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> temp = *(arr + i);</span><br><span class="line">*(arr + i) = *(arr + j);</span><br><span class="line">*(arr + j) = temp;</span><br></pre></td></tr></table></figure>
 <p>如果满足排序条件，我们就交换这两个元素的位置。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c">            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这些是闭合前面的if语句和for循环的大括号。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br></pre></td></tr></table></figure>
 <p>这行代码定义了程序的主函数<code>main</code>。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> arr[<span class="hljs-number">6</span>];<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">6</span>];</span><br></pre></td></tr></table></figure>
 <p>这行代码定义了一个长度为6的整数数组<code>arr</code>。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;请输入6个整数：\n&quot;</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;请输入6个整数：\n&quot;</span>);</span><br></pre></td></tr></table></figure>
 <p>这行代码打印出提示信息，告诉用户需要输入6个整数。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++) &#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, arr + i);<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, arr + i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这两行代码是一个for循环，用于从用户那里读取6个整数并存储在数组<code>arr</code>中。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c">sort(arr, <span class="hljs-number">6</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">sort(arr, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
 <p>这行代码调用我们之前定义的<code>sort</code>函数，对数组<code>arr</code>进行排序。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;由大到小的顺序输出为：\n&quot;</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;由大到小的顺序输出为：\n&quot;</span>);</span><br></pre></td></tr></table></figure>
 <p>这行代码打印出提示信息，告诉用户接下来将按照由大到小的顺序输出这6个整数。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++) &#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, *(arr + i));<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, *(arr + i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这两行代码是一个for循环，用于按照由大到小的顺序打印出这6个整数。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这行代码表示<code>main</code>函数的结束，<code>return 0;</code>表示程序执行成功。</p>
 ]]></content>
       <tags>
@@ -139,21 +139,21 @@ id="文件和目录的颜色代表了什么类型">文件和目录的颜色代�
     <content><![CDATA[<p>安装docker和docker-compose的过程不再赘叙</p>
 <h2 id="编写docker-compose.yaml">编写docker-compose.yaml</h2>
 <p>在任意位置新建<code>docker-compose.yaml</code>文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir /siyuan &amp;&amp; cd /siyuan<br>vim docker-compose.yaml<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /siyuan &amp;&amp; cd /siyuan</span><br><span class="line">vim docker-compose.yaml</span><br></pre></td></tr></table></figure>
 <p>写入以下信息（授权码自己修改）</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3&#x27;</span><br><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">siyuan:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">b3log/siyuan:latest</span><br>    <span class="hljs-attr">command:</span> [<span class="hljs-string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="hljs-string">&#x27;--accessAuthCode=授权码&#x27;</span>]<br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">siyuan</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">TZ=Asia/Shanghai</span><br>    <span class="hljs-attr">user:</span> <span class="hljs-string">&#x27;1000:1000&#x27;</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">6806</span><span class="hljs-string">:6806</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/siyuan/workspace:/siyuan/workspace</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">siyuan:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">b3log/siyuan:latest</span></span><br><span class="line">    <span class="attr">command:</span> [<span class="string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="string">&#x27;--accessAuthCode=授权码&#x27;</span>]</span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">siyuan</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">&#x27;1000:1000&#x27;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">6806</span><span class="string">:6806</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/siyuan/workspace:/siyuan/workspace</span></span><br></pre></td></tr></table></figure>
 <p>保存退出后通过<code>docker-compose up -d</code>启动</p>
 <p>随后就可以通过<code>http://&lt;your_ip:6806&gt;</code>查看服务</p>
 <h2 id="自定义域名">自定义域名</h2>
 <p>使用<code>docker</code>安装运行<code>Nginx Proxy Manager</code></p>
 <p>在任意位置新建<code>docker-compose.yaml</code>文件并写入以下内容</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&quot;3&quot;</span><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">app:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">jc21/nginx-proxy-manager:latest</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">80</span><span class="hljs-string">:80</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">81</span><span class="hljs-string">:81</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">443</span><span class="hljs-string">:443</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-attr">DB_MYSQL_HOST:</span> <span class="hljs-string">db</span><br>      <span class="hljs-attr">DB_MYSQL_PORT:</span> <span class="hljs-number">3306</span><br>      <span class="hljs-attr">DB_MYSQL_USER:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">DB_MYSQL_PASSWORD:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">DB_MYSQL_NAME:</span> <span class="hljs-string">npm</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./data:/data</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./letsencrypt:/etc/letsencrypt</span><br>  <span class="hljs-attr">db:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">yobasystems/alpine-mariadb:latest</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-attr">MYSQL_ROOT_PASSWORD:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">MYSQL_DATABASE:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">MYSQL_USER:</span> <span class="hljs-string">npm</span><br>      <span class="hljs-attr">MYSQL_PASSWORD:</span> <span class="hljs-string">npm</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./data/mysql:/var/lib/mysql</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jc21/nginx-proxy-manager:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:80</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">81</span><span class="string">:81</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">443</span><span class="string">:443</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">DB_MYSQL_HOST:</span> <span class="string">db</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PORT:</span> <span class="number">3306</span></span><br><span class="line">      <span class="attr">DB_MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_NAME:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./letsencrypt:/etc/letsencrypt</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">yobasystems/alpine-mariadb:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/mysql:/var/lib/mysql</span></span><br></pre></td></tr></table></figure>
 <p>保存退出后通过<code>docker-compose up -d</code>启动</p>
 <p>随后就可以通过<code>http://&lt;your_ip:81&gt;</code>查看服务</p>
 <h3 id="配置nginx-proxy-manager">配置Nginx Proxy Manager</h3>
 <p>通过<code>http://&lt;your_ip:81&gt;</code>打开浏览器查看服务</p>
 <p>输入默认账号密码登录服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plain">账号：admin@example.com<br>密码：changeme<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">账号：admin@example.com</span><br><span class="line">密码：changeme</span><br></pre></td></tr></table></figure>
 <p>登录后点击界面上的<code>SSL Certificates</code>给服务添加证书</p>
 <p><img
 src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" /></p>
@@ -174,7 +174,7 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b3
 <p><img
 src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" /></p>
 <p>其中<code>172.21.0.2</code>是容器IP 可以参考以下内容查看容器IP</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">docker inspect [容器ID] | grep IPAddress<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker inspect [容器ID] | grep IPAddress</span><br></pre></td></tr></table></figure>
 <p><img
 src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" /></p>
 <p>随后点击<code>SSL</code>添加刚刚申请的证书并启用<code>Force SSL</code>与<code>HTTP/2 Support</code></p>
@@ -202,11 +202,11 @@ alt="拓扑图" />
 </figure>
 <h1 id="配置过程">配置过程</h1>
 <h2 id="sw1配置">SW1配置</h2>
-<figure class="highlight pf"><table><tr><td class="code"><pre><code class="hljs pf">system-view  <span class="hljs-comment"># 进入系统视图</span><br>vlan batch <span class="hljs-number">10</span>  <span class="hljs-comment"># 创建vlan10</span><br>interface GigabitEthernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">2</span>  <span class="hljs-comment"># 进入与PC1相连的接口</span><br><span class="hljs-keyword">port</span> link-type access <span class="hljs-comment"># 开启访问模式</span><br><span class="hljs-keyword">port</span> <span class="hljs-keyword">default</span> vlan <span class="hljs-number">10</span>  <span class="hljs-comment"># 分配vlan</span><br>interface GigabitEthernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">1</span>  <span class="hljs-comment"># 进入与SW2相连的接口</span><br><span class="hljs-keyword">port</span> link-type trunk <span class="hljs-comment"># 开启trunk模式</span><br><span class="hljs-keyword">port</span> trunk allow-pass vlan <span class="hljs-number">10</span> <span class="hljs-number">20</span> <span class="hljs-comment"># 允许vlan10、20通过这个trunk端口</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view  # 进入系统视图</span><br><span class="line">vlan batch 10  # 创建vlan10</span><br><span class="line">interface GigabitEthernet 0/0/2  # 进入与PC1相连的接口</span><br><span class="line">port link-type access # 开启访问模式</span><br><span class="line">port default vlan 10  # 分配vlan</span><br><span class="line">interface GigabitEthernet 0/0/1  # 进入与SW2相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br></pre></td></tr></table></figure>
 <h2 id="sw2配置">SW2配置</h2>
-<figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">system</span>-view  # 进入系统视图<br><span class="hljs-attribute">vlan</span> batch <span class="hljs-number">10</span> <span class="hljs-number">20</span> # 创建vlan10、<span class="hljs-number">20</span><br><span class="hljs-attribute">interface</span> GigabitEthernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">1</span> # 进入与SW1相连的接口<br><span class="hljs-attribute">port</span> link-type trunk # 开启trunk模式<br><span class="hljs-attribute">port</span> trunk <span class="hljs-literal">allow</span>-pass vlan <span class="hljs-number">10</span> <span class="hljs-number">20</span> # 允许vlan10、<span class="hljs-number">20</span>通过这个trunk端口<br><span class="hljs-attribute">interface</span> GigabitEthernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">2</span> # 进入与SW3相连的接口<br><span class="hljs-attribute">port</span> link-type trunk # 开启trunk模式<br><span class="hljs-attribute">port</span> trunk <span class="hljs-literal">allow</span>-pass vlan <span class="hljs-number">10</span> <span class="hljs-number">20</span> # 允许vlan10、<span class="hljs-number">20</span>通过这个trunk端口<br><span class="hljs-attribute">interface</span> Vlanif <span class="hljs-number">10</span>  # 进入vlan10<br><span class="hljs-attribute">ip</span> address <span class="hljs-number">192.168.3.1</span> <span class="hljs-number">24</span> # 为vlan10设置IP<br><span class="hljs-attribute">interface</span> Vlanif <span class="hljs-number">20</span>  # 进入vlan20<br><span class="hljs-attribute">ip</span> address <span class="hljs-number">192.168.6.1</span> <span class="hljs-number">24</span> # 为vlan20设置IP<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view  # 进入系统视图</span><br><span class="line">vlan batch 10 20 # 创建vlan10、20</span><br><span class="line">interface GigabitEthernet 0/0/1 # 进入与SW1相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br><span class="line">interface GigabitEthernet 0/0/2 # 进入与SW3相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br><span class="line">interface Vlanif 10  # 进入vlan10</span><br><span class="line">ip address 192.168.3.1 24 # 为vlan10设置IP</span><br><span class="line">interface Vlanif 20  # 进入vlan20</span><br><span class="line">ip address 192.168.6.1 24 # 为vlan20设置IP</span><br></pre></td></tr></table></figure>
 <h2 id="sw3配置">SW3配置</h2>
-<figure class="highlight pf"><table><tr><td class="code"><pre><code class="hljs pf">system-view  <span class="hljs-comment"># 进入系统视图</span><br>vlan batch <span class="hljs-number">20</span>  <span class="hljs-comment"># 创建vlan10</span><br>interface GigabitEthernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">2</span>  <span class="hljs-comment"># 进入与PC1相连的接口</span><br><span class="hljs-keyword">port</span> link-type access <span class="hljs-comment"># 开启访问模式</span><br><span class="hljs-keyword">port</span> <span class="hljs-keyword">default</span> vlan <span class="hljs-number">20</span>  <span class="hljs-comment"># 分配vlan</span><br>interface GigabitEthernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">1</span>  <span class="hljs-comment"># 进入与SW2相连的接口</span><br><span class="hljs-keyword">port</span> link-type trunk <span class="hljs-comment"># 开启trunk模式</span><br><span class="hljs-keyword">port</span> trunk allow-pass vlan <span class="hljs-number">10</span> <span class="hljs-number">20</span> <span class="hljs-comment"># 允许vlan10、20通过这个trunk端口</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view  # 进入系统视图</span><br><span class="line">vlan batch 20  # 创建vlan10</span><br><span class="line">interface GigabitEthernet 0/0/2  # 进入与PC1相连的接口</span><br><span class="line">port link-type access # 开启访问模式</span><br><span class="line">port default vlan 20  # 分配vlan</span><br><span class="line">interface GigabitEthernet 0/0/1  # 进入与SW2相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br></pre></td></tr></table></figure>
 <h1 id="测试">测试</h1>
 <figure>
 <img
@@ -234,18 +234,18 @@ you can ask me on <a
 href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="quick-start">Quick Start</h2>
 <h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a
 href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a
 href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a
 href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
@@ -348,26 +348,26 @@ select * from 表名（查看数据表内容） create tables 表名; (创建表
     <content><![CDATA[<h1 id="基础配置命令">基础配置命令</h1>
 <p>启动后进入交换机</p>
 <h2 id="设置中文提示">设置中文提示</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">language-mode Chinese<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">language-mode Chinese</span><br></pre></td></tr></table></figure>
 <h2 id="进入系统视图">进入系统视图</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">system-view<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view</span><br></pre></td></tr></table></figure>
 <h2 id="用户权限">用户权限</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">user privilege level 15<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user privilege level 15</span><br></pre></td></tr></table></figure>
 <h2 id="进入console配置">进入console配置</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">user-interface console 0<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user-interface console 0</span><br></pre></td></tr></table></figure>
 <h2 id="设置console密码">设置console密码</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">authentication-mode password<br>set authentication password simple Huawei<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">authentication-mode password</span><br><span class="line">set authentication password simple Huawei</span><br></pre></td></tr></table></figure>
 <h2 id="设置登录前后标语">设置登录前后标语</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">header login information &quot;This is SW1&quot;<br>header shell information &quot;login succeed&quot;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">header login information &quot;This is SW1&quot;</span><br><span class="line">header shell information &quot;login succeed&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="创建与划分vlan">创建与划分vlan</h2>
 <h3 id="创建vlan">创建vlan</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">vlan batch 10 20<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vlan batch 10 20</span><br></pre></td></tr></table></figure>
 <h3 id="进入端口并划分vlan">进入端口并划分vlan</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">interface GigabitEthernet 0/0/1<br>port link-type access<br>port default vlan 10<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 10</span><br></pre></td></tr></table></figure>
 <h2 id="设置vlan-ip">设置vlan IP</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">interface vlanif 10<br>ip address 192.168.10.1 24<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface vlanif 10</span><br><span class="line">ip address 192.168.10.1 24</span><br></pre></td></tr></table></figure>
 <h2 id="查看配置结果">查看配置结果</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs switch">display current-configuration<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">display current-configuration</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>网络设备</category>
@@ -386,26 +386,26 @@ MC百科|最大的Minecraft中文MOD百科 (mcmod.cn)</a></p>
 <h1 id="player">/player</h1>
 <p>/player命令可以控制在线玩家或者假玩家。</p>
 <h2 id="生成与清除">生成与清除</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; spawn<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/player &lt;target&gt; spawn</span><br></pre></td></tr></table></figure>
 <p>该命令会在玩家所在位置生成一个名为<target>的玩家，无论是否真实存在，并且保持与执行者一样的视角和游戏模式。</p>
 <p>如果生成的玩家真实存在，则该玩家上线时将顶替掉生成的假玩家，并恢复原先的游戏模式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; kill<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/player &lt;target&gt; kill</span><br></pre></td></tr></table></figure>
 <p>该命令会使假玩家退出当前存档或者服务器，同时保留他身上的物品。</p>
 <p>该命令只对假玩家有效。</p>
 <p>如果原版游戏规则keepInventory设为false，击杀生存模式的假玩家会使该玩家掉落身上的所有物品。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; shadow<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/player &lt;target&gt; shadow</span><br></pre></td></tr></table></figure>
 <p>该命令会将目标玩家踢出存档或服务器，并在他的相同位置生成一个名称相同的假玩家。</p>
 <p>该命令只对当前正在游玩的真玩家有效。</p>
 <h2 id="移动">移动</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; look &lt;direction&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/player &lt;target&gt; look &lt;direction&gt;</span><br></pre></td></tr></table></figure>
 <p>该命令会让玩家看向一定的方向。&lt;direction&gt;可以是：</p>
 <ul>
 <li>north（北）、south（南）、west（西）、east（东）、up（上）、down（下）；</li>
 <li>at：让玩家看向某个位置。后面还需要跟玩家要看向的位置的坐标。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; move &lt;direction&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/player &lt;target&gt; move &lt;direction&gt;</span><br></pre></td></tr></table></figure>
 <p>该命令会让玩家按照指定的方向持续移动。&lt;direction&gt;可以是backward（后），forward（前），left（左），right（右）。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; jump [&lt;option&gt;]<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/player &lt;target&gt; jump [&lt;option&gt;]</span><br></pre></td></tr></table></figure>
 <p>该命令会让玩家跳跃一次。</p>
 <p>可以使用[&lt;option&gt;]参数指定跳跃模式。[&lt;option&gt;]可以是：</p>
 <ul>
@@ -413,11 +413,11 @@ MC百科|最大的Minecraft中文MOD百科 (mcmod.cn)</a></p>
 <li>interval：让玩家每隔一定游戏刻跳跃一次。该参数要求后面再跟一个参数，指定跳跃间隔的游戏刻数。</li>
 <li>once：让玩家跳跃一次，与默认情况相同。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; sneak<br>/player &lt;target&gt; unsneak<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/player &lt;target&gt; sneak</span><br><span class="line">/player &lt;target&gt; unsneak</span><br></pre></td></tr></table></figure>
 <p>这两个命令可以分别让玩家潜行和取消潜行。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; sprint<br>/player &lt;target&gt; unsprint<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/player &lt;target&gt; sprint</span><br><span class="line">/player &lt;target&gt; unsprint</span><br></pre></td></tr></table></figure>
 <p>这两个命令可以分别让玩家疾跑和停止疾跑。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs MC-CMD">/player &lt;target&gt; turn &lt;option&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/player &lt;target&gt; turn &lt;option&gt;</span><br></pre></td></tr></table></figure>
 <p>该命令可以让玩家的视角旋转。&lt;option&gt;可以是：</p>
 <ul>
 <li>back（转向身后），left（左转90°），right（右转90°）。</li>
@@ -447,9 +447,9 @@ Carpet - MC百科|最大的Minecraft中文MOD百科 (mcmod.cn)</a></p>
 </ol>
 <h1 id="基本使用">基本使用</h1>
 <h2 id="安装tmux">安装tmux</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Ubantu or Debian</span><br>sudo apt-get install tmux<br><br><span class="hljs-comment"># Centos or Fedora</span><br>sudo yum install tmux<br><br><span class="hljs-comment"># Mac</span><br>brew install tmux<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Ubantu or Debian</span></span><br><span class="line">sudo apt-get install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># Centos or Fedora</span></span><br><span class="line">sudo yum install tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac</span></span><br><span class="line">brew install tmux</span><br></pre></td></tr></table></figure>
 <h2 id="启动退出">启动、退出</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">tmux<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tmux</span><br></pre></td></tr></table></figure>
 <p>在终端输入以上命令即可启动tmux，启动后终端底部会显示一个状态栏。</p>
 <p>左侧是窗口信息（编号和名称），右侧是系统信息。</p>
 <figure>
@@ -459,7 +459,7 @@ alt="image-20230606181115946" />
 <figcaption aria-hidden="true">image-20230606181115946</figcaption>
 </figure>
 <p>按下<code>Ctrl + d</code>或者在终端输入<code>exit</code>即可退出tmux。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">exit</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
 <h2 id="tmux术语">tmux术语</h2>
 <p>tmux 采用 client/server模型，主要有四个模块：</p>
 <ul>
@@ -483,16 +483,16 @@ Tmux
 <code>1</code>，以此类推。这些窗口对应的会话，就是 0 号会话、1
 号会话。</p>
 <p>使用编号区分会话，不太直观，更好的方法是为会话起名。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">tmux new -s &lt;your-session-name&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tmux new -s &lt;your-session-name&gt;</span><br></pre></td></tr></table></figure>
 <p>上面命令新建一个指定名称的会话。</p>
 <h2 id="分离会话">分离会话</h2>
 <p>在 Tmux 窗口中，按下 <code>Ctrl+b d</code> 或者输入
 <code>tmux detach</code> 命令，就会将当前会话与窗口分离。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">tmux detach<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tmux detach</span><br></pre></td></tr></table></figure>
 <p>上面命令执行后，就会退出当前 Tmux
 窗口，但是会话和里面的进程仍然在后台运行。</p>
 <p><code>tmux ls</code> 命令可以查看当前所有的 Tmux 会话。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">tmux <span class="hljs-built_in">ls</span><br><span class="hljs-comment"># or</span><br>tmux list-session<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tmux <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">tmux list-session</span><br></pre></td></tr></table></figure>
 <figure>
 <img
 src="%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8tmux%EF%BC%88%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%89/image-20230606182214934.png"
@@ -501,22 +501,22 @@ alt="image-20230606182214934" />
 </figure>
 <h2 id="接入会话">接入会话</h2>
 <p>在终端输入<code>tmux attach</code>用于重新接入某个已存在的会话。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号接入会话</span><br>tmux attach -t 0<br><br><span class="hljs-comment"># 使用会话名称接入会话</span><br>tmux attach -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用会话编号接入会话</span></span><br><span class="line">tmux attach -t 0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用会话名称接入会话</span></span><br><span class="line">tmux attach -t &lt;your-session-name&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="kill会话">kill会话</h2>
 <p>在终端输入<code>tmux kill-session</code>用于杀死某个已存在的会话。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号结束会话</span><br>tmux kill-sesion -t 0<br><br><span class="hljs-comment"># 使用会话名称结束会话</span><br>tmux kill-sesion -t &lt;your-session-name&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用会话编号结束会话</span></span><br><span class="line">tmux kill-sesion -t 0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用会话名称结束会话</span></span><br><span class="line">tmux kill-sesion -t &lt;your-session-name&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="切换会话">切换会话</h2>
 <p>在终端输入<code>tmux switch</code>以切换会话。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用会话编号切换会话</span><br>tmux switch -t 0<br><br><span class="hljs-comment"># 使用会话名称切换会话</span><br>tmux switch -t &lt;session-name&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用会话编号切换会话</span></span><br><span class="line">tmux switch -t 0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用会话名称切换会话</span></span><br><span class="line">tmux switch -t &lt;session-name&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="重命名会话">重命名会话</h2>
 <p>在终端输入<code>tmux rename-session</code>以重命名会话。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">tmux rename-session -t 0 &lt;new-name&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tmux rename-session -t 0 &lt;new-name&gt;</span><br></pre></td></tr></table></figure>
 <p>以上命令会将<code>0</code>号会话重命名。</p>
 <h1 id="快捷键">快捷键</h1>
 <p>tmux大部分操作都可以用快捷键来代替。</p>
 <p>使用快捷键的前提是先按下了<code>Ctrl + b</code></p>
 <p>使用<code>tmux list-keys</code>可以列出所有快捷键。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">tmux list-keys<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tmux list-keys</span><br></pre></td></tr></table></figure>
 <h2 id="会话快捷键">会话快捷键</h2>
 <ul>
 <li>s ：列出所有会话，也可以在列表中用鼠标或上下键切换会话</li>
@@ -571,7 +571,7 @@ alt="image-20230606184635853" />
 ctrl+shift+c、ctrl+shift+v 的方式进行复制粘贴。</li>
 </ul>
 <p>配置方式为在 ~/.tmux.conf 文件中，增加：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">set-option -g mouse on<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">set-option -g mouse on</span><br></pre></td></tr></table></figure>
 <h1 id="参考文章">参考文章</h1>
 <ol type="1">
 <li><a
@@ -1059,22 +1059,22 @@ Documentation</a></p>
 <h3 id="卸载旧版本docker">卸载旧版本Docker</h3>
 <p>旧版本的 Docker 称为 <code>docker</code> 或者
 <code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get remove docker \<br>             docker-engine \<br>             docker.io<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove docker \</span><br><span class="line">             docker-engine \</span><br><span class="line">             docker.io</span><br></pre></td></tr></table></figure>
 <h3 id="使用-apt-安装">使用 APT 安装</h3>
 <p>由于 <code>apt</code> 源使用 HTTPS
 以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS
 传输的软件包以及 CA 证书。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get udate<br><br>sudo apt-get install \<br>	apt-transport-https \<br>    ca-certificates \<br>    curl \<br>    gnupg \<br>    lsb-release<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get udate</span><br><span class="line"></span><br><span class="line">sudo apt-get install \</span><br><span class="line">	apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg \</span><br><span class="line">    lsb-release</span><br></pre></td></tr></table></figure>
 <p>为了确认所下载软件包的合法性，需要添加软件源的 <code>GPG</code>
 密钥。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br><br><span class="hljs-comment"># 官方源</span><br>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
 <p>向<code>sources.list</code>中添加 Docker 软件源</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> \<br>  <span class="hljs-string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span><br><span class="hljs-string">  <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null<br><br><span class="hljs-comment"># 官方源</span><br><span class="hljs-comment"># $ echo \</span><br><span class="hljs-comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> \</span><br><span class="line">  <span class="string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span></span><br><span class="line"><span class="string">  <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line"><span class="comment"># $ echo \</span></span><br><span class="line"><span class="comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></span><br></pre></td></tr></table></figure>
 <h3 id="安装-docker">安装 Docker</h3>
 <p>更新 apt 软件包缓存，并安装 <code>docker-ce</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
 <h3 id="启动-docker">启动 Docker</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
 <h3 id="建立-docker-用户组">建立 Docker 用户组</h3>
 <p>默认情况下，<code>docker</code> 命令会使用 <a
 href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
@@ -1083,9 +1083,9 @@ href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
 系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
 <code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
 <p>建立<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
 <p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docker <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
 <h2 id="在centos安装docker">在CentOS安装Docker</h2>
 <p>切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker</p>
 <p>Docker 支持 64 位版本 CentOS 7/8，并且要求内核版本不低于 3.10。
@@ -1095,27 +1095,27 @@ CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分�
 <h3 id="卸载旧版本docker-1">卸载旧版本Docker</h3>
 <p>旧版本的 Docker 称为 <code>docker</code> 或者
 <code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum remove docker \<br>                docker-client \<br>                docker-client-latest \<br>                docker-common \<br>                docker-latest \<br>                docker-latest-logrotate \<br>                docker-logrotate \<br>                docker-selinux \<br>                docker-engine-selinux \<br>                docker-engine<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                docker-client \</span><br><span class="line">                docker-client-latest \</span><br><span class="line">                docker-common \</span><br><span class="line">                docker-latest \</span><br><span class="line">                docker-latest-logrotate \</span><br><span class="line">                docker-logrotate \</span><br><span class="line">                docker-selinux \</span><br><span class="line">                docker-engine-selinux \</span><br><span class="line">                docker-engine</span><br></pre></td></tr></table></figure>
 <h3 id="使用-yum-安装">使用 yum 安装</h3>
 <p>安装依赖包：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install -y yum-utils<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br></pre></td></tr></table></figure>
 <p>添加<code>yum</code>软件源：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager \<br>	--add-repp \<br>	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br>sudo sed -i <span class="hljs-string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo<br><br><span class="hljs-comment"># 官方源</span><br>sudo yum-config-manager \<br>	--add-repp<br>	https://download.docker.com/linux/centos/docker-ce.repo<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp \</span><br><span class="line">	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp</span><br><span class="line">	https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
 <p>如需测试版本的Docker：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager --<span class="hljs-built_in">enable</span> docker-ce-test<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> docker-ce-test</span><br></pre></td></tr></table></figure>
 <h3 id="安装-docker-1">安装 Docker</h3>
 <p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
 <h3 id="centos8的额外设置">CentOS8的额外设置</h3>
 <p>由于 CentOS8 防火墙使用了 <code>nftables</code>，但 Docker 尚未支持
 <code>nftables</code>， 我们可以使用如下设置使用
 <code>iptables</code>：</p>
 <p>更改 <code>/etc/firewalld/firewalld.conf</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># FirewallBackend=nftables</span><br>FirewallBackend=iptables<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># FirewallBackend=nftables</span></span><br><span class="line">FirewallBackend=iptables</span><br></pre></td></tr></table></figure>
 <p>或执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">firewall-cmd --permanent --zone=trusted --add-interface=docker0<br>firewall-cmd --reload<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=trusted --add-interface=docker0</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <h3 id="启动-docker-1">启动 Docker</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
 <h3 id="建立-docker-用户组-1">建立 Docker 用户组</h3>
 <p>默认情况下，<code>docker</code> 命令会使用 <a
 href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
@@ -1124,16 +1124,16 @@ href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
 系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
 <code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
 <p>建立 <code>docker</code> 组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
 <p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docekr <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docekr <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
 <h3 id="添加内核参数">添加内核参数</h3>
 <p>如果在 CentOS 使用 Docker 看到下面的这些警告信息：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">WARNING: bridge-nf-call-iptables is disabled<br>WARNING: bridge-nf-call-ip6tables is disabled<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">WARNING: bridge-nf-call-iptables is disabled</span><br><span class="line">WARNING: bridge-nf-call-ip6tables is disabled</span><br></pre></td></tr></table></figure>
 <p>添加内核配置参数以启用这些功能</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="hljs-string">EOF</span><br><span class="hljs-string">net.bridge.bridge-nf-call-ip6tables = 1</span><br><span class="hljs-string">net.bridge.bridge-nf-call-iptables = 1</span><br><span class="hljs-string">EOF</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="string">EOF</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
 <p>重新加载<code>sysctl.conf</code>即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo sysctl -p<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
 <h1 id="docker食用指南">Docker食用指南</h1>
 <h2 id="镜像使用指南">镜像使用指南</h2>
 <p>Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker
@@ -1141,7 +1141,7 @@ href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
 <h3 id="获取镜像">获取镜像</h3>
 <p>从 Docker 镜像仓库获取镜像的命令是
 <code>docker pull</code>。命令格式是：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">docker pull [OPTIONS] NAME[:TAG|@DIGEST]<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull [OPTIONS] NAME[:TAG|@DIGEST]</span><br></pre></td></tr></table></figure>
 <p><strong>参数说明：</strong></p>
 <ul>
 <li>TAG：标签（版本）</li>
@@ -1156,7 +1156,7 @@ href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
 </ul>
 <p>具体选项可以通过<code>docker pull --help</code>命令查看。</p>
 <p><strong>例子如下：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker pull ubuntu:18.04<br>18.04: Pulling from library/ubuntu<br>92dc2a97ff99: Pull complete<br>be13a9d27eb8: Pull complete<br>c8299583700a: Pull complete<br>Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26<br>Status: Downloaded newer image <span class="hljs-keyword">for</span> ubuntu:18.04<br>docker.io/library/ubuntu:18.04<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker pull ubuntu:18.04</span><br><span class="line">18.04: Pulling from library/ubuntu</span><br><span class="line">92dc2a97ff99: Pull complete</span><br><span class="line">be13a9d27eb8: Pull complete</span><br><span class="line">c8299583700a: Pull complete</span><br><span class="line">Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> ubuntu:18.04</span><br><span class="line">docker.io/library/ubuntu:18.04</span><br></pre></td></tr></table></figure>
 <p>上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub
 （<code>docker.io</code>）获取镜像。而镜像名称是
 <code>ubuntu:18.04</code>，因此将会获取官方镜像
@@ -1174,7 +1174,7 @@ Hub，如果没有指定用户名，则默认是<code>library</code>，也就是
 </ul>
 <h4 id="运行">运行</h4>
 <p>有了镜像后，可以以这个镜像为基础启动并运行一个容器。以上面的<code>Ubuntu:18.04</code>为例，如果打算启动里面的<code>bash</code>并且进行交互式操作的话，可以执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker run -it --<span class="hljs-built_in">rm</span> ubuntu:18:04 bash<br><br><span class="hljs-comment"># 以下是容器内操作</span><br>root@e7009c6ce357:/<span class="hljs-comment"># cat /etc/os-release</span><br>NAME=<span class="hljs-string">&quot;Ubuntu&quot;</span><br>VERSION=<span class="hljs-string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span><br>ID=ubuntu<br>ID_LIKE=debian<br>PRETTY_NAME=<span class="hljs-string">&quot;Ubuntu 18.04.1 LTS&quot;</span><br>VERSION_ID=<span class="hljs-string">&quot;18.04&quot;</span><br>HOME_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/&quot;</span><br>SUPPORT_URL=<span class="hljs-string">&quot;https://help.ubuntu.com/&quot;</span><br>BUG_REPORT_URL=<span class="hljs-string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span><br>PRIVACY_POLICY_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span><br>VERSION_CODENAME=bionic<br>UBUNTU_CODENAME=bionic<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker run -it --<span class="built_in">rm</span> ubuntu:18:04 bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下是容器内操作</span></span><br><span class="line">root@e7009c6ce357:/<span class="comment"># cat /etc/os-release</span></span><br><span class="line">NAME=<span class="string">&quot;Ubuntu&quot;</span></span><br><span class="line">VERSION=<span class="string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span></span><br><span class="line">ID=ubuntu</span><br><span class="line">ID_LIKE=debian</span><br><span class="line">PRETTY_NAME=<span class="string">&quot;Ubuntu 18.04.1 LTS&quot;</span></span><br><span class="line">VERSION_ID=<span class="string">&quot;18.04&quot;</span></span><br><span class="line">HOME_URL=<span class="string">&quot;https://www.ubuntu.com/&quot;</span></span><br><span class="line">SUPPORT_URL=<span class="string">&quot;https://help.ubuntu.com/&quot;</span></span><br><span class="line">BUG_REPORT_URL=<span class="string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span></span><br><span class="line">PRIVACY_POLICY_URL=<span class="string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span></span><br><span class="line">VERSION_CODENAME=bionic</span><br><span class="line">UBUNTU_CODENAME=bionic</span><br></pre></td></tr></table></figure>
 <p><code>docker run</code>就是要运行容器的命令，这里简单说明一下上面用到的参数</p>
 <ul>
 <li><code>-it</code>：这是两个参数，一个是
@@ -1196,7 +1196,7 @@ Hub，如果没有指定用户名，则默认是<code>library</code>，也就是
 <h3 id="列出镜像">列出镜像</h3>
 <p>要想列出已经下载下来的镜像，可以使用 <code>docker image ls</code>
 命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span><br>REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE<br>redis                latest              5f515359c7f8        5 days ago          183 MB<br>nginx                latest              05a60462f8ba        5 days ago          181 MB<br>mongo                3.2                 fe9198c04d62        5 days ago          342 MB<br>&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB<br>ubuntu               18.04               329ed837d508        3 days ago          63.3MB<br>ubuntu               bionic              329ed837d508        3 days ago          63.3MB<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span></span><br><span class="line">REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">redis                latest              5f515359c7f8        5 days ago          183 MB</span><br><span class="line">nginx                latest              05a60462f8ba        5 days ago          181 MB</span><br><span class="line">mongo                3.2                 fe9198c04d62        5 days ago          342 MB</span><br><span class="line">&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB</span><br><span class="line">ubuntu               18.04               329ed837d508        3 days ago          63.3MB</span><br><span class="line">ubuntu               bionic              329ed837d508        3 days ago          63.3MB</span><br></pre></td></tr></table></figure>
 <p>列表包含了
 <code>仓库名</code>、<code>标签</code>、<code>镜像 ID</code>、<code>创建时间</code>
 以及 <code>所占用的空间</code>。</p>
@@ -1212,19 +1212,19 @@ Hub上显示的镜像体积是压缩后的体积大小，在镜像上传和下�
 列表中的镜像体积总和并非是所有镜像实际硬盘消耗。由于 Docker
 镜像是多层存储结构，并且可以继承、复用，因此不同镜像可能会因为使用相同的基础镜像，从而拥有共同的层。相同的层只需要保存一份即可。</p>
 <p>通过<code>docker system df</code>命令来查看镜像、容器、数据卷所占用的空间。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker system <span class="hljs-built_in">df</span><br>TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE<br>Images          2         1         390.2MB   390.2MB (99%)<br>Containers      1         0         0B        0B<br>Local Volumes   0         0         0B        0B<br>Build Cache     18        0         789B      789B<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker system <span class="built_in">df</span></span><br><span class="line">TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE</span><br><span class="line">Images          2         1         390.2MB   390.2MB (99%)</span><br><span class="line">Containers      1         0         0B        0B</span><br><span class="line">Local Volumes   0         0         0B        0B</span><br><span class="line">Build Cache     18        0         789B      789B</span><br></pre></td></tr></table></figure>
 <h4 id="列出部分镜像">列出部分镜像</h4>
 <p>不加任何参数的情况下，<code>docker image ls</code>
 会列出所有顶层镜像，但是有时候我们只希望列出部分镜像。<code>docker image ls</code>
 有好几个参数可以帮助做到这个事情。</p>
 <p>根据仓库名列出仓库</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       latest    ba6acccedd29   23 months ago   72.8MB<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       latest    ba6acccedd29   23 months ago   72.8MB</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
 <p>列出特定的某个镜像，也就是说指定仓库名和标签</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu:18.04<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu:18.04</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
 <h3 id="删除本地镜像">删除本地镜像</h3>
 <p>如果要删除本地的镜像，可以使用 <code>docker image rm</code>
 命令，其格式为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]</span><br></pre></td></tr></table></figure>
 <p>其中，<code>&lt;镜像&gt;</code> 可以是
 <code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者
 <code>镜像摘要</code>。</p>
@@ -1327,11 +1327,11 @@ alt="右图网络" />
 <ol type="1">
 <li>OSI的七层模型及每一层的数据形式：</li>
 </ol>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">- </span>应用层（Application）：数据单位是报文（Message）<br><span class="hljs-bullet">- </span>表示层（Presentation）：数据单位是报文（Message）<br><span class="hljs-bullet">- </span>会话层（Session）：数据单位是报文（Message）<br><span class="hljs-bullet">- </span>传输层（Transport）：数据单位是段（Segment）<br><span class="hljs-bullet">- </span>网络层（Network）：数据单位是包（Packet）<br><span class="hljs-bullet">- </span>数据链路层（Data Link）：数据单位是帧（Frame）<br><span class="hljs-bullet">- </span>物理层（Physical）：数据单位是比特流（Bit）<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 应用层（Application）：数据单位是报文（Message）</span><br><span class="line">- 表示层（Presentation）：数据单位是报文（Message）</span><br><span class="line">- 会话层（Session）：数据单位是报文（Message）</span><br><span class="line">- 传输层（Transport）：数据单位是段（Segment）</span><br><span class="line">- 网络层（Network）：数据单位是包（Packet）</span><br><span class="line">- 数据链路层（Data Link）：数据单位是帧（Frame）</span><br><span class="line">- 物理层（Physical）：数据单位是比特流（Bit）</span><br></pre></td></tr></table></figure>
 <ol start="2" type="1">
 <li>TCP/IP的四层模型及上三层主要协议：</li>
 </ol>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">- </span>应用层：HTTP、FTP、SMTP、DNS等<br><span class="hljs-bullet">- </span>传输层：TCP、UDP<br><span class="hljs-bullet">- </span>网络层：IP、ICMP、ARP、RARP<br><span class="hljs-bullet">- </span>网络接口层<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 应用层：HTTP、FTP、SMTP、DNS等</span><br><span class="line">- 传输层：TCP、UDP</span><br><span class="line">- 网络层：IP、ICMP、ARP、RARP</span><br><span class="line">- 网络接口层</span><br></pre></td></tr></table></figure>
 <ol start="3" type="1">
 <li><p><strong>FTTH</strong>（Fiber To The
 Home）是一种光纤直接到户的宽带接入方式，它提供了极高的带宽，可以满足用户对高速互联网、数字电视、电话等多种业务的需求。
@@ -1352,7 +1352,7 @@ Protocol）是一种动态主机配置协议，用于自动分配IP地址。</p>
 <h1 id="四计算题">四、计算题</h1>
 <ol type="1">
 <li><p>一个主机的IP地址是202.112.14.137，掩码为255.255.255.224，求这个主机所在网络的网络地址和广播地址。</p>
-<figure class="highlight dns"><table><tr><td class="code"><pre><code class="hljs dns">IP地址：<span class="hljs-number">202.112.14.137</span> = <span class="hljs-number">11001010</span>.<span class="hljs-number">01110000</span>.<span class="hljs-number">00001110</span>.<span class="hljs-number">10001001</span><br>子网掩码：<span class="hljs-number">255.255.255.224</span> = <span class="hljs-number">11111111</span>.<span class="hljs-number">11111111</span>.<span class="hljs-number">11111111</span>.<span class="hljs-number">11100000</span><br>网络地址：将IP地址和子网掩码进行按位与运算，得到：<br><span class="hljs-number">11001010</span>.<span class="hljs-number">01110000</span>.<span class="hljs-number">00001110</span>.<span class="hljs-number">10000000</span> = <span class="hljs-number">202.112.14.128</span><br>广播地址：将网络地址的主机位全部置为<span class="hljs-number">1</span>，得到：<br><span class="hljs-number">11001010</span>.<span class="hljs-number">01110000</span>.<span class="hljs-number">00001110</span>.<span class="hljs-number">10011111</span> = <span class="hljs-number">202.112.14.159</span><br></code></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IP地址：202.112.14.137 = 11001010.01110000.00001110.10001001</span><br><span class="line">子网掩码：255.255.255.224 = 11111111.11111111.11111111.11100000</span><br><span class="line">网络地址：将IP地址和子网掩码进行按位与运算，得到：</span><br><span class="line">11001010.01110000.00001110.10000000 = 202.112.14.128</span><br><span class="line">广播地址：将网络地址的主机位全部置为1，得到：</span><br><span class="line">11001010.01110000.00001110.10011111 = 202.112.14.159</span><br></pre></td></tr></table></figure></li>
 </ol>
 <p><strong>这个主机所在网络的网络地址是202.112.14.128，广播地址是202.112.14.159。</strong></p>
 <ol start="2" type="1">
@@ -1466,6 +1466,18 @@ alt="进度表" />
       </categories>
   </entry>
   <entry>
+    <title>计网复习汁料</title>
+    <url>//post/%E8%AE%A1%E7%BD%91%E5%A4%8D%E4%B9%A0%E6%B1%81%E6%96%99.html</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>这是一篇用来测试的文章</title>
     <url>//post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0.html</url>
     <content><![CDATA[<p>此篇文章用来记录一些hexo的基本操作（纯新手）</p>
@@ -1476,9 +1488,9 @@ alt="进度表" />
 <del>此时只需要按照以下格式在.md文件中写入即可。</del></p>
 <p>不用看以上方法了，没用。</p>
 <p>首先在hexo的配置文件<code>config.yaml</code>更改一下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>随后使用命令新建一篇文章时，hexo会在<code>_posts</code>中生成相同名字的文件夹，此时将图片放在该文件夹下，而后按照以下格式进行插入即可。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">图片加载失败时的描述</span>](<span class="hljs-link">图片链接</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">图片加载失败时的描述</span>](<span class="link">图片链接</span>)</span><br></pre></td></tr></table></figure>
 <figure>
 <img
 src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E6%B5%8B%E8%AF%95%E6%88%AA%E5%9B%BE2.png"
@@ -1489,11 +1501,11 @@ alt="这其实是一张图片" />
 <p>略</p>
 <h1 id="插件的查看与卸载">插件的查看与卸载</h1>
 <h2 id="查看已安装插件">查看已安装插件</h2>
-<p>在blog目录下输入以下命令即可查看已安装插件 <figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">npm <span class="hljs-built_in">ls</span> <span class="hljs-literal">-dept</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure> <img
+<p>在blog目录下输入以下命令即可查看已安装插件 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm <span class="built_in">ls</span> <span class="literal">-dept</span> <span class="number">0</span></span><br></pre></td></tr></table></figure> <img
 src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/mingling.png"
 alt="这其实是一张图片" /></p>
 <h2 id="卸载插件">卸载插件</h2>
-<p>在blog目录下输入以下命令即可卸载已安装插件 <figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">npm uninstall hexo<span class="hljs-literal">-asset-image</span>@<span class="hljs-number">0.0</span>.<span class="hljs-number">5</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></figure> 其中
+<p>在blog目录下输入以下命令即可卸载已安装插件 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo<span class="literal">-asset-image</span>@<span class="number">0.0</span>.<span class="number">5</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure> 其中
 <strong>hexo-asset-image@0.0.5</strong> 为要卸载的插件的名称</p>
 <p>最后还需前往 <strong>node_modules</strong>
 文件夹删除相关配置和文件</p>
@@ -1501,16 +1513,16 @@ alt="这其实是一张图片" /></p>
 <h2 id="安装所需插件">安装所需插件</h2>
 <p>卸载 Hexo 自带的 renderer，安装 Pandoc renderer <a
 href="https://github.com/jgm/pandoc">下载pandoc并安装</a>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">npm uninstall hexo<span class="hljs-literal">-renderer-marked</span> <span class="hljs-literal">--save</span><br>npm install hexo<span class="hljs-literal">-renderer-pandoc</span> <span class="hljs-literal">--save</span><br></code></pre></td></tr></table></figure></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo<span class="literal">-renderer-marked</span> <span class="literal">--save</span></span><br><span class="line">npm install hexo<span class="literal">-renderer-pandoc</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="如何使用">如何使用</h2>
 <p><a
 href="https://corner430.github.io/2021/07/02/%E7%94%A8markdown%E4%B9%A6%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/#:~:text=%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%9C%AC%E8%A1%8C%E5%86%85%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz,%E7%8B%AC%E8%A1%8C%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%96%B0%E7%9A%84%E4%B8%80%E8%A1%8C%E5%86%85%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%B1%85%E4%B8%AD%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz">具体请参考这篇文章</a></p>
-<p>所有公式都应该包括在一对 “$” 符号中，例如： <figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown">$里面是公式内容$<br></code></pre></td></tr></table></figure> <span
+<p>所有公式都应该包括在一对 “$” 符号中，例如： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$里面是公式内容$</span><br></pre></td></tr></table></figure> <span
 class="math inline">\(5^5-ads\)</span></p>
 <h1 id="如何使用-emoji-表情">如何使用 Emoji 表情</h1>
 <h2 id="使用表情符号简码">使用表情符号简码</h2>
 <p>一些Markdown应用程序允许您通过键入表情符号短代码来插入表情符号。这些以冒号开头和结尾，并包含表情符号的名称。
-<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown">去露营了！ :tent: 很快回来。<br>真好笑！ :joy:<br></code></pre></td></tr></table></figure> 呈现的输出如下所示： 去露营了！ :tent: 很快回来。 真好笑！
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">去露营了！ :tent: 很快回来。</span><br><span class="line">真好笑！ :joy:</span><br></pre></td></tr></table></figure> 呈现的输出如下所示： 去露营了！ :tent: 很快回来。 真好笑！
 :joy:</p>
 <p><a
 href="https://markdown.com.cn/extended-syntax/emoji.html">请参考Markdown的官方教程</a></p>
@@ -1519,7 +1531,7 @@ href="https://gist.github.com/rxaviers/7360908">这是表情符号简码列表</
 <h1 id="插入表格">插入表格</h1>
 <h2 id="markdown默认方法">Markdown默认方法</h2>
 <p>表头内容默认居中对齐，单元格内容默认左对齐，Markdown 代码:
-<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown">| 标题1 | 标题2 | 标题3 |<br>| ------ | ------ | ------ |<br>| 文本好短 | 文本不短也不长 | 文本好长文本好长文本好长 |<br>| 文本好长文本好长文本好长 | 文本好短 | 文本不短也不长 |<br></code></pre></td></tr></table></figure> 显示效果：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 标题1 | 标题2 | 标题3 |</span><br><span class="line">| ------ | ------ | ------ |</span><br><span class="line">| 文本好短 | 文本不短也不长 | 文本好长文本好长文本好长 |</span><br><span class="line">| 文本好长文本好长文本好长 | 文本好短 | 文本不短也不长 |</span><br></pre></td></tr></table></figure> 显示效果：</p>
 <table>
 <thead>
 <tr class="header">
