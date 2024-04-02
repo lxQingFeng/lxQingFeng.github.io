@@ -1,67 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Linux根目录下的各个目录的作用及各颜色类型</title>
-    <url>//post/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%90%84%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8.html</url>
-    <content><![CDATA[<h1 id="linux根目录下的各个目录都有特定的作用和含义"><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969">Linux根目录下的各个目录都有特定的作用和含义</a></h1>
-<ol type="1">
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/bin</code>：存放最常用命令</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/boot</code>：启动Linux的核心文件</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/dev</code>：设备文件，即设备的驱动程序</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/etc</code>：存放各种配置文件</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/home</code>：用户主目录</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/lib</code>：系统最基本的动态链接共享库</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/mnt</code>：一般是空的，用来临时挂载别的文件系统</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/proc</code>：虚拟目录，是内存的映射</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/sbin</code>：系统的管理命令，这里存放的是系统管理员使用的程序</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/tmp</code>：临时文件，重启后自动清空</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/var</code>：某些大文件的溢出区，比如各种服务的日志文件</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/media</code>：存放着可移除的设备，比如软盘，光盘</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/root</code>：超级用户的目录</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/opt</code>：这个是给第三方协力软件放置的目录</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/sys</code>：管理设备文件</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/usr</code>：最大的目录，存放着应用程序和文件</a></li>
-</ol>
-<h1
-id="文件和目录的颜色代表了什么类型">文件和目录的颜色代表了什么类型</h1>
-<ul>
-<li><strong>蓝色</strong>：目录</li>
-<li><strong>绿色</strong>：可执行文件</li>
-<li><strong>红色</strong>：压缩文件</li>
-<li><strong>浅蓝色</strong>：链接文件</li>
-<li><strong>白色</strong>：普通文件或硬链接</li>
-<li><strong>红色闪烁</strong>：某文件被删除后，链接到该文件的软链接的颜色</li>
-<li><strong>黄色</strong>：设备文件，如键盘鼠标</li>
-<li><strong>灰色</strong>：其它文件</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C语言练习题</title>
-    <url>//post/C%E8%AF%AD%E8%A8%80%E7%BB%83%E4%B9%A0%E9%A2%98.html</url>
+    <url>/lxqingfeng.github.io//post/C%E8%AF%AD%E8%A8%80%E7%BB%83%E4%B9%A0%E9%A2%98.html</url>
     <content><![CDATA[<h1 id="打印输出1-30之间的所有素数">打印输出1-30之间的所有素数</h1>
 <h2 id="思路">思路</h2>
 <p>这个程序的目标是打印出1到30之间的所有素数。为了实现这个目标，我们首先需要一个函数来判断一个数是否为素数。这就是<code>is_prime</code>函数的作用。它接受一个整数作为参数，然后通过一个for循环来检查这个数是否可以被2到它的平方根之间的任何整数整除。如果可以，那么这个数就不是素数，函数返回0；否则，这个数就是素数，函数返回1。</p>
@@ -135,7 +76,7 @@ id="输入6个整数仅用指针法实现按由大到小的顺序输出">输入6
   </entry>
   <entry>
     <title>Ubuntu搭建思源笔记（Docker）</title>
-    <url>//post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html</url>
+    <url>/lxqingfeng.github.io//post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html</url>
     <content><![CDATA[<p>安装docker和docker-compose的过程不再赘叙</p>
 <h2 id="编写docker-compose.yaml">编写docker-compose.yaml</h2>
 <p>在任意位置新建<code>docker-compose.yaml</code>文件</p>
@@ -191,8 +132,67 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
       </tags>
   </entry>
   <entry>
+    <title>Linux根目录下的各个目录的作用及各颜色类型</title>
+    <url>/lxqingfeng.github.io//post/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%90%84%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8.html</url>
+    <content><![CDATA[<h1 id="linux根目录下的各个目录都有特定的作用和含义"><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969">Linux根目录下的各个目录都有特定的作用和含义</a></h1>
+<ol type="1">
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/bin</code>：存放最常用命令</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/boot</code>：启动Linux的核心文件</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/dev</code>：设备文件，即设备的驱动程序</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/etc</code>：存放各种配置文件</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/home</code>：用户主目录</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/lib</code>：系统最基本的动态链接共享库</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/mnt</code>：一般是空的，用来临时挂载别的文件系统</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/proc</code>：虚拟目录，是内存的映射</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/sbin</code>：系统的管理命令，这里存放的是系统管理员使用的程序</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/tmp</code>：临时文件，重启后自动清空</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/var</code>：某些大文件的溢出区，比如各种服务的日志文件</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/media</code>：存放着可移除的设备，比如软盘，光盘</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/root</code>：超级用户的目录</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/opt</code>：这个是给第三方协力软件放置的目录</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/sys</code>：管理设备文件</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/usr</code>：最大的目录，存放着应用程序和文件</a></li>
+</ol>
+<h1
+id="文件和目录的颜色代表了什么类型">文件和目录的颜色代表了什么类型</h1>
+<ul>
+<li><strong>蓝色</strong>：目录</li>
+<li><strong>绿色</strong>：可执行文件</li>
+<li><strong>红色</strong>：压缩文件</li>
+<li><strong>浅蓝色</strong>：链接文件</li>
+<li><strong>白色</strong>：普通文件或硬链接</li>
+<li><strong>红色闪烁</strong>：某文件被删除后，链接到该文件的软链接的颜色</li>
+<li><strong>黄色</strong>：设备文件，如键盘鼠标</li>
+<li><strong>灰色</strong>：其它文件</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>eNSP配置三层交换机</title>
-    <url>//post/eNSP%E9%85%8D%E7%BD%AE%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA.html</url>
+    <url>/lxqingfeng.github.io//post/eNSP%E9%85%8D%E7%BD%AE%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA.html</url>
     <content><![CDATA[<h1 id="拓扑图">拓扑图</h1>
 <figure>
 <img
@@ -223,8 +223,25 @@ alt="ping" />
       </tags>
   </entry>
   <entry>
+    <title>imgTP图床测试</title>
+    <url>/lxqingfeng.github.io//post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html</url>
+    <content><![CDATA[<p>我是OP</p>
+<figure>
+<img src="imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95/EOFNREpH.jpg"
+alt="二次元图片" />
+<figcaption aria-hidden="true">二次元图片</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
-    <url>//post/hello-world.html</url>
+    <url>/lxqingfeng.github.io//post/hello-world.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
 first post. Check <a href="https://hexo.io/docs/">documentation</a> for
 more info. If you get any problems when using Hexo, you can find the
@@ -258,7 +275,7 @@ href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
   </entry>
   <entry>
     <title>mysql常用命令</title>
-    <url>//post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</url>
+    <url>/lxqingfeng.github.io//post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</url>
     <content><![CDATA[<p>1.连接数据库 mysql -u用户名 -p密码</p>
 <p>2.显示已有数据库 show databases;</p>
 <p>3.创建数据库 create database sqlname;</p>
@@ -326,25 +343,8 @@ select * from 表名（查看数据表内容） create tables 表名; (创建表
       </tags>
   </entry>
   <entry>
-    <title>imgTP图床测试</title>
-    <url>//post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html</url>
-    <content><![CDATA[<p>我是OP</p>
-<figure>
-<img src="imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95/EOFNREpH.jpg"
-alt="二次元图片" />
-<figcaption aria-hidden="true">二次元图片</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>华为交换机基础配置</title>
-    <url>//post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html</url>
+    <url>/lxqingfeng.github.io//post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html</url>
     <content><![CDATA[<h1 id="基础配置命令">基础配置命令</h1>
 <p>启动后进入交换机</p>
 <h2 id="设置中文提示">设置中文提示</h2>
@@ -378,7 +378,7 @@ alt="二次元图片" />
   </entry>
   <entry>
     <title>地毯模组（Carpet）的使用教程</title>
-    <url>//post/%E5%9C%B0%E6%AF%AF%E6%A8%A1%E7%BB%84%EF%BC%88Carpet%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html</url>
+    <url>/lxqingfeng.github.io//post/%E5%9C%B0%E6%AF%AF%E6%A8%A1%E7%BB%84%EF%BC%88Carpet%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html</url>
     <content><![CDATA[<p>Carpet中文百科</p>
 <p><a href="https://www.mcmod.cn/class/2361.html">Carpet -
 MC百科|最大的Minecraft中文MOD百科 (mcmod.cn)</a></p>
@@ -437,7 +437,7 @@ Carpet - MC百科|最大的Minecraft中文MOD百科 (mcmod.cn)</a></p>
   </entry>
   <entry>
     <title>如何使用tmux（终端工具）</title>
-    <url>//post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8tmux%EF%BC%88%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%89.html</url>
+    <url>/lxqingfeng.github.io//post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8tmux%EF%BC%88%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%89.html</url>
     <content><![CDATA[<h1 id="什么是tmux">什么是tmux</h1>
 <p>Tmux 是一个终端复用器（terminal multiplexer）</p>
 <p>tmux 有主要两个用途：</p>
@@ -592,190 +592,264 @@ href="https://blog.csdn.net/CSSDCC/article/details/121231906">https://blog.csdn.
       </tags>
   </entry>
   <entry>
-    <title>计算机网络练习题</title>
-    <url>//post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%83%E4%B9%A0%E9%A2%98.html</url>
-    <content><![CDATA[<h1 id="一填空题">一、填空题</h1>
-<ol type="1">
-<li>按照网络覆盖的地理范围，计算机网络可以分为<strong>局域网</strong>、<strong>城域网</strong>和<strong>广域网</strong>。</li>
-<li>广播网络传输方式有<strong>单播</strong>、<strong>广播</strong>和<strong>多播</strong>。</li>
-<li>从功能上来看将计算机网路逻辑划分为<strong>客户端</strong>和<strong>服务器端</strong>。</li>
-<li>从组网的层次角度来看，网络的组成结构是一个典型的三层网络机构，最上层称为<strong>核心层</strong>，中间层称为<strong>汇聚层</strong>，最下层称为<strong>接入层</strong>。</li>
-<li>影响网络的因素有<strong>带宽</strong>、<strong>延迟</strong>、<strong>抖动</strong>和<strong>丢包</strong>。</li>
-<li>OSI模型将网络分为<strong>物理层</strong>、<strong>数据链路层</strong>、<strong>网络层</strong>、<strong>传输层</strong>、<strong>会话层</strong>、<strong>表示层</strong>和<strong>应用层</strong>。</li>
-<li>TCP/IP协议有四层，由下往上分别为<strong>网络接口层</strong>、<strong>网络层</strong>、<strong>传输层</strong>和<strong>应用层</strong>。</li>
-<li>在TCP/IP协议中，网络层主要协议有<strong>IP</strong>、<strong>ICMP</strong>、<strong>ARP</strong>和<strong>RARP</strong>。</li>
-<li>在TCP/IP协议中，传输层主要协议有<strong>TCP</strong>和<strong>UDP</strong>。</li>
-<li>双绞线按结构可分为<strong>屏蔽双绞线</strong>和<strong>非屏蔽双绞线</strong>。</li>
-<li>按传输模式分，光纤可分为<strong>单模光纤</strong>和<strong>多模光纤</strong>两类。</li>
-<li>双绞线水晶头的制作标准有<strong>T568A</strong>和<strong>T568B</strong>两种。</li>
-<li>交换机的互联方式主要有<strong>串行互联</strong>、<strong>并行互联</strong>、<strong>总线互联</strong>和<strong>星型互联</strong>。</li>
-<li>局域网的体系结构涉及到了OSI模型的<strong>物理层</strong>和<strong>数据链路层</strong>两层。</li>
-<li>802标准把局域网的数据链路层分为<strong>LLC子层</strong>和<strong>MAC子层</strong>两个子层。</li>
-<li>常用的介质访问控制协议有三种：<strong>CSMA/CD</strong>、<strong>CSMA/CA</strong>和<strong>令牌环</strong>。</li>
-<li>令牌环介质访问控制方法，是通过在环型网上传输<strong>令牌</strong>的方式来实现对介质的访问控制的。</li>
-<li>IP地址由<strong>网络地址</strong>和<strong>主机地址</strong>两部分组成，前者用于该主机所在的网络，后者表示该主机在网络中的特定位置。</li>
-<li>IPv6由<strong>128</strong>位二进制数组成。</li>
-<li>以太网利用<strong>ARP</strong>协议获得主机IP地址与MAC地址的映射关系。</li>
-<li>TCP连接包括<strong>三次握手</strong>、<strong>数据传输</strong>和<strong>四次挥手</strong>三个过程。</li>
-<li>TCP采用<strong>滑动窗口</strong>机制实现流量控制功能。</li>
-<li>Telnet服务系统采用<strong>C/S</strong>工作模式，主要由<strong>Telnet服务器</strong>、<strong>Telnet客户端</strong>和<strong>网络</strong>组成。</li>
-<li>复用技术主要有<strong>频分复用</strong>、<strong>时分复用</strong>和<strong>码分复用</strong>三种。</li>
-<li>交换技术主要有<strong>电路交换</strong>、<strong>报文交换</strong>和<strong>分组交换</strong>三种。</li>
-<li>IPv6地址为2005：0610：0000：0001：0000：0000：0000：67ff，可压缩表示为<strong>2005:610::1:0:0:67ff</strong>。</li>
-</ol>
-<h1 id="二选择题">二、选择题</h1>
-<ol type="1">
-<li>一座大楼内的计算机网络系统属于（<strong>B．LAN</strong>）。</li>
-<li>世界上第一个计算机网络是（<strong>A．ARPANET</strong>）。</li>
-<li>计算机互联的主要目的是（<strong>D．资源共享</strong>）。</li>
-<li>计算机资源主要指计算机（<strong>C．硬件、软件与数据</strong>）。</li>
-<li>在一台计算机上向另一台计算机发送电子邮件信息时，下面哪一项正确的描述了数据封装的五个步骤？（<strong>A．Data
-Segment Packet Frame Bit</strong>）。</li>
-<li>将双绞线制作成交叉线，该双绞线连接的两个设备可为（<strong>A．网卡与网卡</strong>）。</li>
-<li>采用5类双绞线所连接的以太网，理论上任意两台PC机的最大间隔距离是多少？（<strong>A．100m</strong>）。</li>
-<li>以太网交换机根据（<strong>B．MAC地址</strong>）转发数据包。</li>
-<li>MAC地址通常存储在计算机的（<strong>A．网卡上</strong>）。</li>
-<li>在以太网中，冲突（<strong>C．是一种正常现象</strong>）。</li>
-<li>以下IP地址中，属于B类地址的是（<strong>B．166.166.166.166</strong>）。</li>
-<li>一个局域网中某台主机的IP地址为192.168.160.13，使用22位作为网络地址，那么该局域网的子网掩码为（<strong>D．255.255.240.0</strong>）。</li>
-<li>下列地址属于单播地址的是（<strong>C．192.168.25.59/30</strong>）。</li>
-<li>三次握手方法用于（<strong>A．传输层连接的建立</strong>）。</li>
-<li>TCP是因特网中的（<strong>可靠的</strong>）协议，使用（<strong>三</strong>）次握手协议建立连接。当主动方发出SYN连接请求后，等待对方回答（<strong>SYN+ACK</strong>）。这种建立连接的方法可以防止（<strong>重复连接</strong>）。TCP使用的流量控制协议是（<strong>滑动窗口</strong>）。</li>
-<li>在右图网络中，共有（ <strong>3</strong> ）个广播域，（
-<strong>3</strong> ）个冲突域。</li>
-</ol>
-<figure>
-<img
-src="https://picst.sunbangyan.cn/2023/12/24/ecdd0352d5b1b1b140be364ace1aab00.jpeg"
-alt="右图网络" />
-<figcaption aria-hidden="true">右图网络</figcaption>
-</figure>
-<h1 id="三简答题">三、简答题</h1>
-<ol type="1">
-<li>OSI的七层模型及每一层的数据形式：</li>
-</ol>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">- </span>应用层（Application）：数据单位是报文（Message）<br><span class="hljs-bullet">- </span>表示层（Presentation）：数据单位是报文（Message）<br><span class="hljs-bullet">- </span>会话层（Session）：数据单位是报文（Message）<br><span class="hljs-bullet">- </span>传输层（Transport）：数据单位是段（Segment）<br><span class="hljs-bullet">- </span>网络层（Network）：数据单位是包（Packet）<br><span class="hljs-bullet">- </span>数据链路层（Data Link）：数据单位是帧（Frame）<br><span class="hljs-bullet">- </span>物理层（Physical）：数据单位是比特流（Bit）<br></code></pre></td></tr></table></figure>
-<ol start="2" type="1">
-<li>TCP/IP的四层模型及上三层主要协议：</li>
-</ol>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">- </span>应用层：HTTP、FTP、SMTP、DNS等<br><span class="hljs-bullet">- </span>传输层：TCP、UDP<br><span class="hljs-bullet">- </span>网络层：IP、ICMP、ARP、RARP<br><span class="hljs-bullet">- </span>网络接口层<br></code></pre></td></tr></table></figure>
-<ol start="3" type="1">
-<li><p><strong>FTTH</strong>（Fiber To The
-Home）是一种光纤直接到户的宽带接入方式，它提供了极高的带宽，可以满足用户对高速互联网、数字电视、电话等多种业务的需求。
-<strong>ADSL</strong>（Asymmetric Digital Subscriber
-Line）是一种非对称数字用户线路，它利用电话线提供宽带接入服务，但上行和下行的带宽不对称。</p></li>
-<li><p><strong>HTTP</strong>（HyperText Transfer
-Protocol）是一种用于传输超文本的协议，主要用于网页浏览。
-<strong>DNS</strong>（Domain Name
-System）是一种用于将域名转换为IP地址的服务。 <strong>FTP</strong>（File
-Transfer Protocol）是一种用于在网络上进行文件传输的协议。
-<strong>DHCP</strong>（Dynamic Host Configuration
-Protocol）是一种动态主机配置协议，用于自动分配IP地址。</p></li>
-<li><p><strong>基带传输</strong>是指信号在传输过程中保持原始的形式和频率，通常用于短距离、高数据率的传输，如局域网。
-<strong>频带传输</strong>是指信号在传输过程中被调制到较高的频率，通常用于长距离、低数据率的传输，如电视广播。</p></li>
-<li><p><strong>DNS</strong>有两种域名查询方式：<strong>递归查询</strong>和<strong>迭代查询</strong>。递归查询是指客户端向DNS服务器发出请求后，DNS服务器必须给出一个明确的回答。如果DNS服务器不知道答案，它会向其他服务器查询，直到得到一个明确的答案。迭代查询是指客户端向DNS服务器发出请求后，如果DNS服务器不知道答案，它会告诉客户端去向哪个服务器查询。</p></li>
-<li><p><strong>VLAN</strong>的划分方式主要有以下几种：<strong>按端口划分</strong>、<strong>按MAC地址划分</strong>、<strong>按IP地址划分</strong>、<strong>按协议类型划分</strong>。</p></li>
-</ol>
-<h1 id="四计算题">四、计算题</h1>
-<ol type="1">
-<li><p>一个主机的IP地址是202.112.14.137，掩码为255.255.255.224，求这个主机所在网络的网络地址和广播地址。</p>
-<figure class="highlight dns"><table><tr><td class="code"><pre><code class="hljs dns">IP地址：<span class="hljs-number">202.112.14.137</span> = <span class="hljs-number">11001010</span>.<span class="hljs-number">01110000</span>.<span class="hljs-number">00001110</span>.<span class="hljs-number">10001001</span><br>子网掩码：<span class="hljs-number">255.255.255.224</span> = <span class="hljs-number">11111111</span>.<span class="hljs-number">11111111</span>.<span class="hljs-number">11111111</span>.<span class="hljs-number">11100000</span><br>网络地址：将IP地址和子网掩码进行按位与运算，得到：<br><span class="hljs-number">11001010</span>.<span class="hljs-number">01110000</span>.<span class="hljs-number">00001110</span>.<span class="hljs-number">10000000</span> = <span class="hljs-number">202.112.14.128</span><br>广播地址：将网络地址的主机位全部置为<span class="hljs-number">1</span>，得到：<br><span class="hljs-number">11001010</span>.<span class="hljs-number">01110000</span>.<span class="hljs-number">00001110</span>.<span class="hljs-number">10011111</span> = <span class="hljs-number">202.112.14.159</span><br></code></pre></td></tr></table></figure></li>
-</ol>
-<p><strong>这个主机所在网络的网络地址是202.112.14.128，广播地址是202.112.14.159。</strong></p>
-<ol start="2" type="1">
-<li>如下图，通过设置静态路由实现主机A能ping通主机B，则在路由器R1、R2、R3上分别要设置怎样的静态路由。</li>
-</ol>
-<figure>
-<img
-src="https://picss.sunbangyan.cn/2023/12/24/77d7eb09d59f96cbcfaa7a8d7108aace.jpeg"
-alt="拓扑图" />
-<figcaption aria-hidden="true">拓扑图</figcaption>
-</figure>
-<p>R1</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Dest</th>
-<th>Mask</th>
-<th>GW</th>
-<th>Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">192.168.3.0</td>
-<td>255.255.255.0</td>
-<td>192.168.4.2</td>
-<td>e1_1</td>
-</tr>
-</tbody>
-</table>
-<p>R2</p>
-<table>
-<thead>
-<tr class="header">
-<th>Dest</th>
-<th>Mask</th>
-<th>GW</th>
-<th>Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>192.168.2.0</td>
-<td>255.255.255.0</td>
-<td>192.168.4.1</td>
-<td>e1_1</td>
-</tr>
-<tr class="even">
-<td>192.168.3.0</td>
-<td>255.255.255.0</td>
-<td>192.168.6.2</td>
-<td>e1_2</td>
-</tr>
-</tbody>
-</table>
-<p>R3</p>
-<table>
-<thead>
-<tr class="header">
-<th>Dest</th>
-<th>Mask</th>
-<th>GW</th>
-<th>Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>192.168.2.0</td>
-<td>255.255.255.0</td>
-<td>192.168.6.1</td>
-<td>e1_1</td>
-</tr>
-</tbody>
-</table>
-<h1 id="计算题解释">计算题解释</h1>
-<h2 id="计算网络地址和广播地址">1、计算网络地址和广播地址</h2>
-<ol type="1">
-<li><strong>计算网络地址</strong>：网络地址是通过将IP地址和子网掩码进行按位与运算得到的。按位与运算的规则是，如果两个对应的二进制位都为1，则结果为1，否则为0。因此，我们将IP地址和子网掩码对应的二进制位进行比较，如果都是1，则结果为1，否则为0。这样我们就得到了网络地址。</li>
-<li><strong>计算广播地址</strong>：广播地址是通过将网络地址的主机位全部置为1得到的。在子网掩码中，网络位对应的是1，主机位对应的是0。因此，我们将网络地址中，对应子网掩码中0的那些位，全部置为1，就得到了广播地址。</li>
-</ol>
-<h2 id="配置静态路由">2、配置静态路由</h2>
-<p>静态路由的设置是基于网络的拓扑结构和IP地址配置。在你的网络中，主机A需要通过路由器R1、R2、R3来访问主机B。因此，我们需要在每个路由器上设置适当的静态路由，以便数据包能够正确地从主机A路由到主机B。</p>
-<p>对于路由器R1，我们需要设置一个静态路由，使得所有目标为主机B所在网络的数据包都会被发送到下一跳路由器R2。因此，我们将目标网络设置为主机B所在的网络，子网掩码设置为主机B所在网络的子网掩码，网关设置为R1到R2的接口IP，接口设置为R1到R2的接口。</p>
-<p>对于路由器R2，我们需要设置两个静态路由。一个是使得所有目标为主机B所在网络的数据包都会被发送到下一跳路由器R3，另一个是使得所有目标为主机A所在网络的数据包都会被发送到下一跳路由器R1。因此，我们将目标网络设置为主机B和主机A所在的网络，子网掩码设置为主机B和主机A所在网络的子网掩码，网关设置为R2到R3和R2到R1的接口IP，接口设置为R2到R3和R2到R1的接口。</p>
-<p>对于路由器R3，我们需要设置一个静态路由，使得所有目标为主机A所在网络的数据包都会被发送到下一跳路由器R2。因此，我们将目标网络设置为主机A所在的网络，子网掩码设置为主机A所在网络的子网掩码，网关设置为R3到R2的接口IP，接口设置为R3到R2的接口。</p>
+    <title>如何正确的食用Docker</title>
+    <url>/lxqingfeng.github.io//post/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%A3%9F%E7%94%A8Docker.html</url>
+    <content><![CDATA[<h1 id="docker简介">Docker简介</h1>
+<h2 id="什么是docker">什么是Docker？</h2>
+<p>Docker 是一个开源的应用容器引擎，基于 <a
+href="https://www.runoob.com/go/go-tutorial.html">Go 语言</a> 并遵从
+Apache2.0 协议开源。</p>
+<p>Docker
+可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的
+Linux 机器上，也可以实现虚拟化。</p>
+<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的
+app）,更重要的是容器性能开销极低。</p>
+<h2 id="docker能干嘛">Docker能干嘛？</h2>
+<p>软件开发最大的麻烦事之一，就是环境配置。而Docker可以十分方便的配置它们。</p>
+<p>传统的虚拟机技术启动应用服务往往需要数分钟，而 <code>Docker</code>
+容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</p>
+<h2 id="docker的三个基本概念">Docker的三个基本概念</h2>
+<p>Docker 包括三个基本概念：</p>
+<ul>
+<li><strong>镜像（image）</strong>：Docker
+镜像（image），相当于是一个root文件系统。例如官方镜像 Ubuntu: 16.04
+就包含了完整的一套 Ubuntu 16.04 最小系统的root文件系统。</li>
+<li><strong>容器（Container）</strong>：容器（Container）<strong>由</strong>
+Docker 镜像（image）生成。一旦容器生成，就会同时存在两个文件： image
+文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</li>
+<li><strong>仓库（Repository）</strong>：镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a
+href="https://docker-practice.github.io/zh-cn/repository/registry.html">Docker
+Registry</a> 就是这样的服务。</li>
+</ul>
+<h1 id="安装docker">安装Docker</h1>
+<p>Docker 分为 <code>stable</code> <code>test</code> 和
+<code>nightly</code> 三个更新频道。</p>
+<p><a href="https://docs.docker.com/get-docker/">Get Docker | Docker
+Documentation</a></p>
+<h2 id="在ubuntu安装docker">在Ubuntu安装Docker</h2>
+<p>Docker 支持以下版本的 <a href="https://ubuntu.com/server">Ubuntu</a>
+操作系统：</p>
+<ul>
+<li>Ubuntu Hirsute 21.04</li>
+<li>Ubuntu Groovy 20.10</li>
+<li>Ubuntu Focal 20.04 (LTS)</li>
+<li>Ubuntu Bionic 18.04 (LTS)</li>
+</ul>
+<p>Docker 可以安装在 64 位的 x86 平台或 ARM 平台上。Ubuntu
+发行版中，LTS（Long-Term-Support）长期支持版本，会获得 5
+年的升级维护支持，这样的版本会更稳定，因此在生产环境中推荐使用 LTS
+版本。</p>
+<h3 id="卸载旧版本docker">卸载旧版本Docker</h3>
+<p>旧版本的 Docker 称为 <code>docker</code> 或者
+<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get remove docker \<br>             docker-engine \<br>             docker.io<br></code></pre></td></tr></table></figure>
+<h3 id="使用-apt-安装">使用 APT 安装</h3>
+<p>由于 <code>apt</code> 源使用 HTTPS
+以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS
+传输的软件包以及 CA 证书。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get udate<br><br>sudo apt-get install \<br>	apt-transport-https \<br>    ca-certificates \<br>    curl \<br>    gnupg \<br>    lsb-release<br></code></pre></td></tr></table></figure>
+<p>为了确认所下载软件包的合法性，需要添加软件源的 <code>GPG</code>
+密钥。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br><br><span class="hljs-comment"># 官方源</span><br>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br></code></pre></td></tr></table></figure>
+<p>向<code>sources.list</code>中添加 Docker 软件源</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> \<br>  <span class="hljs-string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span><br><span class="hljs-string">  <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null<br><br><span class="hljs-comment"># 官方源</span><br><span class="hljs-comment"># $ echo \</span><br><span class="hljs-comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></code></pre></td></tr></table></figure>
+<h3 id="安装-docker">安装 Docker</h3>
+<p>更新 apt 软件包缓存，并安装 <code>docker-ce</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></figure>
+<h3 id="启动-docker">启动 Docker</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></figure>
+<h3 id="建立-docker-用户组">建立 Docker 用户组</h3>
+<p>默认情况下，<code>docker</code> 命令会使用 <a
+href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
+与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
+组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
+系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
+<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
+<p>建立<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></figure>
+<p>将当前用户加入<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docker <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure>
+<h2 id="在centos安装docker">在CentOS安装Docker</h2>
+<p>切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker</p>
+<p>Docker 支持 64 位版本 CentOS 7/8，并且要求内核版本不低于 3.10。
+CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如
+<code>overlay2</code>
+存储层驱动）无法使用，并且部分功能可能不太稳定。</p>
+<h3 id="卸载旧版本docker-1">卸载旧版本Docker</h3>
+<p>旧版本的 Docker 称为 <code>docker</code> 或者
+<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum remove docker \<br>                docker-client \<br>                docker-client-latest \<br>                docker-common \<br>                docker-latest \<br>                docker-latest-logrotate \<br>                docker-logrotate \<br>                docker-selinux \<br>                docker-engine-selinux \<br>                docker-engine<br></code></pre></td></tr></table></figure>
+<h3 id="使用-yum-安装">使用 yum 安装</h3>
+<p>安装依赖包：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install -y yum-utils<br></code></pre></td></tr></table></figure>
+<p>添加<code>yum</code>软件源：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager \<br>	--add-repp \<br>	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br>sudo sed -i <span class="hljs-string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo<br><br><span class="hljs-comment"># 官方源</span><br>sudo yum-config-manager \<br>	--add-repp<br>	https://download.docker.com/linux/centos/docker-ce.repo<br></code></pre></td></tr></table></figure>
+<p>如需测试版本的Docker：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager --<span class="hljs-built_in">enable</span> docker-ce-test<br></code></pre></td></tr></table></figure>
+<h3 id="安装-docker-1">安装 Docker</h3>
+<p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></figure>
+<h3 id="centos8的额外设置">CentOS8的额外设置</h3>
+<p>由于 CentOS8 防火墙使用了 <code>nftables</code>，但 Docker 尚未支持
+<code>nftables</code>， 我们可以使用如下设置使用
+<code>iptables</code>：</p>
+<p>更改 <code>/etc/firewalld/firewalld.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># FirewallBackend=nftables</span><br>FirewallBackend=iptables<br></code></pre></td></tr></table></figure>
+<p>或执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">firewall-cmd --permanent --zone=trusted --add-interface=docker0<br>firewall-cmd --reload<br></code></pre></td></tr></table></figure>
+<h3 id="启动-docker-1">启动 Docker</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></figure>
+<h3 id="建立-docker-用户组-1">建立 Docker 用户组</h3>
+<p>默认情况下，<code>docker</code> 命令会使用 <a
+href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
+与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
+组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
+系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
+<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
+<p>建立 <code>docker</code> 组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></figure>
+<p>将当前用户加入<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docekr <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure>
+<h3 id="添加内核参数">添加内核参数</h3>
+<p>如果在 CentOS 使用 Docker 看到下面的这些警告信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">WARNING: bridge-nf-call-iptables is disabled<br>WARNING: bridge-nf-call-ip6tables is disabled<br></code></pre></td></tr></table></figure>
+<p>添加内核配置参数以启用这些功能</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="hljs-string">EOF</span><br><span class="hljs-string">net.bridge.bridge-nf-call-ip6tables = 1</span><br><span class="hljs-string">net.bridge.bridge-nf-call-iptables = 1</span><br><span class="hljs-string">EOF</span><br></code></pre></td></tr></table></figure>
+<p>重新加载<code>sysctl.conf</code>即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo sysctl -p<br></code></pre></td></tr></table></figure>
+<h1 id="docker食用指南">Docker食用指南</h1>
+<h2 id="镜像使用指南">镜像使用指南</h2>
+<p>Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker
+会从镜像仓库下载该镜像。</p>
+<h3 id="获取镜像">获取镜像</h3>
+<p>从 Docker 镜像仓库获取镜像的命令是
+<code>docker pull</code>。命令格式是：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">docker pull [OPTIONS] NAME[:TAG|@DIGEST]<br></code></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>TAG：标签（版本）</li>
+<li>DIGEST：摘要</li>
+<li>OPTIONS：
+<ul>
+<li>-a ：下载镜像仓库中所有的指定镜像；</li>
+<li>–disable-content-trust：跳过镜像验证（默认值是true）；</li>
+<li>–platform： 如果服务具有多平台功能，则设置平台；</li>
+<li>-q：一直详细输出；</li>
+</ul></li>
+</ul>
+<p>具体选项可以通过<code>docker pull --help</code>命令查看。</p>
+<p><strong>例子如下：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker pull ubuntu:18.04<br>18.04: Pulling from library/ubuntu<br>92dc2a97ff99: Pull complete<br>be13a9d27eb8: Pull complete<br>c8299583700a: Pull complete<br>Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26<br>Status: Downloaded newer image <span class="hljs-keyword">for</span> ubuntu:18.04<br>docker.io/library/ubuntu:18.04<br></code></pre></td></tr></table></figure>
+<p>上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub
+（<code>docker.io</code>）获取镜像。而镜像名称是
+<code>ubuntu:18.04</code>，因此将会获取官方镜像
+<code>library/ubuntu</code> 仓库中标签为 <code>18.04</code>
+的镜像。<code>docker pull</code>
+命令的输出结果最后一行给出了镜像的完整名称，即：
+<code>docker.io/library/ubuntu:18.04</code>。</p>
+<ul>
+<li>Docker
+镜像仓库地址：地址的格式一般是<code>域名/IP[:端口号]</code>。默认地址是
+Docker Hub（<code>docker.io</code>）。</li>
+<li>仓库名：仓库名是两段式名称，即<code>&lt;用户名&gt;/&lt;软件名&gt;</code>。对于
+Docker
+Hub，如果没有指定用户名，则默认是<code>library</code>，也就是官方镜像。</li>
+</ul>
+<h4 id="运行">运行</h4>
+<p>有了镜像后，可以以这个镜像为基础启动并运行一个容器。以上面的<code>Ubuntu:18.04</code>为例，如果打算启动里面的<code>bash</code>并且进行交互式操作的话，可以执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker run -it --<span class="hljs-built_in">rm</span> ubuntu:18:04 bash<br><br><span class="hljs-comment"># 以下是容器内操作</span><br>root@e7009c6ce357:/<span class="hljs-comment"># cat /etc/os-release</span><br>NAME=<span class="hljs-string">&quot;Ubuntu&quot;</span><br>VERSION=<span class="hljs-string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span><br>ID=ubuntu<br>ID_LIKE=debian<br>PRETTY_NAME=<span class="hljs-string">&quot;Ubuntu 18.04.1 LTS&quot;</span><br>VERSION_ID=<span class="hljs-string">&quot;18.04&quot;</span><br>HOME_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/&quot;</span><br>SUPPORT_URL=<span class="hljs-string">&quot;https://help.ubuntu.com/&quot;</span><br>BUG_REPORT_URL=<span class="hljs-string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span><br>PRIVACY_POLICY_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span><br>VERSION_CODENAME=bionic<br>UBUNTU_CODENAME=bionic<br></code></pre></td></tr></table></figure>
+<p><code>docker run</code>就是要运行容器的命令，这里简单说明一下上面用到的参数</p>
+<ul>
+<li><code>-it</code>：这是两个参数，一个是
+<code>-i</code>：交互式操作，一个是 <code>-t</code>
+终端。我们这里打算进入 <code>bash</code>
+执行一些命令并查看返回结果，因此我们需要交互式终端。</li>
+<li><code>--rm</code>：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动
+<code>docker rm</code>。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用
+<code>--rm</code> 可以避免浪费空间。</li>
+<li><code>ubuntu:18.04</code>：这是指用 <code>ubuntu:18.04</code>
+镜像为基础来启动容器。</li>
+<li><code>bash</code>：放在镜像名后的是
+<strong>命令</strong>，这里我们希望有个交互式 Shell，因此用的是
+<code>bash</code>。</li>
+</ul>
+<p>进入容器后就可以在 Shell
+下操作执行任何所需的命令。例如，上面就执行了<code>cat /etc/os-release</code>，这是Linux常用的查看当前系统版本的命令，从返回的结果可以看到容器内是<code>Ubuntu 18.04.1 LTS</code>系统。</p>
+<p>最后可以通过<code>exit</code>退出这个容器。</p>
+<h3 id="列出镜像">列出镜像</h3>
+<p>要想列出已经下载下来的镜像，可以使用 <code>docker image ls</code>
+命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span><br>REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE<br>redis                latest              5f515359c7f8        5 days ago          183 MB<br>nginx                latest              05a60462f8ba        5 days ago          181 MB<br>mongo                3.2                 fe9198c04d62        5 days ago          342 MB<br>&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB<br>ubuntu               18.04               329ed837d508        3 days ago          63.3MB<br>ubuntu               bionic              329ed837d508        3 days ago          63.3MB<br></code></pre></td></tr></table></figure>
+<p>列表包含了
+<code>仓库名</code>、<code>标签</code>、<code>镜像 ID</code>、<code>创建时间</code>
+以及 <code>所占用的空间</code>。</p>
+<p>其中仓库名、标签在之前的基础概念章节已经介绍过了。<strong>镜像
+ID</strong> 则是镜像的唯一标识，一个镜像可以对应多个
+<strong>标签</strong>。因此，在上面的例子中，我们可以看到
+<code>ubuntu:18.04</code> 和 <code>ubuntu:bionic</code> 拥有相同的
+ID，因为它们对应的是同一个镜像。</p>
+<h4 id="镜像体积">镜像体积</h4>
+<p>Docker
+Hub上显示的镜像体积是压缩后的体积大小，在镜像上传和下载的过程中镜像是保持压缩状态的。而使用命令<code>docker image ls</code>显示的是镜像下载到本地后展开的大小，准确说，是展开后的各层所占空间的总和。</p>
+<p>另外一个需要注意的问题是，<code>docker image ls</code>
+列表中的镜像体积总和并非是所有镜像实际硬盘消耗。由于 Docker
+镜像是多层存储结构，并且可以继承、复用，因此不同镜像可能会因为使用相同的基础镜像，从而拥有共同的层。相同的层只需要保存一份即可。</p>
+<p>通过<code>docker system df</code>命令来查看镜像、容器、数据卷所占用的空间。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker system <span class="hljs-built_in">df</span><br>TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE<br>Images          2         1         390.2MB   390.2MB (99%)<br>Containers      1         0         0B        0B<br>Local Volumes   0         0         0B        0B<br>Build Cache     18        0         789B      789B<br></code></pre></td></tr></table></figure>
+<h4 id="列出部分镜像">列出部分镜像</h4>
+<p>不加任何参数的情况下，<code>docker image ls</code>
+会列出所有顶层镜像，但是有时候我们只希望列出部分镜像。<code>docker image ls</code>
+有好几个参数可以帮助做到这个事情。</p>
+<p>根据仓库名列出仓库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       latest    ba6acccedd29   23 months ago   72.8MB<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></figure>
+<p>列出特定的某个镜像，也就是说指定仓库名和标签</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu:18.04<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></figure>
+<h3 id="删除本地镜像">删除本地镜像</h3>
+<p>如果要删除本地的镜像，可以使用 <code>docker image rm</code>
+命令，其格式为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]<br></code></pre></td></tr></table></figure>
+<p>其中，<code>&lt;镜像&gt;</code> 可以是
+<code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者
+<code>镜像摘要</code>。</p>
+<p>我们可以用镜像的完整 ID，也称为
+<code>长 ID</code>，来删除镜像。使用脚本的时候可能会用长
+ID，但是人工输入就太累了，所以更多的时候是用 <code>短 ID</code>
+来删除镜像。<code>docker image ls</code> 默认列出的就已经是短 ID
+了，一般取前3个字符以上，只要足够区分于别的镜像就可以了。</p>
+<h2 id="操作容器">操作容器</h2>
+<h4 id="启动容器">启动容器、</h4>
+<p>启动容器有两种方式，一种是基于镜像新建一个容器并启动，另外一个是将在终止状态（<code>exited</code>）的容器重新启动。</p>
+<p>因为 Docker
+的容器实在太轻量级了，很多时候用户都是随时删除和新创建容器。</p>
+<h1 id="未完待续">未完待续</h1>
+<h1 id="参考文章">参考文章</h1>
+<p>更多详细教程请参考 <a
+href="https://docker-practice.github.io/zh-cn/">前言 · Docker --
+从入门到实践 (docker-practice.github.io)</a></p>
+<p><a
+href="https://blog.csdn.net/zhuzicc/article/details/118066353">Docker
+“pull“命令获取镜像，讲道理你真的会吗？_docker
+pull_zhuzicc的博客-CSDN博客</a></p>
+<p><a href="https://www.runoob.com/docker/docker-tutorial.html">Docker
+教程 | 菜鸟教程 (runoob.com)</a></p>
+<p><a
+href="https://zhuanlan.zhihu.com/p/435605760">全面的Docker快速入门教程 -
+知乎 (zhihu.com)</a></p>
+<p><a
+href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker
+入门教程 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
 ]]></content>
       <categories>
-        <category>计算机网络</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>笔记</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
     <title>网络安全工具大全</title>
-    <url>//post/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E5%A4%A7%E5%85%A8.html</url>
+    <url>/lxqingfeng.github.io//post/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E5%A4%A7%E5%85%A8.html</url>
     <content><![CDATA[<p><strong>资料来源 wx公众号：橘猫学安全</strong></p>
 <h1 id="漏洞及渗透练习平台">漏洞及渗透练习平台</h1>
 <h2 id="webgoat漏洞练习环境">WebGoat漏洞练习环境</h2>
@@ -1191,8 +1265,190 @@ top10漏洞扫描和边界资产发现能力)</p>
       </tags>
   </entry>
   <entry>
+    <title>计算机网络练习题</title>
+    <url>/lxqingfeng.github.io//post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%83%E4%B9%A0%E9%A2%98.html</url>
+    <content><![CDATA[<h1 id="一填空题">一、填空题</h1>
+<ol type="1">
+<li>按照网络覆盖的地理范围，计算机网络可以分为<strong>局域网</strong>、<strong>城域网</strong>和<strong>广域网</strong>。</li>
+<li>广播网络传输方式有<strong>单播</strong>、<strong>广播</strong>和<strong>多播</strong>。</li>
+<li>从功能上来看将计算机网路逻辑划分为<strong>客户端</strong>和<strong>服务器端</strong>。</li>
+<li>从组网的层次角度来看，网络的组成结构是一个典型的三层网络机构，最上层称为<strong>核心层</strong>，中间层称为<strong>汇聚层</strong>，最下层称为<strong>接入层</strong>。</li>
+<li>影响网络的因素有<strong>带宽</strong>、<strong>延迟</strong>、<strong>抖动</strong>和<strong>丢包</strong>。</li>
+<li>OSI模型将网络分为<strong>物理层</strong>、<strong>数据链路层</strong>、<strong>网络层</strong>、<strong>传输层</strong>、<strong>会话层</strong>、<strong>表示层</strong>和<strong>应用层</strong>。</li>
+<li>TCP/IP协议有四层，由下往上分别为<strong>网络接口层</strong>、<strong>网络层</strong>、<strong>传输层</strong>和<strong>应用层</strong>。</li>
+<li>在TCP/IP协议中，网络层主要协议有<strong>IP</strong>、<strong>ICMP</strong>、<strong>ARP</strong>和<strong>RARP</strong>。</li>
+<li>在TCP/IP协议中，传输层主要协议有<strong>TCP</strong>和<strong>UDP</strong>。</li>
+<li>双绞线按结构可分为<strong>屏蔽双绞线</strong>和<strong>非屏蔽双绞线</strong>。</li>
+<li>按传输模式分，光纤可分为<strong>单模光纤</strong>和<strong>多模光纤</strong>两类。</li>
+<li>双绞线水晶头的制作标准有<strong>T568A</strong>和<strong>T568B</strong>两种。</li>
+<li>交换机的互联方式主要有<strong>串行互联</strong>、<strong>并行互联</strong>、<strong>总线互联</strong>和<strong>星型互联</strong>。</li>
+<li>局域网的体系结构涉及到了OSI模型的<strong>物理层</strong>和<strong>数据链路层</strong>两层。</li>
+<li>802标准把局域网的数据链路层分为<strong>LLC子层</strong>和<strong>MAC子层</strong>两个子层。</li>
+<li>常用的介质访问控制协议有三种：<strong>CSMA/CD</strong>、<strong>CSMA/CA</strong>和<strong>令牌环</strong>。</li>
+<li>令牌环介质访问控制方法，是通过在环型网上传输<strong>令牌</strong>的方式来实现对介质的访问控制的。</li>
+<li>IP地址由<strong>网络地址</strong>和<strong>主机地址</strong>两部分组成，前者用于该主机所在的网络，后者表示该主机在网络中的特定位置。</li>
+<li>IPv6由<strong>128</strong>位二进制数组成。</li>
+<li>以太网利用<strong>ARP</strong>协议获得主机IP地址与MAC地址的映射关系。</li>
+<li>TCP连接包括<strong>三次握手</strong>、<strong>数据传输</strong>和<strong>四次挥手</strong>三个过程。</li>
+<li>TCP采用<strong>滑动窗口</strong>机制实现流量控制功能。</li>
+<li>Telnet服务系统采用<strong>C/S</strong>工作模式，主要由<strong>Telnet服务器</strong>、<strong>Telnet客户端</strong>和<strong>网络</strong>组成。</li>
+<li>复用技术主要有<strong>频分复用</strong>、<strong>时分复用</strong>和<strong>码分复用</strong>三种。</li>
+<li>交换技术主要有<strong>电路交换</strong>、<strong>报文交换</strong>和<strong>分组交换</strong>三种。</li>
+<li>IPv6地址为2005：0610：0000：0001：0000：0000：0000：67ff，可压缩表示为<strong>2005:610::1:0:0:67ff</strong>。</li>
+</ol>
+<h1 id="二选择题">二、选择题</h1>
+<ol type="1">
+<li>一座大楼内的计算机网络系统属于（<strong>B．LAN</strong>）。</li>
+<li>世界上第一个计算机网络是（<strong>A．ARPANET</strong>）。</li>
+<li>计算机互联的主要目的是（<strong>D．资源共享</strong>）。</li>
+<li>计算机资源主要指计算机（<strong>C．硬件、软件与数据</strong>）。</li>
+<li>在一台计算机上向另一台计算机发送电子邮件信息时，下面哪一项正确的描述了数据封装的五个步骤？（<strong>A．Data
+Segment Packet Frame Bit</strong>）。</li>
+<li>将双绞线制作成交叉线，该双绞线连接的两个设备可为（<strong>A．网卡与网卡</strong>）。</li>
+<li>采用5类双绞线所连接的以太网，理论上任意两台PC机的最大间隔距离是多少？（<strong>A．100m</strong>）。</li>
+<li>以太网交换机根据（<strong>B．MAC地址</strong>）转发数据包。</li>
+<li>MAC地址通常存储在计算机的（<strong>A．网卡上</strong>）。</li>
+<li>在以太网中，冲突（<strong>C．是一种正常现象</strong>）。</li>
+<li>以下IP地址中，属于B类地址的是（<strong>B．166.166.166.166</strong>）。</li>
+<li>一个局域网中某台主机的IP地址为192.168.160.13，使用22位作为网络地址，那么该局域网的子网掩码为（<strong>D．255.255.240.0</strong>）。</li>
+<li>下列地址属于单播地址的是（<strong>C．192.168.25.59/30</strong>）。</li>
+<li>三次握手方法用于（<strong>A．传输层连接的建立</strong>）。</li>
+<li>TCP是因特网中的（<strong>可靠的</strong>）协议，使用（<strong>三</strong>）次握手协议建立连接。当主动方发出SYN连接请求后，等待对方回答（<strong>SYN+ACK</strong>）。这种建立连接的方法可以防止（<strong>重复连接</strong>）。TCP使用的流量控制协议是（<strong>滑动窗口</strong>）。</li>
+<li>在右图网络中，共有（ <strong>3</strong> ）个广播域，（
+<strong>3</strong> ）个冲突域。</li>
+</ol>
+<figure>
+<img
+src="https://picst.sunbangyan.cn/2023/12/24/ecdd0352d5b1b1b140be364ace1aab00.jpeg"
+alt="右图网络" />
+<figcaption aria-hidden="true">右图网络</figcaption>
+</figure>
+<h1 id="三简答题">三、简答题</h1>
+<ol type="1">
+<li>OSI的七层模型及每一层的数据形式：</li>
+</ol>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">- </span>应用层（Application）：数据单位是报文（Message）<br><span class="hljs-bullet">- </span>表示层（Presentation）：数据单位是报文（Message）<br><span class="hljs-bullet">- </span>会话层（Session）：数据单位是报文（Message）<br><span class="hljs-bullet">- </span>传输层（Transport）：数据单位是段（Segment）<br><span class="hljs-bullet">- </span>网络层（Network）：数据单位是包（Packet）<br><span class="hljs-bullet">- </span>数据链路层（Data Link）：数据单位是帧（Frame）<br><span class="hljs-bullet">- </span>物理层（Physical）：数据单位是比特流（Bit）<br></code></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>TCP/IP的四层模型及上三层主要协议：</li>
+</ol>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">- </span>应用层：HTTP、FTP、SMTP、DNS等<br><span class="hljs-bullet">- </span>传输层：TCP、UDP<br><span class="hljs-bullet">- </span>网络层：IP、ICMP、ARP、RARP<br><span class="hljs-bullet">- </span>网络接口层<br></code></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li><p><strong>FTTH</strong>（Fiber To The
+Home）是一种光纤直接到户的宽带接入方式，它提供了极高的带宽，可以满足用户对高速互联网、数字电视、电话等多种业务的需求。
+<strong>ADSL</strong>（Asymmetric Digital Subscriber
+Line）是一种非对称数字用户线路，它利用电话线提供宽带接入服务，但上行和下行的带宽不对称。</p></li>
+<li><p><strong>HTTP</strong>（HyperText Transfer
+Protocol）是一种用于传输超文本的协议，主要用于网页浏览。
+<strong>DNS</strong>（Domain Name
+System）是一种用于将域名转换为IP地址的服务。 <strong>FTP</strong>（File
+Transfer Protocol）是一种用于在网络上进行文件传输的协议。
+<strong>DHCP</strong>（Dynamic Host Configuration
+Protocol）是一种动态主机配置协议，用于自动分配IP地址。</p></li>
+<li><p><strong>基带传输</strong>是指信号在传输过程中保持原始的形式和频率，通常用于短距离、高数据率的传输，如局域网。
+<strong>频带传输</strong>是指信号在传输过程中被调制到较高的频率，通常用于长距离、低数据率的传输，如电视广播。</p></li>
+<li><p><strong>DNS</strong>有两种域名查询方式：<strong>递归查询</strong>和<strong>迭代查询</strong>。递归查询是指客户端向DNS服务器发出请求后，DNS服务器必须给出一个明确的回答。如果DNS服务器不知道答案，它会向其他服务器查询，直到得到一个明确的答案。迭代查询是指客户端向DNS服务器发出请求后，如果DNS服务器不知道答案，它会告诉客户端去向哪个服务器查询。</p></li>
+<li><p><strong>VLAN</strong>的划分方式主要有以下几种：<strong>按端口划分</strong>、<strong>按MAC地址划分</strong>、<strong>按IP地址划分</strong>、<strong>按协议类型划分</strong>。</p></li>
+</ol>
+<h1 id="四计算题">四、计算题</h1>
+<ol type="1">
+<li><p>一个主机的IP地址是202.112.14.137，掩码为255.255.255.224，求这个主机所在网络的网络地址和广播地址。</p>
+<figure class="highlight dns"><table><tr><td class="code"><pre><code class="hljs dns">IP地址：<span class="hljs-number">202.112.14.137</span> = <span class="hljs-number">11001010</span>.<span class="hljs-number">01110000</span>.<span class="hljs-number">00001110</span>.<span class="hljs-number">10001001</span><br>子网掩码：<span class="hljs-number">255.255.255.224</span> = <span class="hljs-number">11111111</span>.<span class="hljs-number">11111111</span>.<span class="hljs-number">11111111</span>.<span class="hljs-number">11100000</span><br>网络地址：将IP地址和子网掩码进行按位与运算，得到：<br><span class="hljs-number">11001010</span>.<span class="hljs-number">01110000</span>.<span class="hljs-number">00001110</span>.<span class="hljs-number">10000000</span> = <span class="hljs-number">202.112.14.128</span><br>广播地址：将网络地址的主机位全部置为<span class="hljs-number">1</span>，得到：<br><span class="hljs-number">11001010</span>.<span class="hljs-number">01110000</span>.<span class="hljs-number">00001110</span>.<span class="hljs-number">10011111</span> = <span class="hljs-number">202.112.14.159</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>这个主机所在网络的网络地址是202.112.14.128，广播地址是202.112.14.159。</strong></p>
+<ol start="2" type="1">
+<li>如下图，通过设置静态路由实现主机A能ping通主机B，则在路由器R1、R2、R3上分别要设置怎样的静态路由。</li>
+</ol>
+<figure>
+<img
+src="https://picss.sunbangyan.cn/2023/12/24/77d7eb09d59f96cbcfaa7a8d7108aace.jpeg"
+alt="拓扑图" />
+<figcaption aria-hidden="true">拓扑图</figcaption>
+</figure>
+<p>R1</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dest</th>
+<th>Mask</th>
+<th>GW</th>
+<th>Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">192.168.3.0</td>
+<td>255.255.255.0</td>
+<td>192.168.4.2</td>
+<td>e1_1</td>
+</tr>
+</tbody>
+</table>
+<p>R2</p>
+<table>
+<thead>
+<tr class="header">
+<th>Dest</th>
+<th>Mask</th>
+<th>GW</th>
+<th>Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>192.168.2.0</td>
+<td>255.255.255.0</td>
+<td>192.168.4.1</td>
+<td>e1_1</td>
+</tr>
+<tr class="even">
+<td>192.168.3.0</td>
+<td>255.255.255.0</td>
+<td>192.168.6.2</td>
+<td>e1_2</td>
+</tr>
+</tbody>
+</table>
+<p>R3</p>
+<table>
+<thead>
+<tr class="header">
+<th>Dest</th>
+<th>Mask</th>
+<th>GW</th>
+<th>Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>192.168.2.0</td>
+<td>255.255.255.0</td>
+<td>192.168.6.1</td>
+<td>e1_1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="计算题解释">计算题解释</h1>
+<h2 id="计算网络地址和广播地址">1、计算网络地址和广播地址</h2>
+<ol type="1">
+<li><strong>计算网络地址</strong>：网络地址是通过将IP地址和子网掩码进行按位与运算得到的。按位与运算的规则是，如果两个对应的二进制位都为1，则结果为1，否则为0。因此，我们将IP地址和子网掩码对应的二进制位进行比较，如果都是1，则结果为1，否则为0。这样我们就得到了网络地址。</li>
+<li><strong>计算广播地址</strong>：广播地址是通过将网络地址的主机位全部置为1得到的。在子网掩码中，网络位对应的是1，主机位对应的是0。因此，我们将网络地址中，对应子网掩码中0的那些位，全部置为1，就得到了广播地址。</li>
+</ol>
+<h2 id="配置静态路由">2、配置静态路由</h2>
+<p>静态路由的设置是基于网络的拓扑结构和IP地址配置。在你的网络中，主机A需要通过路由器R1、R2、R3来访问主机B。因此，我们需要在每个路由器上设置适当的静态路由，以便数据包能够正确地从主机A路由到主机B。</p>
+<p>对于路由器R1，我们需要设置一个静态路由，使得所有目标为主机B所在网络的数据包都会被发送到下一跳路由器R2。因此，我们将目标网络设置为主机B所在的网络，子网掩码设置为主机B所在网络的子网掩码，网关设置为R1到R2的接口IP，接口设置为R1到R2的接口。</p>
+<p>对于路由器R2，我们需要设置两个静态路由。一个是使得所有目标为主机B所在网络的数据包都会被发送到下一跳路由器R3，另一个是使得所有目标为主机A所在网络的数据包都会被发送到下一跳路由器R1。因此，我们将目标网络设置为主机B和主机A所在的网络，子网掩码设置为主机B和主机A所在网络的子网掩码，网关设置为R2到R3和R2到R1的接口IP，接口设置为R2到R3和R2到R1的接口。</p>
+<p>对于路由器R3，我们需要设置一个静态路由，使得所有目标为主机A所在网络的数据包都会被发送到下一跳路由器R2。因此，我们将目标网络设置为主机A所在的网络，子网掩码设置为主机A所在网络的子网掩码，网关设置为R3到R2的接口IP，接口设置为R3到R2的接口。</p>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>课表与进度表</title>
-    <url>//post/%E8%AF%BE%E8%A1%A8%E4%B8%8E%E8%BF%9B%E5%BA%A6%E8%A1%A8.html</url>
+    <url>/lxqingfeng.github.io//post/%E8%AF%BE%E8%A1%A8%E4%B8%8E%E8%BF%9B%E5%BA%A6%E8%A1%A8.html</url>
     <content><![CDATA[<h1 id="课表">课表</h1>
 <p><img
 src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/4c21a9ae60a1b086dd311b78cec092a1.jpg"
@@ -1210,264 +1466,8 @@ alt="进度表" />
       </categories>
   </entry>
   <entry>
-    <title>如何正确的食用Docker</title>
-    <url>//post/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%A3%9F%E7%94%A8Docker.html</url>
-    <content><![CDATA[<h1 id="docker简介">Docker简介</h1>
-<h2 id="什么是docker">什么是Docker？</h2>
-<p>Docker 是一个开源的应用容器引擎，基于 <a
-href="https://www.runoob.com/go/go-tutorial.html">Go 语言</a> 并遵从
-Apache2.0 协议开源。</p>
-<p>Docker
-可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的
-Linux 机器上，也可以实现虚拟化。</p>
-<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的
-app）,更重要的是容器性能开销极低。</p>
-<h2 id="docker能干嘛">Docker能干嘛？</h2>
-<p>软件开发最大的麻烦事之一，就是环境配置。而Docker可以十分方便的配置它们。</p>
-<p>传统的虚拟机技术启动应用服务往往需要数分钟，而 <code>Docker</code>
-容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</p>
-<h2 id="docker的三个基本概念">Docker的三个基本概念</h2>
-<p>Docker 包括三个基本概念：</p>
-<ul>
-<li><strong>镜像（image）</strong>：Docker
-镜像（image），相当于是一个root文件系统。例如官方镜像 Ubuntu: 16.04
-就包含了完整的一套 Ubuntu 16.04 最小系统的root文件系统。</li>
-<li><strong>容器（Container）</strong>：容器（Container）<strong>由</strong>
-Docker 镜像（image）生成。一旦容器生成，就会同时存在两个文件： image
-文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</li>
-<li><strong>仓库（Repository）</strong>：镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a
-href="https://docker-practice.github.io/zh-cn/repository/registry.html">Docker
-Registry</a> 就是这样的服务。</li>
-</ul>
-<h1 id="安装docker">安装Docker</h1>
-<p>Docker 分为 <code>stable</code> <code>test</code> 和
-<code>nightly</code> 三个更新频道。</p>
-<p><a href="https://docs.docker.com/get-docker/">Get Docker | Docker
-Documentation</a></p>
-<h2 id="在ubuntu安装docker">在Ubuntu安装Docker</h2>
-<p>Docker 支持以下版本的 <a href="https://ubuntu.com/server">Ubuntu</a>
-操作系统：</p>
-<ul>
-<li>Ubuntu Hirsute 21.04</li>
-<li>Ubuntu Groovy 20.10</li>
-<li>Ubuntu Focal 20.04 (LTS)</li>
-<li>Ubuntu Bionic 18.04 (LTS)</li>
-</ul>
-<p>Docker 可以安装在 64 位的 x86 平台或 ARM 平台上。Ubuntu
-发行版中，LTS（Long-Term-Support）长期支持版本，会获得 5
-年的升级维护支持，这样的版本会更稳定，因此在生产环境中推荐使用 LTS
-版本。</p>
-<h3 id="卸载旧版本docker">卸载旧版本Docker</h3>
-<p>旧版本的 Docker 称为 <code>docker</code> 或者
-<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get remove docker \<br>             docker-engine \<br>             docker.io<br></code></pre></td></tr></table></figure>
-<h3 id="使用-apt-安装">使用 APT 安装</h3>
-<p>由于 <code>apt</code> 源使用 HTTPS
-以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS
-传输的软件包以及 CA 证书。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get udate<br><br>sudo apt-get install \<br>	apt-transport-https \<br>    ca-certificates \<br>    curl \<br>    gnupg \<br>    lsb-release<br></code></pre></td></tr></table></figure>
-<p>为了确认所下载软件包的合法性，需要添加软件源的 <code>GPG</code>
-密钥。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br><br><span class="hljs-comment"># 官方源</span><br>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br></code></pre></td></tr></table></figure>
-<p>向<code>sources.list</code>中添加 Docker 软件源</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> \<br>  <span class="hljs-string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span><br><span class="hljs-string">  <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null<br><br><span class="hljs-comment"># 官方源</span><br><span class="hljs-comment"># $ echo \</span><br><span class="hljs-comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></code></pre></td></tr></table></figure>
-<h3 id="安装-docker">安装 Docker</h3>
-<p>更新 apt 软件包缓存，并安装 <code>docker-ce</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></figure>
-<h3 id="启动-docker">启动 Docker</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></figure>
-<h3 id="建立-docker-用户组">建立 Docker 用户组</h3>
-<p>默认情况下，<code>docker</code> 命令会使用 <a
-href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
-与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
-组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
-系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
-<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
-<p>建立<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></figure>
-<p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docker <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure>
-<h2 id="在centos安装docker">在CentOS安装Docker</h2>
-<p>切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker</p>
-<p>Docker 支持 64 位版本 CentOS 7/8，并且要求内核版本不低于 3.10。
-CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如
-<code>overlay2</code>
-存储层驱动）无法使用，并且部分功能可能不太稳定。</p>
-<h3 id="卸载旧版本docker-1">卸载旧版本Docker</h3>
-<p>旧版本的 Docker 称为 <code>docker</code> 或者
-<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum remove docker \<br>                docker-client \<br>                docker-client-latest \<br>                docker-common \<br>                docker-latest \<br>                docker-latest-logrotate \<br>                docker-logrotate \<br>                docker-selinux \<br>                docker-engine-selinux \<br>                docker-engine<br></code></pre></td></tr></table></figure>
-<h3 id="使用-yum-安装">使用 yum 安装</h3>
-<p>安装依赖包：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install -y yum-utils<br></code></pre></td></tr></table></figure>
-<p>添加<code>yum</code>软件源：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager \<br>	--add-repp \<br>	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br>sudo sed -i <span class="hljs-string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo<br><br><span class="hljs-comment"># 官方源</span><br>sudo yum-config-manager \<br>	--add-repp<br>	https://download.docker.com/linux/centos/docker-ce.repo<br></code></pre></td></tr></table></figure>
-<p>如需测试版本的Docker：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum-config-manager --<span class="hljs-built_in">enable</span> docker-ce-test<br></code></pre></td></tr></table></figure>
-<h3 id="安装-docker-1">安装 Docker</h3>
-<p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></figure>
-<h3 id="centos8的额外设置">CentOS8的额外设置</h3>
-<p>由于 CentOS8 防火墙使用了 <code>nftables</code>，但 Docker 尚未支持
-<code>nftables</code>， 我们可以使用如下设置使用
-<code>iptables</code>：</p>
-<p>更改 <code>/etc/firewalld/firewalld.conf</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># FirewallBackend=nftables</span><br>FirewallBackend=iptables<br></code></pre></td></tr></table></figure>
-<p>或执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">firewall-cmd --permanent --zone=trusted --add-interface=docker0<br>firewall-cmd --reload<br></code></pre></td></tr></table></figure>
-<h3 id="启动-docker-1">启动 Docker</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></figure>
-<h3 id="建立-docker-用户组-1">建立 Docker 用户组</h3>
-<p>默认情况下，<code>docker</code> 命令会使用 <a
-href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
-与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
-组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
-系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
-<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
-<p>建立 <code>docker</code> 组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></figure>
-<p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo usermod -aG docekr <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure>
-<h3 id="添加内核参数">添加内核参数</h3>
-<p>如果在 CentOS 使用 Docker 看到下面的这些警告信息：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">WARNING: bridge-nf-call-iptables is disabled<br>WARNING: bridge-nf-call-ip6tables is disabled<br></code></pre></td></tr></table></figure>
-<p>添加内核配置参数以启用这些功能</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="hljs-string">EOF</span><br><span class="hljs-string">net.bridge.bridge-nf-call-ip6tables = 1</span><br><span class="hljs-string">net.bridge.bridge-nf-call-iptables = 1</span><br><span class="hljs-string">EOF</span><br></code></pre></td></tr></table></figure>
-<p>重新加载<code>sysctl.conf</code>即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo sysctl -p<br></code></pre></td></tr></table></figure>
-<h1 id="docker食用指南">Docker食用指南</h1>
-<h2 id="镜像使用指南">镜像使用指南</h2>
-<p>Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker
-会从镜像仓库下载该镜像。</p>
-<h3 id="获取镜像">获取镜像</h3>
-<p>从 Docker 镜像仓库获取镜像的命令是
-<code>docker pull</code>。命令格式是：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">docker pull [OPTIONS] NAME[:TAG|@DIGEST]<br></code></pre></td></tr></table></figure>
-<p><strong>参数说明：</strong></p>
-<ul>
-<li>TAG：标签（版本）</li>
-<li>DIGEST：摘要</li>
-<li>OPTIONS：
-<ul>
-<li>-a ：下载镜像仓库中所有的指定镜像；</li>
-<li>–disable-content-trust：跳过镜像验证（默认值是true）；</li>
-<li>–platform： 如果服务具有多平台功能，则设置平台；</li>
-<li>-q：一直详细输出；</li>
-</ul></li>
-</ul>
-<p>具体选项可以通过<code>docker pull --help</code>命令查看。</p>
-<p><strong>例子如下：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker pull ubuntu:18.04<br>18.04: Pulling from library/ubuntu<br>92dc2a97ff99: Pull complete<br>be13a9d27eb8: Pull complete<br>c8299583700a: Pull complete<br>Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26<br>Status: Downloaded newer image <span class="hljs-keyword">for</span> ubuntu:18.04<br>docker.io/library/ubuntu:18.04<br></code></pre></td></tr></table></figure>
-<p>上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub
-（<code>docker.io</code>）获取镜像。而镜像名称是
-<code>ubuntu:18.04</code>，因此将会获取官方镜像
-<code>library/ubuntu</code> 仓库中标签为 <code>18.04</code>
-的镜像。<code>docker pull</code>
-命令的输出结果最后一行给出了镜像的完整名称，即：
-<code>docker.io/library/ubuntu:18.04</code>。</p>
-<ul>
-<li>Docker
-镜像仓库地址：地址的格式一般是<code>域名/IP[:端口号]</code>。默认地址是
-Docker Hub（<code>docker.io</code>）。</li>
-<li>仓库名：仓库名是两段式名称，即<code>&lt;用户名&gt;/&lt;软件名&gt;</code>。对于
-Docker
-Hub，如果没有指定用户名，则默认是<code>library</code>，也就是官方镜像。</li>
-</ul>
-<h4 id="运行">运行</h4>
-<p>有了镜像后，可以以这个镜像为基础启动并运行一个容器。以上面的<code>Ubuntu:18.04</code>为例，如果打算启动里面的<code>bash</code>并且进行交互式操作的话，可以执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker run -it --<span class="hljs-built_in">rm</span> ubuntu:18:04 bash<br><br><span class="hljs-comment"># 以下是容器内操作</span><br>root@e7009c6ce357:/<span class="hljs-comment"># cat /etc/os-release</span><br>NAME=<span class="hljs-string">&quot;Ubuntu&quot;</span><br>VERSION=<span class="hljs-string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span><br>ID=ubuntu<br>ID_LIKE=debian<br>PRETTY_NAME=<span class="hljs-string">&quot;Ubuntu 18.04.1 LTS&quot;</span><br>VERSION_ID=<span class="hljs-string">&quot;18.04&quot;</span><br>HOME_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/&quot;</span><br>SUPPORT_URL=<span class="hljs-string">&quot;https://help.ubuntu.com/&quot;</span><br>BUG_REPORT_URL=<span class="hljs-string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span><br>PRIVACY_POLICY_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span><br>VERSION_CODENAME=bionic<br>UBUNTU_CODENAME=bionic<br></code></pre></td></tr></table></figure>
-<p><code>docker run</code>就是要运行容器的命令，这里简单说明一下上面用到的参数</p>
-<ul>
-<li><code>-it</code>：这是两个参数，一个是
-<code>-i</code>：交互式操作，一个是 <code>-t</code>
-终端。我们这里打算进入 <code>bash</code>
-执行一些命令并查看返回结果，因此我们需要交互式终端。</li>
-<li><code>--rm</code>：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动
-<code>docker rm</code>。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用
-<code>--rm</code> 可以避免浪费空间。</li>
-<li><code>ubuntu:18.04</code>：这是指用 <code>ubuntu:18.04</code>
-镜像为基础来启动容器。</li>
-<li><code>bash</code>：放在镜像名后的是
-<strong>命令</strong>，这里我们希望有个交互式 Shell，因此用的是
-<code>bash</code>。</li>
-</ul>
-<p>进入容器后就可以在 Shell
-下操作执行任何所需的命令。例如，上面就执行了<code>cat /etc/os-release</code>，这是Linux常用的查看当前系统版本的命令，从返回的结果可以看到容器内是<code>Ubuntu 18.04.1 LTS</code>系统。</p>
-<p>最后可以通过<code>exit</code>退出这个容器。</p>
-<h3 id="列出镜像">列出镜像</h3>
-<p>要想列出已经下载下来的镜像，可以使用 <code>docker image ls</code>
-命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span><br>REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE<br>redis                latest              5f515359c7f8        5 days ago          183 MB<br>nginx                latest              05a60462f8ba        5 days ago          181 MB<br>mongo                3.2                 fe9198c04d62        5 days ago          342 MB<br>&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB<br>ubuntu               18.04               329ed837d508        3 days ago          63.3MB<br>ubuntu               bionic              329ed837d508        3 days ago          63.3MB<br></code></pre></td></tr></table></figure>
-<p>列表包含了
-<code>仓库名</code>、<code>标签</code>、<code>镜像 ID</code>、<code>创建时间</code>
-以及 <code>所占用的空间</code>。</p>
-<p>其中仓库名、标签在之前的基础概念章节已经介绍过了。<strong>镜像
-ID</strong> 则是镜像的唯一标识，一个镜像可以对应多个
-<strong>标签</strong>。因此，在上面的例子中，我们可以看到
-<code>ubuntu:18.04</code> 和 <code>ubuntu:bionic</code> 拥有相同的
-ID，因为它们对应的是同一个镜像。</p>
-<h4 id="镜像体积">镜像体积</h4>
-<p>Docker
-Hub上显示的镜像体积是压缩后的体积大小，在镜像上传和下载的过程中镜像是保持压缩状态的。而使用命令<code>docker image ls</code>显示的是镜像下载到本地后展开的大小，准确说，是展开后的各层所占空间的总和。</p>
-<p>另外一个需要注意的问题是，<code>docker image ls</code>
-列表中的镜像体积总和并非是所有镜像实际硬盘消耗。由于 Docker
-镜像是多层存储结构，并且可以继承、复用，因此不同镜像可能会因为使用相同的基础镜像，从而拥有共同的层。相同的层只需要保存一份即可。</p>
-<p>通过<code>docker system df</code>命令来查看镜像、容器、数据卷所占用的空间。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker system <span class="hljs-built_in">df</span><br>TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE<br>Images          2         1         390.2MB   390.2MB (99%)<br>Containers      1         0         0B        0B<br>Local Volumes   0         0         0B        0B<br>Build Cache     18        0         789B      789B<br></code></pre></td></tr></table></figure>
-<h4 id="列出部分镜像">列出部分镜像</h4>
-<p>不加任何参数的情况下，<code>docker image ls</code>
-会列出所有顶层镜像，但是有时候我们只希望列出部分镜像。<code>docker image ls</code>
-有好几个参数可以帮助做到这个事情。</p>
-<p>根据仓库名列出仓库</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       latest    ba6acccedd29   23 months ago   72.8MB<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></figure>
-<p>列出特定的某个镜像，也就是说指定仓库名和标签</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu:18.04<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></figure>
-<h3 id="删除本地镜像">删除本地镜像</h3>
-<p>如果要删除本地的镜像，可以使用 <code>docker image rm</code>
-命令，其格式为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]<br></code></pre></td></tr></table></figure>
-<p>其中，<code>&lt;镜像&gt;</code> 可以是
-<code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者
-<code>镜像摘要</code>。</p>
-<p>我们可以用镜像的完整 ID，也称为
-<code>长 ID</code>，来删除镜像。使用脚本的时候可能会用长
-ID，但是人工输入就太累了，所以更多的时候是用 <code>短 ID</code>
-来删除镜像。<code>docker image ls</code> 默认列出的就已经是短 ID
-了，一般取前3个字符以上，只要足够区分于别的镜像就可以了。</p>
-<h2 id="操作容器">操作容器</h2>
-<h4 id="启动容器">启动容器、</h4>
-<p>启动容器有两种方式，一种是基于镜像新建一个容器并启动，另外一个是将在终止状态（<code>exited</code>）的容器重新启动。</p>
-<p>因为 Docker
-的容器实在太轻量级了，很多时候用户都是随时删除和新创建容器。</p>
-<h1 id="未完待续">未完待续</h1>
-<h1 id="参考文章">参考文章</h1>
-<p>更多详细教程请参考 <a
-href="https://docker-practice.github.io/zh-cn/">前言 · Docker --
-从入门到实践 (docker-practice.github.io)</a></p>
-<p><a
-href="https://blog.csdn.net/zhuzicc/article/details/118066353">Docker
-“pull“命令获取镜像，讲道理你真的会吗？_docker
-pull_zhuzicc的博客-CSDN博客</a></p>
-<p><a href="https://www.runoob.com/docker/docker-tutorial.html">Docker
-教程 | 菜鸟教程 (runoob.com)</a></p>
-<p><a
-href="https://zhuanlan.zhihu.com/p/435605760">全面的Docker快速入门教程 -
-知乎 (zhihu.com)</a></p>
-<p><a
-href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker
-入门教程 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>这是一篇用来测试的文章</title>
-    <url>//post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0.html</url>
+    <url>/lxqingfeng.github.io//post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0.html</url>
     <content><![CDATA[<p>此篇文章用来记录一些hexo的基本操作（纯新手）</p>
 <h1 id="插入图片">插入图片</h1>
 <h2 id="第一种方法">第一种方法</h2>

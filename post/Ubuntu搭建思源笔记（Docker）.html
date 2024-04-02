@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/lxqingfeng.github.io/img/fluid.png">
+  <link rel="icon" href="/lxqingfeng.github.io/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,7 +19,7 @@
     <meta name="description" content="安装docker和docker-compose的过程不再赘叙 编写docker-compose.yaml 在任意位置新建docker-compose.yaml文件 12mkdir &#x2F;siyuan &amp;&amp; cd &#x2F;siyuanvim docker-compose.yaml 写入以下信息（授权码自己修改） 123456789101112131415version: &#x27;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu搭建思源笔记（Docker）">
-<meta property="og:url" content="https://lxqingfeng.github.io/post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html">
+<meta property="og:url" content="https://ptz191610.cn/post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html">
 <meta property="og:site_name" content="宇宙无敌至尊神龙牛逼大王">
 <meta property="og:description" content="安装docker和docker-compose的过程不再赘叙 编写docker-compose.yaml 在任意位置新建docker-compose.yaml文件 12mkdir &#x2F;siyuan &amp;&amp; cd &#x2F;siyuanvim docker-compose.yaml 写入以下信息（授权码自己修改） 123456789101112131415version: &#x27;">
 <meta property="og:locale" content="zh_CN">
@@ -57,34 +57,34 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/lxqingfeng.github.io/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/lxqingfeng.github.io/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/lxqingfeng.github.io/css/highlight-dark.css" />
   
 
 
 
   
-<link rel="stylesheet" href="/css/fold_code.css">
-<link rel="stylesheet" href="/css/font_4094348_sfho0rs3ss.css">
+<link rel="stylesheet" href="/lxqingfeng.github.io/css/fold_code.css">
+<link rel="stylesheet" href="/lxqingfeng.github.io/css/font_4094348_sfho0rs3ss.css">
 
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"lxqingfeng.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"ptz191610.cn","root":"/lxqingfeng.github.io/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/lxqingfeng.github.io/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/lxqingfeng.github.io/js/utils.js" ></script>
+  <script  src="/lxqingfeng.github.io/js/color-schema.js" ></script>
   
 
 
@@ -101,7 +101,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/lxqingfeng.github.io/">
       <strong>我不是OP</strong>
     </a>
 
@@ -120,7 +120,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/lxqingfeng.github.io/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/lxqingfeng.github.io/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/lxqingfeng.github.io/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/lxqingfeng.github.io/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/lxqingfeng.github.io/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -180,7 +180,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Links/" target="_self">
+              <a class="nav-link" href="/lxqingfeng.github.io/Links/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -320,30 +320,30 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">账号：admin@example.com<br>密码：changeme<br></code></pre></td></tr></table></figure>
 <p>登录后点击界面上的<code>SSL Certificates</code>给服务添加证书</p>
 <p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" srcset="/img/loading.gif" lazyload /></p>
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" srcset="/lxqingfeng.github.io/img/loading.gif" lazyload /></p>
 <p>随后依次点击<code>Add SSL Certificates</code> --&gt;
 <code>Let's Encrypt</code></p>
 <p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/71e3f0f25ef4da4e94b3582f94819dbfe9c242.webp" srcset="/img/loading.gif" lazyload /></p>
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/71e3f0f25ef4da4e94b3582f94819dbfe9c242.webp" srcset="/lxqingfeng.github.io/img/loading.gif" lazyload /></p>
 <p>输入自己的域名并同意条款后点击<code>Save</code>等待几分钟即可</p>
 <p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/e128f87851b254bd1943900b3708b35dd30bb5.webp" srcset="/img/loading.gif" lazyload /></p>
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/e128f87851b254bd1943900b3708b35dd30bb5.webp" srcset="/lxqingfeng.github.io/img/loading.gif" lazyload /></p>
 <p>随后点击<code>Hosts</code> --&gt; <code>Proxy Hosts</code></p>
 <p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/61571b806083cfc0474401d4d6f6de63220c19.webp" srcset="/img/loading.gif" lazyload /></p>
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/61571b806083cfc0474401d4d6f6de63220c19.webp" srcset="/lxqingfeng.github.io/img/loading.gif" lazyload /></p>
 <p>点击<code>Add Proxy Host</code></p>
 <p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b392b7bf57bdd1724d0d6641f12a6e72.webp" srcset="/img/loading.gif" lazyload /></p>
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b392b7bf57bdd1724d0d6641f12a6e72.webp" srcset="/lxqingfeng.github.io/img/loading.gif" lazyload /></p>
 <p>根据自己的情况依次填入信息</p>
 <p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" srcset="/img/loading.gif" lazyload /></p>
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" srcset="/lxqingfeng.github.io/img/loading.gif" lazyload /></p>
 <p>其中<code>172.21.0.2</code>是容器IP 可以参考以下内容查看容器IP</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker inspect [容器ID] | grep IPAddress<br></code></pre></td></tr></table></figure>
 <p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" srcset="/img/loading.gif" lazyload /></p>
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" srcset="/lxqingfeng.github.io/img/loading.gif" lazyload /></p>
 <p>随后点击<code>SSL</code>添加刚刚申请的证书并启用<code>Force SSL</code>与<code>HTTP/2 Support</code></p>
 <p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b45547909dab5d903002d26bce5b801f6a.webp" srcset="/img/loading.gif" lazyload /></p>
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b45547909dab5d903002d26bce5b801f6a.webp" srcset="/lxqingfeng.github.io/img/loading.gif" lazyload /></p>
 <p>再点击<code>Save</code>保存即可通过域名访问思源笔记</p>
 <p>当然 前提是你的域名已经解析到了你的服务器</p>
 
@@ -364,7 +364,7 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
     
       <span class="category-chain">
         
-  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  <a href="/lxqingfeng.github.io/categories/Linux/" class="category-chain-item">Linux</a>
   
   
 
@@ -379,7 +379,7 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
+        <a href="/lxqingfeng.github.io/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
       
     </div>
   
@@ -392,7 +392,7 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
   <div class="license-box my-3">
     <div class="license-title">
       <div>Ubuntu搭建思源笔记（Docker）</div>
-      <div>https://lxqingfeng.github.io/post/Ubuntu搭建思源笔记（Docker）.html</div>
+      <div>https://ptz191610.cn/post/Ubuntu搭建思源笔记（Docker）.html</div>
     </div>
     <div class="license-meta">
       
@@ -436,7 +436,7 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%90%84%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8.html" title="Linux根目录下的各个目录的作用及各颜色类型">
+                      <a href="/lxqingfeng.github.io/post/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%90%84%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8.html" title="Linux根目录下的各个目录的作用及各颜色类型">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Linux根目录下的各个目录的作用及各颜色类型</span>
                         <span class="visible-mobile">上一篇</span>
@@ -446,7 +446,7 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
                   <article class="post-next col-6">
                     
                     
-                      <a href="/post/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E5%A4%A7%E5%85%A8.html" title="网络安全工具大全">
+                      <a href="/lxqingfeng.github.io/post/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E5%A4%A7%E5%85%A8.html" title="网络安全工具大全">
                         <span class="hidden-mobile">网络安全工具大全</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -582,8 +582,8 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/lxqingfeng.github.io/js/events.js" ></script>
+<script  src="/lxqingfeng.github.io/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -605,7 +605,7 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/lxqingfeng.github.io/js/img-lazyload.js" ></script>
   
 
 
@@ -747,7 +747,7 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
 
   <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/lxqingfeng.github.io/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -757,7 +757,7 @@ src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b455
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/lxqingfeng.github.io/js/boot.js" ></script>
 
 
   
