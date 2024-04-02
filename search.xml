@@ -257,6 +257,23 @@ href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
       </tags>
   </entry>
   <entry>
+    <title>imgTP图床测试</title>
+    <url>//post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html</url>
+    <content><![CDATA[<p>我是OP</p>
+<figure>
+<img src="imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95/EOFNREpH.jpg"
+alt="二次元图片" />
+<figcaption aria-hidden="true">二次元图片</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mysql常用命令</title>
     <url>//post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</url>
     <content><![CDATA[<p>1.连接数据库 mysql -u用户名 -p密码</p>
@@ -323,23 +340,6 @@ select * from 表名（查看数据表内容） create tables 表名; (创建表
       </categories>
       <tags>
         <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>imgTP图床测试</title>
-    <url>//post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html</url>
-    <content><![CDATA[<p>我是OP</p>
-<figure>
-<img src="imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95/EOFNREpH.jpg"
-alt="二次元图片" />
-<figcaption aria-hidden="true">二次元图片</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
