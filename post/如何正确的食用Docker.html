@@ -1,32 +1,970 @@
-extends includes/layout.pug
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="融化的巧克力">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Docker简介 什么是Docker？ Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何正确的食用Docker">
+<meta property="og:url" content="https://lxqingfeng.github.io/post/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%A3%9F%E7%94%A8Docker.html">
+<meta property="og:site_name" content="宇宙无敌至尊神龙牛逼大王">
+<meta property="og:description" content="Docker简介 什么是Docker？ Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-14T01:31:00.000Z">
+<meta property="article:modified_time" content="2023-11-04T12:22:36.025Z">
+<meta property="article:author" content="融化的巧克力">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>如何正确的食用Docker - 宇宙无敌至尊神龙牛逼大王</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/fold_code.css">
+<link rel="stylesheet" href="/css/font_4094348_sfho0rs3ss.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"lxqingfeng.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>我不是OP</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+  
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://img1.imgtp.com/2023/06/14/Mry7ptXh.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="如何正确的食用Docker"></span>
+          
+        </div>
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-14 09:31" pubdate>
+          2023年6月14日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          25 分钟
+        
+      </span>
+    
+
+    
+    
       
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">如何正确的食用Docker</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="docker简介">Docker简介</h1>
+<h2 id="什么是docker">什么是Docker？</h2>
+<p>Docker 是一个开源的应用容器引擎，基于 <a
+target="_blank" rel="noopener" href="https://www.runoob.com/go/go-tutorial.html">Go 语言</a> 并遵从
+Apache2.0 协议开源。</p>
+<p>Docker
+可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的
+Linux 机器上，也可以实现虚拟化。</p>
+<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的
+app）,更重要的是容器性能开销极低。</p>
+<h2 id="docker能干嘛">Docker能干嘛？</h2>
+<p>软件开发最大的麻烦事之一，就是环境配置。而Docker可以十分方便的配置它们。</p>
+<p>传统的虚拟机技术启动应用服务往往需要数分钟，而 <code>Docker</code>
+容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</p>
+<h2 id="docker的三个基本概念">Docker的三个基本概念</h2>
+<p>Docker 包括三个基本概念：</p>
+<ul>
+<li><strong>镜像（image）</strong>：Docker
+镜像（image），相当于是一个root文件系统。例如官方镜像 Ubuntu: 16.04
+就包含了完整的一套 Ubuntu 16.04 最小系统的root文件系统。</li>
+<li><strong>容器（Container）</strong>：容器（Container）<strong>由</strong>
+Docker 镜像（image）生成。一旦容器生成，就会同时存在两个文件： image
+文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</li>
+<li><strong>仓库（Repository）</strong>：镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a
+target="_blank" rel="noopener" href="https://docker-practice.github.io/zh-cn/repository/registry.html">Docker
+Registry</a> 就是这样的服务。</li>
+</ul>
+<h1 id="安装docker">安装Docker</h1>
+<p>Docker 分为 <code>stable</code> <code>test</code> 和
+<code>nightly</code> 三个更新频道。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/get-docker/">Get Docker | Docker
+Documentation</a></p>
+<h2 id="在ubuntu安装docker">在Ubuntu安装Docker</h2>
+<p>Docker 支持以下版本的 <a target="_blank" rel="noopener" href="https://ubuntu.com/server">Ubuntu</a>
+操作系统：</p>
+<ul>
+<li>Ubuntu Hirsute 21.04</li>
+<li>Ubuntu Groovy 20.10</li>
+<li>Ubuntu Focal 20.04 (LTS)</li>
+<li>Ubuntu Bionic 18.04 (LTS)</li>
+</ul>
+<p>Docker 可以安装在 64 位的 x86 平台或 ARM 平台上。Ubuntu
+发行版中，LTS（Long-Term-Support）长期支持版本，会获得 5
+年的升级维护支持，这样的版本会更稳定，因此在生产环境中推荐使用 LTS
+版本。</p>
+<h3 id="卸载旧版本docker">卸载旧版本Docker</h3>
+<p>旧版本的 Docker 称为 <code>docker</code> 或者
+<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get remove docker \<br>             docker-engine \<br>             docker.io<br></code></pre></td></tr></table></figure>
+<h3 id="使用-apt-安装">使用 APT 安装</h3>
+<p>由于 <code>apt</code> 源使用 HTTPS
+以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS
+传输的软件包以及 CA 证书。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get udate<br><br>sudo apt-get install \<br>	apt-transport-https \<br>    ca-certificates \<br>    curl \<br>    gnupg \<br>    lsb-release<br></code></pre></td></tr></table></figure>
+<p>为了确认所下载软件包的合法性，需要添加软件源的 <code>GPG</code>
+密钥。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br><br><span class="hljs-comment"># 官方源</span><br>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<br></code></pre></td></tr></table></figure>
+<p>向<code>sources.list</code>中添加 Docker 软件源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> \<br>  <span class="hljs-string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span><br><span class="hljs-string">  <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null<br><br><span class="hljs-comment"># 官方源</span><br><span class="hljs-comment"># $ echo \</span><br><span class="hljs-comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="hljs-comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></code></pre></td></tr></table></figure>
+<h3 id="安装-docker">安装 Docker</h3>
+<p>更新 apt 软件包缓存，并安装 <code>docker-ce</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></figure>
+<h3 id="启动-docker">启动 Docker</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></figure>
+<h3 id="建立-docker-用户组">建立 Docker 用户组</h3>
+<p>默认情况下，<code>docker</code> 命令会使用 <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
+与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
+组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
+系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
+<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
+<p>建立<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></figure>
+<p>将当前用户加入<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo usermod -aG docker <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure>
+<h2 id="在centos安装docker">在CentOS安装Docker</h2>
+<p>切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker</p>
+<p>Docker 支持 64 位版本 CentOS 7/8，并且要求内核版本不低于 3.10。
+CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如
+<code>overlay2</code>
+存储层驱动）无法使用，并且部分功能可能不太稳定。</p>
+<h3 id="卸载旧版本docker-1">卸载旧版本Docker</h3>
+<p>旧版本的 Docker 称为 <code>docker</code> 或者
+<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo yum remove docker \<br>                docker-client \<br>                docker-client-latest \<br>                docker-common \<br>                docker-latest \<br>                docker-latest-logrotate \<br>                docker-logrotate \<br>                docker-selinux \<br>                docker-engine-selinux \<br>                docker-engine<br></code></pre></td></tr></table></figure>
+<h3 id="使用-yum-安装">使用 yum 安装</h3>
+<p>安装依赖包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo yum install -y yum-utils<br></code></pre></td></tr></table></figure>
+<p>添加<code>yum</code>软件源：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo yum-config-manager \<br>	--add-repp \<br>	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br>sudo sed -i <span class="hljs-string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo<br><br><span class="hljs-comment"># 官方源</span><br>sudo yum-config-manager \<br>	--add-repp<br>	https://download.docker.com/linux/centos/docker-ce.repo<br></code></pre></td></tr></table></figure>
+<p>如需测试版本的Docker：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo yum-config-manager --<span class="hljs-built_in">enable</span> docker-ce-test<br></code></pre></td></tr></table></figure>
+<h3 id="安装-docker-1">安装 Docker</h3>
+<p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin<br></code></pre></td></tr></table></figure>
+<h3 id="centos8的额外设置">CentOS8的额外设置</h3>
+<p>由于 CentOS8 防火墙使用了 <code>nftables</code>，但 Docker 尚未支持
+<code>nftables</code>， 我们可以使用如下设置使用
+<code>iptables</code>：</p>
+<p>更改 <code>/etc/firewalld/firewalld.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># FirewallBackend=nftables</span><br>FirewallBackend=iptables<br></code></pre></td></tr></table></figure>
+<p>或执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">firewall-cmd --permanent --zone=trusted --add-interface=docker0<br>firewall-cmd --reload<br></code></pre></td></tr></table></figure>
+<h3 id="启动-docker-1">启动 Docker</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br>sudo systemctl start docker<br></code></pre></td></tr></table></figure>
+<h3 id="建立-docker-用户组-1">建立 Docker 用户组</h3>
+<p>默认情况下，<code>docker</code> 命令会使用 <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
+与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
+组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
+系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
+<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
+<p>建立 <code>docker</code> 组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></figure>
+<p>将当前用户加入<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo usermod -aG docekr <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure>
+<h3 id="添加内核参数">添加内核参数</h3>
+<p>如果在 CentOS 使用 Docker 看到下面的这些警告信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">WARNING: bridge-nf-call-iptables is disabled<br>WARNING: bridge-nf-call-ip6tables is disabled<br></code></pre></td></tr></table></figure>
+<p>添加内核配置参数以启用这些功能</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="hljs-string">EOF</span><br><span class="hljs-string">net.bridge.bridge-nf-call-ip6tables = 1</span><br><span class="hljs-string">net.bridge.bridge-nf-call-iptables = 1</span><br><span class="hljs-string">EOF</span><br></code></pre></td></tr></table></figure>
+<p>重新加载<code>sysctl.conf</code>即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo sysctl -p<br></code></pre></td></tr></table></figure>
+<h1 id="docker食用指南">Docker食用指南</h1>
+<h2 id="镜像使用指南">镜像使用指南</h2>
+<p>Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker
+会从镜像仓库下载该镜像。</p>
+<h3 id="获取镜像">获取镜像</h3>
+<p>从 Docker 镜像仓库获取镜像的命令是
+<code>docker pull</code>。命令格式是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull [OPTIONS] NAME[:TAG|@DIGEST]<br></code></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>TAG：标签（版本）</li>
+<li>DIGEST：摘要</li>
+<li>OPTIONS：
+<ul>
+<li>-a ：下载镜像仓库中所有的指定镜像；</li>
+<li>–disable-content-trust：跳过镜像验证（默认值是true）；</li>
+<li>–platform： 如果服务具有多平台功能，则设置平台；</li>
+<li>-q：一直详细输出；</li>
+</ul></li>
+</ul>
+<p>具体选项可以通过<code>docker pull --help</code>命令查看。</p>
+<p><strong>例子如下：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker pull ubuntu:18.04<br>18.04: Pulling from library/ubuntu<br>92dc2a97ff99: Pull complete<br>be13a9d27eb8: Pull complete<br>c8299583700a: Pull complete<br>Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26<br>Status: Downloaded newer image <span class="hljs-keyword">for</span> ubuntu:18.04<br>docker.io/library/ubuntu:18.04<br></code></pre></td></tr></table></figure>
+<p>上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub
+（<code>docker.io</code>）获取镜像。而镜像名称是
+<code>ubuntu:18.04</code>，因此将会获取官方镜像
+<code>library/ubuntu</code> 仓库中标签为 <code>18.04</code>
+的镜像。<code>docker pull</code>
+命令的输出结果最后一行给出了镜像的完整名称，即：
+<code>docker.io/library/ubuntu:18.04</code>。</p>
+<ul>
+<li>Docker
+镜像仓库地址：地址的格式一般是<code>域名/IP[:端口号]</code>。默认地址是
+Docker Hub（<code>docker.io</code>）。</li>
+<li>仓库名：仓库名是两段式名称，即<code>&lt;用户名&gt;/&lt;软件名&gt;</code>。对于
+Docker
+Hub，如果没有指定用户名，则默认是<code>library</code>，也就是官方镜像。</li>
+</ul>
+<h4 id="运行">运行</h4>
+<p>有了镜像后，可以以这个镜像为基础启动并运行一个容器。以上面的<code>Ubuntu:18.04</code>为例，如果打算启动里面的<code>bash</code>并且进行交互式操作的话，可以执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker run -it --<span class="hljs-built_in">rm</span> ubuntu:18:04 bash<br><br><span class="hljs-comment"># 以下是容器内操作</span><br>root@e7009c6ce357:/<span class="hljs-comment"># cat /etc/os-release</span><br>NAME=<span class="hljs-string">&quot;Ubuntu&quot;</span><br>VERSION=<span class="hljs-string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span><br>ID=ubuntu<br>ID_LIKE=debian<br>PRETTY_NAME=<span class="hljs-string">&quot;Ubuntu 18.04.1 LTS&quot;</span><br>VERSION_ID=<span class="hljs-string">&quot;18.04&quot;</span><br>HOME_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/&quot;</span><br>SUPPORT_URL=<span class="hljs-string">&quot;https://help.ubuntu.com/&quot;</span><br>BUG_REPORT_URL=<span class="hljs-string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span><br>PRIVACY_POLICY_URL=<span class="hljs-string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span><br>VERSION_CODENAME=bionic<br>UBUNTU_CODENAME=bionic<br></code></pre></td></tr></table></figure>
+<p><code>docker run</code>就是要运行容器的命令，这里简单说明一下上面用到的参数</p>
+<ul>
+<li><code>-it</code>：这是两个参数，一个是
+<code>-i</code>：交互式操作，一个是 <code>-t</code>
+终端。我们这里打算进入 <code>bash</code>
+执行一些命令并查看返回结果，因此我们需要交互式终端。</li>
+<li><code>--rm</code>：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动
+<code>docker rm</code>。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用
+<code>--rm</code> 可以避免浪费空间。</li>
+<li><code>ubuntu:18.04</code>：这是指用 <code>ubuntu:18.04</code>
+镜像为基础来启动容器。</li>
+<li><code>bash</code>：放在镜像名后的是
+<strong>命令</strong>，这里我们希望有个交互式 Shell，因此用的是
+<code>bash</code>。</li>
+</ul>
+<p>进入容器后就可以在 Shell
+下操作执行任何所需的命令。例如，上面就执行了<code>cat /etc/os-release</code>，这是Linux常用的查看当前系统版本的命令，从返回的结果可以看到容器内是<code>Ubuntu 18.04.1 LTS</code>系统。</p>
+<p>最后可以通过<code>exit</code>退出这个容器。</p>
+<h3 id="列出镜像">列出镜像</h3>
+<p>要想列出已经下载下来的镜像，可以使用 <code>docker image ls</code>
+命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span><br>REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE<br>redis                latest              5f515359c7f8        5 days ago          183 MB<br>nginx                latest              05a60462f8ba        5 days ago          181 MB<br>mongo                3.2                 fe9198c04d62        5 days ago          342 MB<br>&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB<br>ubuntu               18.04               329ed837d508        3 days ago          63.3MB<br>ubuntu               bionic              329ed837d508        3 days ago          63.3MB<br></code></pre></td></tr></table></figure>
+<p>列表包含了
+<code>仓库名</code>、<code>标签</code>、<code>镜像 ID</code>、<code>创建时间</code>
+以及 <code>所占用的空间</code>。</p>
+<p>其中仓库名、标签在之前的基础概念章节已经介绍过了。<strong>镜像
+ID</strong> 则是镜像的唯一标识，一个镜像可以对应多个
+<strong>标签</strong>。因此，在上面的例子中，我们可以看到
+<code>ubuntu:18.04</code> 和 <code>ubuntu:bionic</code> 拥有相同的
+ID，因为它们对应的是同一个镜像。</p>
+<h4 id="镜像体积">镜像体积</h4>
+<p>Docker
+Hub上显示的镜像体积是压缩后的体积大小，在镜像上传和下载的过程中镜像是保持压缩状态的。而使用命令<code>docker image ls</code>显示的是镜像下载到本地后展开的大小，准确说，是展开后的各层所占空间的总和。</p>
+<p>另外一个需要注意的问题是，<code>docker image ls</code>
+列表中的镜像体积总和并非是所有镜像实际硬盘消耗。由于 Docker
+镜像是多层存储结构，并且可以继承、复用，因此不同镜像可能会因为使用相同的基础镜像，从而拥有共同的层。相同的层只需要保存一份即可。</p>
+<p>通过<code>docker system df</code>命令来查看镜像、容器、数据卷所占用的空间。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker system <span class="hljs-built_in">df</span><br>TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE<br>Images          2         1         390.2MB   390.2MB (99%)<br>Containers      1         0         0B        0B<br>Local Volumes   0         0         0B        0B<br>Build Cache     18        0         789B      789B<br></code></pre></td></tr></table></figure>
+<h4 id="列出部分镜像">列出部分镜像</h4>
+<p>不加任何参数的情况下，<code>docker image ls</code>
+会列出所有顶层镜像，但是有时候我们只希望列出部分镜像。<code>docker image ls</code>
+有好几个参数可以帮助做到这个事情。</p>
+<p>根据仓库名列出仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       latest    ba6acccedd29   23 months ago   72.8MB<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></figure>
+<p>列出特定的某个镜像，也就是说指定仓库名和标签</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">ls</span> ubuntu:18.04<br>REPOSITORY   TAG       IMAGE ID       CREATED         SIZE<br>ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB<br></code></pre></td></tr></table></figure>
+<h3 id="删除本地镜像">删除本地镜像</h3>
+<p>如果要删除本地的镜像，可以使用 <code>docker image rm</code>
+命令，其格式为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker image <span class="hljs-built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]<br></code></pre></td></tr></table></figure>
+<p>其中，<code>&lt;镜像&gt;</code> 可以是
+<code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者
+<code>镜像摘要</code>。</p>
+<p>我们可以用镜像的完整 ID，也称为
+<code>长 ID</code>，来删除镜像。使用脚本的时候可能会用长
+ID，但是人工输入就太累了，所以更多的时候是用 <code>短 ID</code>
+来删除镜像。<code>docker image ls</code> 默认列出的就已经是短 ID
+了，一般取前3个字符以上，只要足够区分于别的镜像就可以了。</p>
+<h2 id="操作容器">操作容器</h2>
+<h4 id="启动容器">启动容器、</h4>
+<p>启动容器有两种方式，一种是基于镜像新建一个容器并启动，另外一个是将在终止状态（<code>exited</code>）的容器重新启动。</p>
+<p>因为 Docker
+的容器实在太轻量级了，很多时候用户都是随时删除和新创建容器。</p>
+<h1 id="未完待续">未完待续</h1>
+<h1 id="参考文章">参考文章</h1>
+<p>更多详细教程请参考 <a
+target="_blank" rel="noopener" href="https://docker-practice.github.io/zh-cn/">前言 · Docker --
+从入门到实践 (docker-practice.github.io)</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/zhuzicc/article/details/118066353">Docker
+“pull“命令获取镜像，讲道理你真的会吗？_docker
+pull_zhuzicc的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-tutorial.html">Docker
+教程 | 菜鸟教程 (runoob.com)</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/435605760">全面的Docker快速入门教程 -
+知乎 (zhihu.com)</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker
+入门教程 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
+      
+        <a href="/tags/Docker/" class="print-no-link">#Docker</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>如何正确的食用Docker</div>
+      <div>https://lxqingfeng.github.io/post/如何正确的食用Docker.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>融化的巧克力</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/hello-world.html" title="Hello World">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8tmux%EF%BC%88%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%89.html" title="如何使用tmux（终端工具）">
+                        <span class="hidden-mobile">如何使用tmux（终端工具）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
