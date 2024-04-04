@@ -1,63 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Ubuntu搭建思源笔记（Docker）</title>
-    <url>//post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html</url>
-    <content><![CDATA[<p>安装docker和docker-compose的过程不再赘叙</p>
-<h2 id="编写docker-compose.yaml">编写docker-compose.yaml</h2>
-<p>在任意位置新建<code>docker-compose.yaml</code>文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /siyuan &amp;&amp; cd /siyuan</span><br><span class="line">vim docker-compose.yaml</span><br></pre></td></tr></table></figure>
-<p>写入以下信息（授权码自己修改）</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">siyuan:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">b3log/siyuan:latest</span></span><br><span class="line">    <span class="attr">command:</span> [<span class="string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="string">&#x27;--accessAuthCode=授权码&#x27;</span>]</span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">siyuan</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">&#x27;1000:1000&#x27;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">6806</span><span class="string">:6806</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/siyuan/workspace:/siyuan/workspace</span></span><br></pre></td></tr></table></figure>
-<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
-<p>随后就可以通过<code>http://&lt;your_ip:6806&gt;</code>查看服务</p>
-<h2 id="自定义域名">自定义域名</h2>
-<p>使用<code>docker</code>安装运行<code>Nginx Proxy Manager</code></p>
-<p>在任意位置新建<code>docker-compose.yaml</code>文件并写入以下内容</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jc21/nginx-proxy-manager:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:80</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">81</span><span class="string">:81</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">443</span><span class="string">:443</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">DB_MYSQL_HOST:</span> <span class="string">db</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PORT:</span> <span class="number">3306</span></span><br><span class="line">      <span class="attr">DB_MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_NAME:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./letsencrypt:/etc/letsencrypt</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">yobasystems/alpine-mariadb:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/mysql:/var/lib/mysql</span></span><br></pre></td></tr></table></figure>
-<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
-<p>随后就可以通过<code>http://&lt;your_ip:81&gt;</code>查看服务</p>
-<h3 id="配置nginx-proxy-manager">配置Nginx Proxy Manager</h3>
-<p>通过<code>http://&lt;your_ip:81&gt;</code>打开浏览器查看服务</p>
-<p>输入默认账号密码登录服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">账号：admin@example.com</span><br><span class="line">密码：changeme</span><br></pre></td></tr></table></figure>
-<p>登录后点击界面上的<code>SSL Certificates</code>给服务添加证书</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" /></p>
-<p>随后依次点击<code>Add SSL Certificates</code> --&gt;
-<code>Let's Encrypt</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/71e3f0f25ef4da4e94b3582f94819dbfe9c242.webp" /></p>
-<p>输入自己的域名并同意条款后点击<code>Save</code>等待几分钟即可</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/e128f87851b254bd1943900b3708b35dd30bb5.webp" /></p>
-<p>随后点击<code>Hosts</code> --&gt; <code>Proxy Hosts</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/61571b806083cfc0474401d4d6f6de63220c19.webp" /></p>
-<p>点击<code>Add Proxy Host</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b392b7bf57bdd1724d0d6641f12a6e72.webp" /></p>
-<p>根据自己的情况依次填入信息</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" /></p>
-<p>其中<code>172.21.0.2</code>是容器IP 可以参考以下内容查看容器IP</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker inspect [容器ID] | grep IPAddress</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" /></p>
-<p>随后点击<code>SSL</code>添加刚刚申请的证书并启用<code>Force SSL</code>与<code>HTTP/2 Support</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b45547909dab5d903002d26bce5b801f6a.webp" /></p>
-<p>再点击<code>Save</code>保存即可通过域名访问思源笔记</p>
-<p>当然 前提是你的域名已经解析到了你的服务器</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C语言练习题</title>
     <url>//post/C%E8%AF%AD%E8%A8%80%E7%BB%83%E4%B9%A0%E9%A2%98.html</url>
     <content><![CDATA[<h1 id="打印输出1-30之间的所有素数">打印输出1-30之间的所有素数</h1>
@@ -127,6 +70,63 @@ id="输入6个整数仅用指针法实现按由大到小的顺序输出">输入6
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这行代码表示<code>main</code>函数的结束，<code>return 0;</code>表示程序执行成功。</p>
 ]]></content>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu搭建思源笔记（Docker）</title>
+    <url>//post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html</url>
+    <content><![CDATA[<p>安装docker和docker-compose的过程不再赘叙</p>
+<h2 id="编写docker-compose.yaml">编写docker-compose.yaml</h2>
+<p>在任意位置新建<code>docker-compose.yaml</code>文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /siyuan &amp;&amp; cd /siyuan</span><br><span class="line">vim docker-compose.yaml</span><br></pre></td></tr></table></figure>
+<p>写入以下信息（授权码自己修改）</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">siyuan:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">b3log/siyuan:latest</span></span><br><span class="line">    <span class="attr">command:</span> [<span class="string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="string">&#x27;--accessAuthCode=授权码&#x27;</span>]</span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">siyuan</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">&#x27;1000:1000&#x27;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">6806</span><span class="string">:6806</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/siyuan/workspace:/siyuan/workspace</span></span><br></pre></td></tr></table></figure>
+<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
+<p>随后就可以通过<code>http://&lt;your_ip:6806&gt;</code>查看服务</p>
+<h2 id="自定义域名">自定义域名</h2>
+<p>使用<code>docker</code>安装运行<code>Nginx Proxy Manager</code></p>
+<p>在任意位置新建<code>docker-compose.yaml</code>文件并写入以下内容</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jc21/nginx-proxy-manager:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:80</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">81</span><span class="string">:81</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">443</span><span class="string">:443</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">DB_MYSQL_HOST:</span> <span class="string">db</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PORT:</span> <span class="number">3306</span></span><br><span class="line">      <span class="attr">DB_MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_NAME:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./letsencrypt:/etc/letsencrypt</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">yobasystems/alpine-mariadb:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/mysql:/var/lib/mysql</span></span><br></pre></td></tr></table></figure>
+<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
+<p>随后就可以通过<code>http://&lt;your_ip:81&gt;</code>查看服务</p>
+<h3 id="配置nginx-proxy-manager">配置Nginx Proxy Manager</h3>
+<p>通过<code>http://&lt;your_ip:81&gt;</code>打开浏览器查看服务</p>
+<p>输入默认账号密码登录服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">账号：admin@example.com</span><br><span class="line">密码：changeme</span><br></pre></td></tr></table></figure>
+<p>登录后点击界面上的<code>SSL Certificates</code>给服务添加证书</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" /></p>
+<p>随后依次点击<code>Add SSL Certificates</code> --&gt;
+<code>Let's Encrypt</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/71e3f0f25ef4da4e94b3582f94819dbfe9c242.webp" /></p>
+<p>输入自己的域名并同意条款后点击<code>Save</code>等待几分钟即可</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/e128f87851b254bd1943900b3708b35dd30bb5.webp" /></p>
+<p>随后点击<code>Hosts</code> --&gt; <code>Proxy Hosts</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/61571b806083cfc0474401d4d6f6de63220c19.webp" /></p>
+<p>点击<code>Add Proxy Host</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b392b7bf57bdd1724d0d6641f12a6e72.webp" /></p>
+<p>根据自己的情况依次填入信息</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" /></p>
+<p>其中<code>172.21.0.2</code>是容器IP 可以参考以下内容查看容器IP</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker inspect [容器ID] | grep IPAddress</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" /></p>
+<p>随后点击<code>SSL</code>添加刚刚申请的证书并启用<code>Force SSL</code>与<code>HTTP/2 Support</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b45547909dab5d903002d26bce5b801f6a.webp" /></p>
+<p>再点击<code>Save</code>保存即可通过域名访问思源笔记</p>
+<p>当然 前提是你的域名已经解析到了你的服务器</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
       <tags>
         <tag>笔记</tag>
       </tags>
@@ -223,23 +223,6 @@ alt="ping" />
       </tags>
   </entry>
   <entry>
-    <title>imgTP图床测试</title>
-    <url>//post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html</url>
-    <content><![CDATA[<p>我是OP</p>
-<figure>
-<img src="imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95/EOFNREpH.jpg"
-alt="二次元图片" />
-<figcaption aria-hidden="true">二次元图片</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>//post/hello-world.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
@@ -271,6 +254,58 @@ href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
       </categories>
       <tags>
         <tag>开始</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>imgTP图床测试</title>
+    <url>//post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html</url>
+    <content><![CDATA[<p>我是OP</p>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E6%B2%B9%E7%94%BBLH.jpg"
+alt="OP图片" />
+<figcaption aria-hidden="true">OP图片</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>华为交换机基础配置</title>
+    <url>//post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html</url>
+    <content><![CDATA[<h1 id="基础配置命令">基础配置命令</h1>
+<p>启动后进入交换机</p>
+<h2 id="设置中文提示">设置中文提示</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">language-mode Chinese</span><br></pre></td></tr></table></figure>
+<h2 id="进入系统视图">进入系统视图</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view</span><br></pre></td></tr></table></figure>
+<h2 id="用户权限">用户权限</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user privilege level 15</span><br></pre></td></tr></table></figure>
+<h2 id="进入console配置">进入console配置</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user-interface console 0</span><br></pre></td></tr></table></figure>
+<h2 id="设置console密码">设置console密码</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">authentication-mode password</span><br><span class="line">set authentication password simple Huawei</span><br></pre></td></tr></table></figure>
+<h2 id="设置登录前后标语">设置登录前后标语</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">header login information &quot;This is SW1&quot;</span><br><span class="line">header shell information &quot;login succeed&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="创建与划分vlan">创建与划分vlan</h2>
+<h3 id="创建vlan">创建vlan</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vlan batch 10 20</span><br></pre></td></tr></table></figure>
+<h3 id="进入端口并划分vlan">进入端口并划分vlan</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 10</span><br></pre></td></tr></table></figure>
+<h2 id="设置vlan-ip">设置vlan IP</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface vlanif 10</span><br><span class="line">ip address 192.168.10.1 24</span><br></pre></td></tr></table></figure>
+<h2 id="查看配置结果">查看配置结果</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">display current-configuration</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>网络设备</category>
+      </categories>
+      <tags>
+        <tag>eNSP</tag>
       </tags>
   </entry>
   <entry>
@@ -340,40 +375,6 @@ select * from 表名（查看数据表内容） create tables 表名; (创建表
       </categories>
       <tags>
         <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>华为交换机基础配置</title>
-    <url>//post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html</url>
-    <content><![CDATA[<h1 id="基础配置命令">基础配置命令</h1>
-<p>启动后进入交换机</p>
-<h2 id="设置中文提示">设置中文提示</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">language-mode Chinese</span><br></pre></td></tr></table></figure>
-<h2 id="进入系统视图">进入系统视图</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view</span><br></pre></td></tr></table></figure>
-<h2 id="用户权限">用户权限</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user privilege level 15</span><br></pre></td></tr></table></figure>
-<h2 id="进入console配置">进入console配置</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user-interface console 0</span><br></pre></td></tr></table></figure>
-<h2 id="设置console密码">设置console密码</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">authentication-mode password</span><br><span class="line">set authentication password simple Huawei</span><br></pre></td></tr></table></figure>
-<h2 id="设置登录前后标语">设置登录前后标语</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">header login information &quot;This is SW1&quot;</span><br><span class="line">header shell information &quot;login succeed&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="创建与划分vlan">创建与划分vlan</h2>
-<h3 id="创建vlan">创建vlan</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vlan batch 10 20</span><br></pre></td></tr></table></figure>
-<h3 id="进入端口并划分vlan">进入端口并划分vlan</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 10</span><br></pre></td></tr></table></figure>
-<h2 id="设置vlan-ip">设置vlan IP</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface vlanif 10</span><br><span class="line">ip address 192.168.10.1 24</span><br></pre></td></tr></table></figure>
-<h2 id="查看配置结果">查看配置结果</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">display current-configuration</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>网络设备</category>
-      </categories>
-      <tags>
-        <tag>eNSP</tag>
       </tags>
   </entry>
   <entry>
@@ -846,6 +847,25 @@ href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker
         <tag>笔记</tag>
         <tag>Docker</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>课表与进度表</title>
+    <url>//post/%E8%AF%BE%E8%A1%A8%E4%B8%8E%E8%BF%9B%E5%BA%A6%E8%A1%A8.html</url>
+    <content><![CDATA[<h1 id="课表">课表</h1>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/4c21a9ae60a1b086dd311b78cec092a1.jpg"
+alt="四天早八课表" />)</p>
+<h1 id="进度表">进度表</h1>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E6%95%99%E5%AD%A6%E8%BF%9B%E5%BA%A6%E4%BF%A1%E5%AE%892331.png"
+alt="进度表" />
+<figcaption aria-hidden="true">进度表</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
   </entry>
   <entry>
     <title>网络安全工具大全</title>
@@ -1445,37 +1465,6 @@ alt="拓扑图" />
       <tags>
         <tag>笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>计网复习汁料</title>
-    <url>//post/%E8%AE%A1%E7%BD%91%E5%A4%8D%E4%B9%A0%E6%B1%81%E6%96%99.html</url>
-    <content><![CDATA[
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>课表与进度表</title>
-    <url>//post/%E8%AF%BE%E8%A1%A8%E4%B8%8E%E8%BF%9B%E5%BA%A6%E8%A1%A8.html</url>
-    <content><![CDATA[<h1 id="课表">课表</h1>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/4c21a9ae60a1b086dd311b78cec092a1.jpg"
-alt="四天早八课表" />)</p>
-<h1 id="进度表">进度表</h1>
-<figure>
-<img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E6%95%99%E5%AD%A6%E8%BF%9B%E5%BA%A6%E4%BF%A1%E5%AE%892331.png"
-alt="进度表" />
-<figcaption aria-hidden="true">进度表</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
   </entry>
   <entry>
     <title>这是一篇用来测试的文章</title>
