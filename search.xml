@@ -75,6 +75,95 @@ id="输入6个整数仅用指针法实现按由大到小的顺序输出">输入6
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu搭建思源笔记（Docker）</title>
+    <url>//post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html</url>
+    <content><![CDATA[<p>安装docker和docker-compose的过程不再赘叙</p>
+<h2 id="编写docker-compose.yaml">编写docker-compose.yaml</h2>
+<p>在任意位置新建<code>docker-compose.yaml</code>文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /siyuan &amp;&amp; cd /siyuan</span><br><span class="line">vim docker-compose.yaml</span><br></pre></td></tr></table></figure>
+<p>写入以下信息（授权码自己修改）</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">siyuan:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">b3log/siyuan:latest</span></span><br><span class="line">    <span class="attr">command:</span> [<span class="string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="string">&#x27;--accessAuthCode=授权码&#x27;</span>]</span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">siyuan</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">&#x27;1000:1000&#x27;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">6806</span><span class="string">:6806</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/siyuan/workspace:/siyuan/workspace</span></span><br></pre></td></tr></table></figure>
+<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
+<p>随后就可以通过<code>http://&lt;your_ip:6806&gt;</code>查看服务</p>
+<h2 id="自定义域名">自定义域名</h2>
+<p>使用<code>docker</code>安装运行<code>Nginx Proxy Manager</code></p>
+<p>在任意位置新建<code>docker-compose.yaml</code>文件并写入以下内容</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jc21/nginx-proxy-manager:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:80</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">81</span><span class="string">:81</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">443</span><span class="string">:443</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">DB_MYSQL_HOST:</span> <span class="string">db</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PORT:</span> <span class="number">3306</span></span><br><span class="line">      <span class="attr">DB_MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_NAME:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./letsencrypt:/etc/letsencrypt</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">yobasystems/alpine-mariadb:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/mysql:/var/lib/mysql</span></span><br></pre></td></tr></table></figure>
+<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
+<p>随后就可以通过<code>http://&lt;your_ip:81&gt;</code>查看服务</p>
+<h3 id="配置nginx-proxy-manager">配置Nginx Proxy Manager</h3>
+<p>通过<code>http://&lt;your_ip:81&gt;</code>打开浏览器查看服务</p>
+<p>输入默认账号密码登录服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">账号：admin@example.com</span><br><span class="line">密码：changeme</span><br></pre></td></tr></table></figure>
+<p>登录后点击界面上的<code>SSL Certificates</code>给服务添加证书</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" /></p>
+<p>随后依次点击<code>Add SSL Certificates</code> --&gt;
+<code>Let's Encrypt</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/71e3f0f25ef4da4e94b3582f94819dbfe9c242.webp" /></p>
+<p>输入自己的域名并同意条款后点击<code>Save</code>等待几分钟即可</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/e128f87851b254bd1943900b3708b35dd30bb5.webp" /></p>
+<p>随后点击<code>Hosts</code> --&gt; <code>Proxy Hosts</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/61571b806083cfc0474401d4d6f6de63220c19.webp" /></p>
+<p>点击<code>Add Proxy Host</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b392b7bf57bdd1724d0d6641f12a6e72.webp" /></p>
+<p>根据自己的情况依次填入信息</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" /></p>
+<p>其中<code>172.21.0.2</code>是容器IP 可以参考以下内容查看容器IP</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker inspect [容器ID] | grep IPAddress</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" /></p>
+<p>随后点击<code>SSL</code>添加刚刚申请的证书并启用<code>Force SSL</code>与<code>HTTP/2 Support</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b45547909dab5d903002d26bce5b801f6a.webp" /></p>
+<p>再点击<code>Save</code>保存即可通过域名访问思源笔记</p>
+<p>当然 前提是你的域名已经解析到了你的服务器</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>eNSP配置三层交换机</title>
+    <url>//post/eNSP%E9%85%8D%E7%BD%AE%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA.html</url>
+    <content><![CDATA[<h1 id="拓扑图">拓扑图</h1>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%8B%93%E6%89%91%E5%9B%BE.png"
+alt="拓扑图" />
+<figcaption aria-hidden="true">拓扑图</figcaption>
+</figure>
+<h1 id="配置过程">配置过程</h1>
+<h2 id="sw1配置">SW1配置</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view  # 进入系统视图</span><br><span class="line">vlan batch 10  # 创建vlan10</span><br><span class="line">interface GigabitEthernet 0/0/2  # 进入与PC1相连的接口</span><br><span class="line">port link-type access # 开启访问模式</span><br><span class="line">port default vlan 10  # 分配vlan</span><br><span class="line">interface GigabitEthernet 0/0/1  # 进入与SW2相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br></pre></td></tr></table></figure>
+<h2 id="sw2配置">SW2配置</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view  # 进入系统视图</span><br><span class="line">vlan batch 10 20 # 创建vlan10、20</span><br><span class="line">interface GigabitEthernet 0/0/1 # 进入与SW1相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br><span class="line">interface GigabitEthernet 0/0/2 # 进入与SW3相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br><span class="line">interface Vlanif 10  # 进入vlan10</span><br><span class="line">ip address 192.168.3.1 24 # 为vlan10设置IP</span><br><span class="line">interface Vlanif 20  # 进入vlan20</span><br><span class="line">ip address 192.168.6.1 24 # 为vlan20设置IP</span><br></pre></td></tr></table></figure>
+<h2 id="sw3配置">SW3配置</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view  # 进入系统视图</span><br><span class="line">vlan batch 20  # 创建vlan10</span><br><span class="line">interface GigabitEthernet 0/0/2  # 进入与PC1相连的接口</span><br><span class="line">port link-type access # 开启访问模式</span><br><span class="line">port default vlan 20  # 分配vlan</span><br><span class="line">interface GigabitEthernet 0/0/1  # 进入与SW2相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br></pre></td></tr></table></figure>
+<h1 id="测试">测试</h1>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/ping.png"
+alt="ping" />
+<figcaption aria-hidden="true">ping</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>网络设备</category>
+      </categories>
+      <tags>
+        <tag>eNSP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux根目录下的各个目录的作用及各颜色类型</title>
     <url>//post/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%90%84%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8.html</url>
     <content><![CDATA[<h1 id="linux根目录下的各个目录都有特定的作用和含义"><a
@@ -134,257 +223,6 @@ id="文件和目录的颜色代表了什么类型">文件和目录的颜色代�
       </tags>
   </entry>
   <entry>
-    <title>&#39;MySQL作业&#39;</title>
-    <url>//post/MySQL%E4%BD%9C%E4%B8%9A.html</url>
-    <content><![CDATA[<p>MySQL 45题作业</p>
-<p>代码均为AI生成，保真不保对。</p>
-<ol type="1">
-<li>查询"01"课程比"02"课程成绩高的学生的信息及课程分数：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    s1.score <span class="keyword">AS</span> <span class="string">&#x27;01_Score&#x27;</span>, </span><br><span class="line">    s2.score <span class="keyword">AS</span> <span class="string">&#x27;02_Score&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC s1 <span class="keyword">ON</span> s.SId <span class="operator">=</span> s1.SId <span class="keyword">AND</span> s1.CId <span class="operator">=</span> <span class="string">&#x27;01&#x27;</span></span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC s2 <span class="keyword">ON</span> s.SId <span class="operator">=</span> s2.SId <span class="keyword">AND</span> s2.CId <span class="operator">=</span> <span class="string">&#x27;02&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    s1.score <span class="operator">&gt;</span> s2.score;</span><br></pre></td></tr></table></figure>
-<ol start="2" type="1">
-<li>查询平均成绩大于等于60分的同学的学生编号和学生姓名和平均成绩：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Avg_Score&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname</span><br><span class="line"><span class="keyword">HAVING</span> </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="operator">&gt;=</span> <span class="number">60</span>;</span><br></pre></td></tr></table></figure>
-<ol start="3" type="1">
-<li>查询在SC表存在成绩的学生信息：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="keyword">DISTINCT</span> s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    s.Sage, </span><br><span class="line">    s.Ssex</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId;</span><br></pre></td></tr></table></figure>
-<ol start="4" type="1">
-<li>查询所有同学的学生编号、学生姓名、选课总数、所有课程的总成绩（没成绩的显示为
-null）：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    <span class="built_in">COUNT</span>(sc.CId) <span class="keyword">AS</span> <span class="string">&#x27;Total_Courses&#x27;</span>, </span><br><span class="line">    <span class="built_in">SUM</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Total_Score&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname;</span><br></pre></td></tr></table></figure>
-<ol start="5" type="1">
-<li>查询「李」姓老师的数量：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> <span class="string">&#x27;Number_of_Li_Teachers&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Teacher</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    Tname <span class="keyword">LIKE</span> <span class="string">&#x27;李%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<ol start="6" type="1">
-<li>查询学过「张三」老师授课的同学的信息：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    s.Sage, </span><br><span class="line">    s.Ssex</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Course c <span class="keyword">ON</span> sc.CId <span class="operator">=</span> c.CId</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Teacher t <span class="keyword">ON</span> c.TId <span class="operator">=</span> t.TId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    t.Tname <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<ol start="7" type="1">
-<li>查询没有学全所有课程的同学的信息：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    s.Sage, </span><br><span class="line">    s.Ssex</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    s.SId <span class="keyword">NOT</span> <span class="keyword">IN</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            sc.SId</span><br><span class="line">        <span class="keyword">FROM</span> </span><br><span class="line">            SC sc</span><br><span class="line">        <span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">            sc.SId</span><br><span class="line">        <span class="keyword">HAVING</span> </span><br><span class="line">            <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> sc.CId) <span class="operator">=</span> (<span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> Course)</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
-<ol start="8" type="1">
-<li>查询至少有一门课与学号为"01"的同学所学相同的同学的信息：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    s.Sage, </span><br><span class="line">    s.Ssex</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    sc.CId <span class="keyword">IN</span> (<span class="keyword">SELECT</span> CId <span class="keyword">FROM</span> SC <span class="keyword">WHERE</span> SId <span class="operator">=</span> <span class="string">&#x27;01&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<ol start="9" type="1">
-<li>查询和"01"号的同学学习的课程完全相同的其他同学的信息：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    s.Sage, </span><br><span class="line">    s.Ssex</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    s.SId <span class="operator">!=</span> <span class="string">&#x27;01&#x27;</span></span><br><span class="line"><span class="keyword">AND</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> </span><br><span class="line">        CId </span><br><span class="line">    <span class="keyword">FROM</span> </span><br><span class="line">        SC </span><br><span class="line">    <span class="keyword">WHERE</span> </span><br><span class="line">        SId <span class="operator">=</span> <span class="string">&#x27;01&#x27;</span></span><br><span class="line">    <span class="keyword">AND</span> CId <span class="keyword">NOT</span> <span class="keyword">IN</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            CId </span><br><span class="line">        <span class="keyword">FROM</span> </span><br><span class="line">            SC </span><br><span class="line">        <span class="keyword">WHERE</span> </span><br><span class="line">            SId <span class="operator">=</span> s.SId</span><br><span class="line">    )</span><br><span class="line">)</span><br><span class="line"><span class="keyword">AND</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> </span><br><span class="line">        CId </span><br><span class="line">    <span class="keyword">FROM</span> </span><br><span class="line">        SC </span><br><span class="line">    <span class="keyword">WHERE</span> </span><br><span class="line">        SId <span class="operator">=</span> s.SId</span><br><span class="line">    <span class="keyword">AND</span> CId <span class="keyword">NOT</span> <span class="keyword">IN</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            CId </span><br><span class="line">        <span class="keyword">FROM</span> </span><br><span class="line">            SC </span><br><span class="line">        <span class="keyword">WHERE</span> </span><br><span class="line">            SId <span class="operator">=</span> <span class="string">&#x27;01&#x27;</span></span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<ol start="10" type="1">
-<li>查询没学过"张三"老师讲授的任一门课程的学生姓名：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.Sname</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> </span><br><span class="line">        <span class="operator">*</span></span><br><span class="line">    <span class="keyword">FROM</span> </span><br><span class="line">        SC sc</span><br><span class="line">    <span class="keyword">JOIN</span> </span><br><span class="line">        Course c <span class="keyword">ON</span> sc.CId <span class="operator">=</span> c.CId</span><br><span class="line">    <span class="keyword">JOIN</span> </span><br><span class="line">        Teacher t <span class="keyword">ON</span> c.TId <span class="operator">=</span> t.TId</span><br><span class="line">    <span class="keyword">WHERE</span> </span><br><span class="line">        t.Tname <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span></span><br><span class="line">    <span class="keyword">AND</span> </span><br><span class="line">        s.SId <span class="operator">=</span> sc.SId</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<ol start="11" type="1">
-<li>查询两门及其以上不及格课程的同学的学号，姓名及其平均成绩：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Avg_Score&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    sc.SId <span class="keyword">IN</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            SId </span><br><span class="line">        <span class="keyword">FROM</span> </span><br><span class="line">            SC </span><br><span class="line">        <span class="keyword">WHERE</span> </span><br><span class="line">            score <span class="operator">&lt;</span> <span class="number">60</span></span><br><span class="line">        <span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">            SId</span><br><span class="line">        <span class="keyword">HAVING</span> </span><br><span class="line">            <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;=</span> <span class="number">2</span></span><br><span class="line">    )</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname;</span><br></pre></td></tr></table></figure>
-<ol start="12" type="1">
-<li>检索"01"课程分数小于60，按分数降序排列的学生信息：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    s.Sage, </span><br><span class="line">    s.Ssex, </span><br><span class="line">    sc.score</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    sc.CId <span class="operator">=</span> <span class="string">&#x27;01&#x27;</span></span><br><span class="line"><span class="keyword">AND</span> </span><br><span class="line">    sc.score <span class="operator">&lt;</span> <span class="number">60</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">    sc.score <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
-<ol start="13" type="1">
-<li>按平均成绩从高到低显示所有学生的所有课程的成绩以及平均成绩：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Avg_Score&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
-<ol start="14" type="1">
-<li>查询各科成绩最高分、最低分和平均分：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname, </span><br><span class="line">    <span class="built_in">MAX</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Highest_Score&#x27;</span>, </span><br><span class="line">    <span class="built_in">MIN</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Lowest_Score&#x27;</span>, </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Average_Score&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Course c</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> c.CId <span class="operator">=</span> sc.CId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname;</span><br></pre></td></tr></table></figure>
-<ol start="15" type="1">
-<li>按各科成绩进行排序，并显示排名，Score重复时保留名次空缺（这需要数据库支持窗口函数）：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    sc.CId, </span><br><span class="line">    sc.score, </span><br><span class="line">    <span class="built_in">RANK</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> sc.CId <span class="keyword">ORDER</span> <span class="keyword">BY</span> sc.score <span class="keyword">DESC</span>) <span class="keyword">AS</span> <span class="string">&#x27;Rank&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    SC sc</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Student s <span class="keyword">ON</span> sc.SId <span class="operator">=</span> s.SId;</span><br></pre></td></tr></table></figure>
-<ol start="16" type="1">
-<li>查询学生的总成绩，并进行排名，总分重复时保留名次空缺：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    <span class="built_in">SUM</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Total_Score&#x27;</span>, </span><br><span class="line">    <span class="built_in">RANK</span>() <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">SUM</span>(sc.score) <span class="keyword">DESC</span>) <span class="keyword">AS</span> <span class="string">&#x27;Rank&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname;</span><br></pre></td></tr></table></figure>
-<ol start="17" type="1">
-<li>统计各科成绩各分数段人数：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname,</span><br><span class="line">    <span class="built_in">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sc.score <span class="operator">&gt;=</span> <span class="number">85</span> <span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">&#x27;[100-85]&#x27;</span>,</span><br><span class="line">    <span class="built_in">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sc.score <span class="operator">&lt;</span> <span class="number">85</span> <span class="keyword">AND</span> sc.score <span class="operator">&gt;=</span> <span class="number">70</span> <span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">&#x27;[85-70]&#x27;</span>,</span><br><span class="line">    <span class="built_in">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sc.score <span class="operator">&lt;</span> <span class="number">70</span> <span class="keyword">AND</span> sc.score <span class="operator">&gt;=</span> <span class="number">60</span> <span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">&#x27;[70-60]&#x27;</span>,</span><br><span class="line">    <span class="built_in">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sc.score <span class="operator">&lt;</span> <span class="number">60</span> <span class="keyword">THEN</span> <span class="number">1</span> <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="string">&#x27;[60-0]&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Course c</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> c.CId <span class="operator">=</span> sc.CId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname;</span><br></pre></td></tr></table></figure>
-<ol start="18" type="1">
-<li>查询各科成绩前三名的记录：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    sc.CId, </span><br><span class="line">    sc.score</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    SC sc</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Student s <span class="keyword">ON</span> sc.SId <span class="operator">=</span> s.SId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> score)</span><br><span class="line">        <span class="keyword">FROM</span> </span><br><span class="line">            SC sc2</span><br><span class="line">        <span class="keyword">WHERE</span> </span><br><span class="line">            sc2.score <span class="operator">&gt;</span> sc.score</span><br><span class="line">        <span class="keyword">AND</span> </span><br><span class="line">            sc2.CId <span class="operator">=</span> sc.CId</span><br><span class="line">    ) <span class="operator">&lt;</span> <span class="number">3</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">    sc.CId, </span><br><span class="line">    sc.score <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
-<ol start="19" type="1">
-<li>查询每门课程被选修的学生数：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname, </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> sc.SId) <span class="keyword">AS</span> <span class="string">&#x27;Number_of_Students&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Course c</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> c.CId <span class="operator">=</span> sc.CId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname;</span><br></pre></td></tr></table></figure>
-<ol start="20" type="1">
-<li>查询出只选修两门课程的学生学号和姓名：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname</span><br><span class="line"><span class="keyword">HAVING</span> </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> sc.CId) <span class="operator">=</span> <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-<ol start="21" type="1">
-<li>查询男生、女生人数：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    Ssex, </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> <span class="string">&#x27;Number_of_Students&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    Ssex;</span><br></pre></td></tr></table></figure>
-<ol start="22" type="1">
-<li>查询名字中含有「风」字的学生信息：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    Sname <span class="keyword">LIKE</span> <span class="string">&#x27;%风%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<ol start="23" type="1">
-<li>查询同名同性学生名单，并统计同名人数：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    Sname, </span><br><span class="line">    Ssex, </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> <span class="string">&#x27;Number_of_Same_Name&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    Sname, </span><br><span class="line">    Ssex</span><br><span class="line"><span class="keyword">HAVING</span> </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<ol start="24" type="1">
-<li>查询1990年出生的学生名单：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    <span class="keyword">YEAR</span>(Sage) <span class="operator">=</span> <span class="number">1990</span>;</span><br></pre></td></tr></table></figure>
-<ol start="25" type="1">
-<li>查询每门课程的平均成绩，结果按平均成绩降序排列，平均成绩相同时，按课程编号升序排列：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname, </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Avg_Score&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Course c</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> c.CId <span class="operator">=</span> sc.CId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="keyword">DESC</span>, </span><br><span class="line">    c.CId <span class="keyword">ASC</span>;</span><br></pre></td></tr></table></figure>
-<ol start="26" type="1">
-<li>查询平均成绩大于等于85的所有学生的学号、姓名和平均成绩：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="keyword">AS</span> <span class="string">&#x27;Avg_Score&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname</span><br><span class="line"><span class="keyword">HAVING</span> </span><br><span class="line">    <span class="built_in">AVG</span>(sc.score) <span class="operator">&gt;=</span> <span class="number">85</span>;</span><br></pre></td></tr></table></figure>
-<ol start="27" type="1">
-<li>查询课程名称为「数学」，且分数低于60的学生姓名和分数：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.Sname, </span><br><span class="line">    sc.score</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    SC sc</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Student s <span class="keyword">ON</span> sc.SId <span class="operator">=</span> s.SId</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Course c <span class="keyword">ON</span> sc.CId <span class="operator">=</span> c.CId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    c.Cname <span class="operator">=</span> <span class="string">&#x27;数学&#x27;</span></span><br><span class="line"><span class="keyword">AND</span> </span><br><span class="line">    sc.score <span class="operator">&lt;</span> <span class="number">60</span>;</span><br></pre></td></tr></table></figure>
-<ol start="28" type="1">
-<li>查询所有学生的课程及分数情况（存在学生没成绩，没选课的情况）：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname, </span><br><span class="line">    sc.score</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    Course c <span class="keyword">ON</span> sc.CId <span class="operator">=</span> c.CId;</span><br></pre></td></tr></table></figure>
-<ol start="29" type="1">
-<li>查询任何一门课程成绩在70分以上的姓名、课程名称和分数：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.Sname, </span><br><span class="line">    c.Cname, </span><br><span class="line">    sc.score</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    SC sc</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Student s <span class="keyword">ON</span> sc.SId <span class="operator">=</span> s.SId</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Course c <span class="keyword">ON</span> sc.CId <span class="operator">=</span> c.CId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    sc.score <span class="operator">&gt;</span> <span class="number">70</span>;</span><br></pre></td></tr></table></figure>
-<ol start="30" type="1">
-<li>查询不及格的课程：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    SC sc</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Course c <span class="keyword">ON</span> sc.CId <span class="operator">=</span> c.CId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    sc.score <span class="operator">&lt;</span> <span class="number">60</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname;</span><br></pre></td></tr></table></figure>
-<ol start="31" type="1">
-<li>查询课程编号为01且课程成绩在80分以上的学生的学号和姓名：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    sc.CId <span class="operator">=</span> <span class="string">&#x27;01&#x27;</span></span><br><span class="line"><span class="keyword">AND</span> </span><br><span class="line">    sc.score <span class="operator">&gt;</span> <span class="number">80</span>;</span><br></pre></td></tr></table></figure>
-<ol start="32" type="1">
-<li>求每门课程的学生人数：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname, </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> s.SId) <span class="keyword">AS</span> <span class="string">&#x27;Number_of_Students&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Course c</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> c.CId <span class="operator">=</span> sc.CId</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">    Student s <span class="keyword">ON</span> sc.SId <span class="operator">=</span> s.SId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname;</span><br></pre></td></tr></table></figure>
-<ol start="33" type="1">
-<li>假设成绩不重复，查询选修「张三」老师所授课程的学生中，成绩最高的学生信息及其成绩：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    sc.CId, </span><br><span class="line">    sc.score</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    SC sc</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Student s <span class="keyword">ON</span> sc.SId <span class="operator">=</span> s.SId</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Course c <span class="keyword">ON</span> sc.CId <span class="operator">=</span> c.CId</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Teacher t <span class="keyword">ON</span> c.TId <span class="operator">=</span> t.TId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    t.Tname <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">    sc.score <span class="keyword">DESC</span></span><br><span class="line">LIMIT <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<ol start="34" type="1">
-<li>假设成绩有重复的情况下，查询选修「张三」老师所授课程的学生中，成绩最高的学生信息及其成绩：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    sc.CId, </span><br><span class="line">    sc.score</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    SC sc</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Student s <span class="keyword">ON</span> sc.SId <span class="operator">=</span> s.SId</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Course c <span class="keyword">ON</span> sc.CId <span class="operator">=</span> c.CId</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Teacher t <span class="keyword">ON</span> c.TId <span class="operator">=</span> t.TId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    t.Tname <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span></span><br><span class="line"><span class="keyword">AND</span> </span><br><span class="line">    sc.score <span class="operator">=</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            <span class="built_in">MAX</span>(score)</span><br><span class="line">        <span class="keyword">FROM</span> </span><br><span class="line">            SC</span><br><span class="line">        <span class="keyword">JOIN</span> </span><br><span class="line">            Course <span class="keyword">ON</span> SC.CId <span class="operator">=</span> Course.CId</span><br><span class="line">        <span class="keyword">JOIN</span> </span><br><span class="line">            Teacher <span class="keyword">ON</span> Course.TId <span class="operator">=</span> Teacher.TId</span><br><span class="line">        <span class="keyword">WHERE</span> </span><br><span class="line">            Teacher.Tname <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span></span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
-<ol start="35" type="1">
-<li>查询不同课程成绩相同的学生的学生编号、课程编号、学生成绩：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    sc1.SId, </span><br><span class="line">    sc1.CId <span class="keyword">AS</span> <span class="string">&#x27;CId_1&#x27;</span>, </span><br><span class="line">    sc2.CId <span class="keyword">AS</span> <span class="string">&#x27;CId_2&#x27;</span>, </span><br><span class="line">    sc1.score</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    SC sc1</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc2 <span class="keyword">ON</span> sc1.SId <span class="operator">=</span> sc2.SId <span class="keyword">AND</span> sc1.CId <span class="operator">!=</span> sc2.CId <span class="keyword">AND</span> sc1.score <span class="operator">=</span> sc2.score;</span><br></pre></td></tr></table></figure>
-<ol start="36" type="1">
-<li>查询每门功成绩最好的前两名：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    sc.CId, </span><br><span class="line">    sc.score</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    SC sc</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    Student s <span class="keyword">ON</span> sc.SId <span class="operator">=</span> s.SId</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> score)</span><br><span class="line">        <span class="keyword">FROM</span> </span><br><span class="line">            SC sc2</span><br><span class="line">        <span class="keyword">WHERE</span> </span><br><span class="line">            sc2.score <span class="operator">&gt;</span> sc.score</span><br><span class="line">        <span class="keyword">AND</span> </span><br><span class="line">            sc2.CId <span class="operator">=</span> sc.CId</span><br><span class="line">    ) <span class="operator">&lt;</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">    sc.CId, </span><br><span class="line">    sc.score <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
-<ol start="37" type="1">
-<li>统计每门课程的学生选修人数（超过5人的课程才统计）：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname, </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> sc.SId) <span class="keyword">AS</span> <span class="string">&#x27;Number_of_Students&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Course c</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> c.CId <span class="operator">=</span> sc.CId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    c.CId, </span><br><span class="line">    c.Cname</span><br><span class="line"><span class="keyword">HAVING</span> </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> sc.SId) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
-<ol start="38" type="1">
-<li>检索至少选修两门课程的学生学号：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">JOIN</span> </span><br><span class="line">    SC sc <span class="keyword">ON</span> s.SId <span class="operator">=</span> sc.SId</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> </span><br><span class="line">    s.SId</span><br><span class="line"><span class="keyword">HAVING</span> </span><br><span class="line">    <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> sc.CId) <span class="operator">&gt;=</span> <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-<ol start="39" type="1">
-<li>查询选修了全部课程的学生信息：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    s.SId, </span><br><span class="line">    s.Sname, </span><br><span class="line">    s.Sage, </span><br><span class="line">    s.Ssex</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student s</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> </span><br><span class="line">            c.CId</span><br><span class="line">        <span class="keyword">FROM</span> </span><br><span class="line">            Course c</span><br><span class="line">        <span class="keyword">WHERE</span> </span><br><span class="line">            <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">                <span class="keyword">SELECT</span> </span><br><span class="line">                    sc.SId</span><br><span class="line">                <span class="keyword">FROM</span> </span><br><span class="line">                    SC sc</span><br><span class="line">                <span class="keyword">WHERE</span> </span><br><span class="line">                    sc.SId <span class="operator">=</span> s.SId</span><br><span class="line">                <span class="keyword">AND</span> </span><br><span class="line">                    sc.CId <span class="operator">=</span> c.CId</span><br><span class="line">            )</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
-<ol start="40" type="1">
-<li>查询各学生的年龄，只按年份来算：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    SId, </span><br><span class="line">    Sname, </span><br><span class="line">    <span class="keyword">YEAR</span>(CURDATE()) <span class="operator">-</span> <span class="keyword">YEAR</span>(Sage) <span class="keyword">AS</span> <span class="string">&#x27;Age&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student;</span><br></pre></td></tr></table></figure>
-<ol start="41" type="1">
-<li>按照出生日期来算，当前月日 &lt; 出生年月的月日则，年龄减一：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    SId, </span><br><span class="line">    Sname, </span><br><span class="line">    <span class="keyword">CASE</span> </span><br><span class="line">        <span class="keyword">WHEN</span> DATE_FORMAT(CURDATE(), <span class="string">&#x27;%m%d&#x27;</span>) <span class="operator">&lt;</span> DATE_FORMAT(Sage, <span class="string">&#x27;%m%d&#x27;</span>) </span><br><span class="line">        <span class="keyword">THEN</span> <span class="keyword">YEAR</span>(CURDATE()) <span class="operator">-</span> <span class="keyword">YEAR</span>(Sage) <span class="operator">-</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">ELSE</span> <span class="keyword">YEAR</span>(CURDATE()) <span class="operator">-</span> <span class="keyword">YEAR</span>(Sage)</span><br><span class="line">    <span class="keyword">END</span> <span class="keyword">AS</span> <span class="string">&#x27;Age&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student;</span><br></pre></td></tr></table></figure>
-<ol start="42" type="1">
-<li>查询本周过生日的学生：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    SId, </span><br><span class="line">    Sname, </span><br><span class="line">    Sage</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    WEEK(Sage) <span class="operator">=</span> WEEK(CURDATE())</span><br><span class="line"><span class="keyword">AND</span> </span><br><span class="line">    <span class="keyword">YEAR</span>(Sage) <span class="operator">!=</span> <span class="keyword">YEAR</span>(CURDATE());</span><br></pre></td></tr></table></figure>
-<ol start="43" type="1">
-<li>查询下周过生日的学生：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    SId, </span><br><span class="line">    Sname, </span><br><span class="line">    Sage</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    WEEK(Sage) <span class="operator">=</span> WEEK(DATE_ADD(CURDATE(), <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>))</span><br><span class="line"><span class="keyword">AND</span> </span><br><span class="line">    <span class="keyword">YEAR</span>(Sage) <span class="operator">!=</span> <span class="keyword">YEAR</span>(CURDATE());</span><br></pre></td></tr></table></figure>
-<ol start="44" type="1">
-<li>查询本月过生日的学生：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    SId, </span><br><span class="line">    Sname, </span><br><span class="line">    Sage</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    <span class="keyword">MONTH</span>(Sage) <span class="operator">=</span> <span class="keyword">MONTH</span>(CURDATE())</span><br><span class="line"><span class="keyword">AND</span> </span><br><span class="line">    <span class="keyword">YEAR</span>(Sage) <span class="operator">!=</span> <span class="keyword">YEAR</span>(CURDATE());</span><br></pre></td></tr></table></figure>
-<ol start="45" type="1">
-<li>查询下月过生日的学生：</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    SId, </span><br><span class="line">    Sname, </span><br><span class="line">    Sage</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    Student</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    <span class="keyword">MONTH</span>(Sage) <span class="operator">=</span> <span class="keyword">MONTH</span>(DATE_ADD(CURDATE(), <span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">MONTH</span>))</span><br><span class="line"><span class="keyword">AND</span> </span><br><span class="line">    <span class="keyword">YEAR</span>(Sage) <span class="operator">!=</span> <span class="keyword">YEAR</span>(CURDATE());</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu搭建思源笔记（Docker）</title>
-    <url>//post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html</url>
-    <content><![CDATA[<p>安装docker和docker-compose的过程不再赘叙</p>
-<h2 id="编写docker-compose.yaml">编写docker-compose.yaml</h2>
-<p>在任意位置新建<code>docker-compose.yaml</code>文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /siyuan &amp;&amp; cd /siyuan</span><br><span class="line">vim docker-compose.yaml</span><br></pre></td></tr></table></figure>
-<p>写入以下信息（授权码自己修改）</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">siyuan:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">b3log/siyuan:latest</span></span><br><span class="line">    <span class="attr">command:</span> [<span class="string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="string">&#x27;--accessAuthCode=授权码&#x27;</span>]</span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">siyuan</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">&#x27;1000:1000&#x27;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">6806</span><span class="string">:6806</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/siyuan/workspace:/siyuan/workspace</span></span><br></pre></td></tr></table></figure>
-<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
-<p>随后就可以通过<code>http://&lt;your_ip:6806&gt;</code>查看服务</p>
-<h2 id="自定义域名">自定义域名</h2>
-<p>使用<code>docker</code>安装运行<code>Nginx Proxy Manager</code></p>
-<p>在任意位置新建<code>docker-compose.yaml</code>文件并写入以下内容</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jc21/nginx-proxy-manager:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:80</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">81</span><span class="string">:81</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">443</span><span class="string">:443</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">DB_MYSQL_HOST:</span> <span class="string">db</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PORT:</span> <span class="number">3306</span></span><br><span class="line">      <span class="attr">DB_MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_NAME:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./letsencrypt:/etc/letsencrypt</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">yobasystems/alpine-mariadb:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/mysql:/var/lib/mysql</span></span><br></pre></td></tr></table></figure>
-<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
-<p>随后就可以通过<code>http://&lt;your_ip:81&gt;</code>查看服务</p>
-<h3 id="配置nginx-proxy-manager">配置Nginx Proxy Manager</h3>
-<p>通过<code>http://&lt;your_ip:81&gt;</code>打开浏览器查看服务</p>
-<p>输入默认账号密码登录服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">账号：admin@example.com</span><br><span class="line">密码：changeme</span><br></pre></td></tr></table></figure>
-<p>登录后点击界面上的<code>SSL Certificates</code>给服务添加证书</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" /></p>
-<p>随后依次点击<code>Add SSL Certificates</code> --&gt;
-<code>Let's Encrypt</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/71e3f0f25ef4da4e94b3582f94819dbfe9c242.webp" /></p>
-<p>输入自己的域名并同意条款后点击<code>Save</code>等待几分钟即可</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/e128f87851b254bd1943900b3708b35dd30bb5.webp" /></p>
-<p>随后点击<code>Hosts</code> --&gt; <code>Proxy Hosts</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/61571b806083cfc0474401d4d6f6de63220c19.webp" /></p>
-<p>点击<code>Add Proxy Host</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b392b7bf57bdd1724d0d6641f12a6e72.webp" /></p>
-<p>根据自己的情况依次填入信息</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" /></p>
-<p>其中<code>172.21.0.2</code>是容器IP 可以参考以下内容查看容器IP</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker inspect [容器ID] | grep IPAddress</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" /></p>
-<p>随后点击<code>SSL</code>添加刚刚申请的证书并启用<code>Force SSL</code>与<code>HTTP/2 Support</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b45547909dab5d903002d26bce5b801f6a.webp" /></p>
-<p>再点击<code>Save</code>保存即可通过域名访问思源笔记</p>
-<p>当然 前提是你的域名已经解析到了你的服务器</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>//post/hello-world.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
@@ -416,38 +254,6 @@ href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
       </categories>
       <tags>
         <tag>开始</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>eNSP配置三层交换机</title>
-    <url>//post/eNSP%E9%85%8D%E7%BD%AE%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA.html</url>
-    <content><![CDATA[<h1 id="拓扑图">拓扑图</h1>
-<figure>
-<img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%8B%93%E6%89%91%E5%9B%BE.png"
-alt="拓扑图" />
-<figcaption aria-hidden="true">拓扑图</figcaption>
-</figure>
-<h1 id="配置过程">配置过程</h1>
-<h2 id="sw1配置">SW1配置</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view  # 进入系统视图</span><br><span class="line">vlan batch 10  # 创建vlan10</span><br><span class="line">interface GigabitEthernet 0/0/2  # 进入与PC1相连的接口</span><br><span class="line">port link-type access # 开启访问模式</span><br><span class="line">port default vlan 10  # 分配vlan</span><br><span class="line">interface GigabitEthernet 0/0/1  # 进入与SW2相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br></pre></td></tr></table></figure>
-<h2 id="sw2配置">SW2配置</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view  # 进入系统视图</span><br><span class="line">vlan batch 10 20 # 创建vlan10、20</span><br><span class="line">interface GigabitEthernet 0/0/1 # 进入与SW1相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br><span class="line">interface GigabitEthernet 0/0/2 # 进入与SW3相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br><span class="line">interface Vlanif 10  # 进入vlan10</span><br><span class="line">ip address 192.168.3.1 24 # 为vlan10设置IP</span><br><span class="line">interface Vlanif 20  # 进入vlan20</span><br><span class="line">ip address 192.168.6.1 24 # 为vlan20设置IP</span><br></pre></td></tr></table></figure>
-<h2 id="sw3配置">SW3配置</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view  # 进入系统视图</span><br><span class="line">vlan batch 20  # 创建vlan10</span><br><span class="line">interface GigabitEthernet 0/0/2  # 进入与PC1相连的接口</span><br><span class="line">port link-type access # 开启访问模式</span><br><span class="line">port default vlan 20  # 分配vlan</span><br><span class="line">interface GigabitEthernet 0/0/1  # 进入与SW2相连的接口</span><br><span class="line">port link-type trunk # 开启trunk模式</span><br><span class="line">port trunk allow-pass vlan 10 20 # 允许vlan10、20通过这个trunk端口</span><br></pre></td></tr></table></figure>
-<h1 id="测试">测试</h1>
-<figure>
-<img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/ping.png"
-alt="ping" />
-<figcaption aria-hidden="true">ping</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>网络设备</category>
-      </categories>
-      <tags>
-        <tag>eNSP</tag>
       </tags>
   </entry>
   <entry>
@@ -538,40 +344,6 @@ select * from 表名（查看数据表内容） create tables 表名; (创建表
       </tags>
   </entry>
   <entry>
-    <title>华为交换机基础配置</title>
-    <url>//post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html</url>
-    <content><![CDATA[<h1 id="基础配置命令">基础配置命令</h1>
-<p>启动后进入交换机</p>
-<h2 id="设置中文提示">设置中文提示</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">language-mode Chinese</span><br></pre></td></tr></table></figure>
-<h2 id="进入系统视图">进入系统视图</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view</span><br></pre></td></tr></table></figure>
-<h2 id="用户权限">用户权限</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user privilege level 15</span><br></pre></td></tr></table></figure>
-<h2 id="进入console配置">进入console配置</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user-interface console 0</span><br></pre></td></tr></table></figure>
-<h2 id="设置console密码">设置console密码</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">authentication-mode password</span><br><span class="line">set authentication password simple Huawei</span><br></pre></td></tr></table></figure>
-<h2 id="设置登录前后标语">设置登录前后标语</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">header login information &quot;This is SW1&quot;</span><br><span class="line">header shell information &quot;login succeed&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="创建与划分vlan">创建与划分vlan</h2>
-<h3 id="创建vlan">创建vlan</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vlan batch 10 20</span><br></pre></td></tr></table></figure>
-<h3 id="进入端口并划分vlan">进入端口并划分vlan</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 10</span><br></pre></td></tr></table></figure>
-<h2 id="设置vlan-ip">设置vlan IP</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface vlanif 10</span><br><span class="line">ip address 192.168.10.1 24</span><br></pre></td></tr></table></figure>
-<h2 id="查看配置结果">查看配置结果</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">display current-configuration</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>网络设备</category>
-      </categories>
-      <tags>
-        <tag>eNSP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>地毯模组（Carpet）的使用教程</title>
     <url>//post/%E5%9C%B0%E6%AF%AF%E6%A8%A1%E7%BB%84%EF%BC%88Carpet%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html</url>
     <content><![CDATA[<p>Carpet中文百科</p>
@@ -628,6 +400,40 @@ Carpet - MC百科|最大的Minecraft中文MOD百科 (mcmod.cn)</a></p>
       </categories>
       <tags>
         <tag>我的世界mod教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>华为交换机基础配置</title>
+    <url>//post/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE.html</url>
+    <content><![CDATA[<h1 id="基础配置命令">基础配置命令</h1>
+<p>启动后进入交换机</p>
+<h2 id="设置中文提示">设置中文提示</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">language-mode Chinese</span><br></pre></td></tr></table></figure>
+<h2 id="进入系统视图">进入系统视图</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">system-view</span><br></pre></td></tr></table></figure>
+<h2 id="用户权限">用户权限</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user privilege level 15</span><br></pre></td></tr></table></figure>
+<h2 id="进入console配置">进入console配置</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user-interface console 0</span><br></pre></td></tr></table></figure>
+<h2 id="设置console密码">设置console密码</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">authentication-mode password</span><br><span class="line">set authentication password simple Huawei</span><br></pre></td></tr></table></figure>
+<h2 id="设置登录前后标语">设置登录前后标语</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">header login information &quot;This is SW1&quot;</span><br><span class="line">header shell information &quot;login succeed&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="创建与划分vlan">创建与划分vlan</h2>
+<h3 id="创建vlan">创建vlan</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vlan batch 10 20</span><br></pre></td></tr></table></figure>
+<h3 id="进入端口并划分vlan">进入端口并划分vlan</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface GigabitEthernet 0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 10</span><br></pre></td></tr></table></figure>
+<h2 id="设置vlan-ip">设置vlan IP</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface vlanif 10</span><br><span class="line">ip address 192.168.10.1 24</span><br></pre></td></tr></table></figure>
+<h2 id="查看配置结果">查看配置结果</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">display current-configuration</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>网络设备</category>
+      </categories>
+      <tags>
+        <tag>eNSP</tag>
       </tags>
   </entry>
   <entry>
@@ -785,281 +591,6 @@ href="https://blog.csdn.net/CSSDCC/article/details/121231906">https://blog.csdn.
       <tags>
         <tag>工具</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>如何正确的食用Docker</title>
-    <url>//post/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%A3%9F%E7%94%A8Docker.html</url>
-    <content><![CDATA[<h1 id="docker简介">Docker简介</h1>
-<h2 id="什么是docker">什么是Docker？</h2>
-<p>Docker 是一个开源的应用容器引擎，基于 <a
-href="https://www.runoob.com/go/go-tutorial.html">Go 语言</a> 并遵从
-Apache2.0 协议开源。</p>
-<p>Docker
-可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的
-Linux 机器上，也可以实现虚拟化。</p>
-<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的
-app）,更重要的是容器性能开销极低。</p>
-<h2 id="docker能干嘛">Docker能干嘛？</h2>
-<p>软件开发最大的麻烦事之一，就是环境配置。而Docker可以十分方便的配置它们。</p>
-<p>传统的虚拟机技术启动应用服务往往需要数分钟，而 <code>Docker</code>
-容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</p>
-<h2 id="docker的三个基本概念">Docker的三个基本概念</h2>
-<p>Docker 包括三个基本概念：</p>
-<ul>
-<li><strong>镜像（image）</strong>：Docker
-镜像（image），相当于是一个root文件系统。例如官方镜像 Ubuntu: 16.04
-就包含了完整的一套 Ubuntu 16.04 最小系统的root文件系统。</li>
-<li><strong>容器（Container）</strong>：容器（Container）<strong>由</strong>
-Docker 镜像（image）生成。一旦容器生成，就会同时存在两个文件： image
-文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</li>
-<li><strong>仓库（Repository）</strong>：镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a
-href="https://docker-practice.github.io/zh-cn/repository/registry.html">Docker
-Registry</a> 就是这样的服务。</li>
-</ul>
-<h1 id="安装docker">安装Docker</h1>
-<p>Docker 分为 <code>stable</code> <code>test</code> 和
-<code>nightly</code> 三个更新频道。</p>
-<p><a href="https://docs.docker.com/get-docker/">Get Docker | Docker
-Documentation</a></p>
-<h2 id="在ubuntu安装docker">在Ubuntu安装Docker</h2>
-<p>Docker 支持以下版本的 <a href="https://ubuntu.com/server">Ubuntu</a>
-操作系统：</p>
-<ul>
-<li>Ubuntu Hirsute 21.04</li>
-<li>Ubuntu Groovy 20.10</li>
-<li>Ubuntu Focal 20.04 (LTS)</li>
-<li>Ubuntu Bionic 18.04 (LTS)</li>
-</ul>
-<p>Docker 可以安装在 64 位的 x86 平台或 ARM 平台上。Ubuntu
-发行版中，LTS（Long-Term-Support）长期支持版本，会获得 5
-年的升级维护支持，这样的版本会更稳定，因此在生产环境中推荐使用 LTS
-版本。</p>
-<h3 id="卸载旧版本docker">卸载旧版本Docker</h3>
-<p>旧版本的 Docker 称为 <code>docker</code> 或者
-<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove docker \</span><br><span class="line">             docker-engine \</span><br><span class="line">             docker.io</span><br></pre></td></tr></table></figure>
-<h3 id="使用-apt-安装">使用 APT 安装</h3>
-<p>由于 <code>apt</code> 源使用 HTTPS
-以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS
-传输的软件包以及 CA 证书。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get udate</span><br><span class="line"></span><br><span class="line">sudo apt-get install \</span><br><span class="line">	apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg \</span><br><span class="line">    lsb-release</span><br></pre></td></tr></table></figure>
-<p>为了确认所下载软件包的合法性，需要添加软件源的 <code>GPG</code>
-密钥。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
-<p>向<code>sources.list</code>中添加 Docker 软件源</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> \</span><br><span class="line">  <span class="string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span></span><br><span class="line"><span class="string">  <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line"><span class="comment"># $ echo \</span></span><br><span class="line"><span class="comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></span><br></pre></td></tr></table></figure>
-<h3 id="安装-docker">安装 Docker</h3>
-<p>更新 apt 软件包缓存，并安装 <code>docker-ce</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
-<h3 id="启动-docker">启动 Docker</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-<h3 id="建立-docker-用户组">建立 Docker 用户组</h3>
-<p>默认情况下，<code>docker</code> 命令会使用 <a
-href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
-与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
-组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
-系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
-<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
-<p>建立<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
-<p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
-<h2 id="在centos安装docker">在CentOS安装Docker</h2>
-<p>切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker</p>
-<p>Docker 支持 64 位版本 CentOS 7/8，并且要求内核版本不低于 3.10。
-CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如
-<code>overlay2</code>
-存储层驱动）无法使用，并且部分功能可能不太稳定。</p>
-<h3 id="卸载旧版本docker-1">卸载旧版本Docker</h3>
-<p>旧版本的 Docker 称为 <code>docker</code> 或者
-<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                docker-client \</span><br><span class="line">                docker-client-latest \</span><br><span class="line">                docker-common \</span><br><span class="line">                docker-latest \</span><br><span class="line">                docker-latest-logrotate \</span><br><span class="line">                docker-logrotate \</span><br><span class="line">                docker-selinux \</span><br><span class="line">                docker-engine-selinux \</span><br><span class="line">                docker-engine</span><br></pre></td></tr></table></figure>
-<h3 id="使用-yum-安装">使用 yum 安装</h3>
-<p>安装依赖包：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br></pre></td></tr></table></figure>
-<p>添加<code>yum</code>软件源：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp \</span><br><span class="line">	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp</span><br><span class="line">	https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-<p>如需测试版本的Docker：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> docker-ce-test</span><br></pre></td></tr></table></figure>
-<h3 id="安装-docker-1">安装 Docker</h3>
-<p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
-<h3 id="centos8的额外设置">CentOS8的额外设置</h3>
-<p>由于 CentOS8 防火墙使用了 <code>nftables</code>，但 Docker 尚未支持
-<code>nftables</code>， 我们可以使用如下设置使用
-<code>iptables</code>：</p>
-<p>更改 <code>/etc/firewalld/firewalld.conf</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># FirewallBackend=nftables</span></span><br><span class="line">FirewallBackend=iptables</span><br></pre></td></tr></table></figure>
-<p>或执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=trusted --add-interface=docker0</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<h3 id="启动-docker-1">启动 Docker</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-<h3 id="建立-docker-用户组-1">建立 Docker 用户组</h3>
-<p>默认情况下，<code>docker</code> 命令会使用 <a
-href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
-与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
-组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
-系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
-<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
-<p>建立 <code>docker</code> 组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
-<p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docekr <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
-<h3 id="添加内核参数">添加内核参数</h3>
-<p>如果在 CentOS 使用 Docker 看到下面的这些警告信息：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">WARNING: bridge-nf-call-iptables is disabled</span><br><span class="line">WARNING: bridge-nf-call-ip6tables is disabled</span><br></pre></td></tr></table></figure>
-<p>添加内核配置参数以启用这些功能</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="string">EOF</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
-<p>重新加载<code>sysctl.conf</code>即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
-<h1 id="docker食用指南">Docker食用指南</h1>
-<h2 id="镜像使用指南">镜像使用指南</h2>
-<p>Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker
-会从镜像仓库下载该镜像。</p>
-<h3 id="获取镜像">获取镜像</h3>
-<p>从 Docker 镜像仓库获取镜像的命令是
-<code>docker pull</code>。命令格式是：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull [OPTIONS] NAME[:TAG|@DIGEST]</span><br></pre></td></tr></table></figure>
-<p><strong>参数说明：</strong></p>
-<ul>
-<li>TAG：标签（版本）</li>
-<li>DIGEST：摘要</li>
-<li>OPTIONS：
-<ul>
-<li>-a ：下载镜像仓库中所有的指定镜像；</li>
-<li>–disable-content-trust：跳过镜像验证（默认值是true）；</li>
-<li>–platform： 如果服务具有多平台功能，则设置平台；</li>
-<li>-q：一直详细输出；</li>
-</ul></li>
-</ul>
-<p>具体选项可以通过<code>docker pull --help</code>命令查看。</p>
-<p><strong>例子如下：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker pull ubuntu:18.04</span><br><span class="line">18.04: Pulling from library/ubuntu</span><br><span class="line">92dc2a97ff99: Pull complete</span><br><span class="line">be13a9d27eb8: Pull complete</span><br><span class="line">c8299583700a: Pull complete</span><br><span class="line">Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> ubuntu:18.04</span><br><span class="line">docker.io/library/ubuntu:18.04</span><br></pre></td></tr></table></figure>
-<p>上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub
-（<code>docker.io</code>）获取镜像。而镜像名称是
-<code>ubuntu:18.04</code>，因此将会获取官方镜像
-<code>library/ubuntu</code> 仓库中标签为 <code>18.04</code>
-的镜像。<code>docker pull</code>
-命令的输出结果最后一行给出了镜像的完整名称，即：
-<code>docker.io/library/ubuntu:18.04</code>。</p>
-<ul>
-<li>Docker
-镜像仓库地址：地址的格式一般是<code>域名/IP[:端口号]</code>。默认地址是
-Docker Hub（<code>docker.io</code>）。</li>
-<li>仓库名：仓库名是两段式名称，即<code>&lt;用户名&gt;/&lt;软件名&gt;</code>。对于
-Docker
-Hub，如果没有指定用户名，则默认是<code>library</code>，也就是官方镜像。</li>
-</ul>
-<h4 id="运行">运行</h4>
-<p>有了镜像后，可以以这个镜像为基础启动并运行一个容器。以上面的<code>Ubuntu:18.04</code>为例，如果打算启动里面的<code>bash</code>并且进行交互式操作的话，可以执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker run -it --<span class="built_in">rm</span> ubuntu:18:04 bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下是容器内操作</span></span><br><span class="line">root@e7009c6ce357:/<span class="comment"># cat /etc/os-release</span></span><br><span class="line">NAME=<span class="string">&quot;Ubuntu&quot;</span></span><br><span class="line">VERSION=<span class="string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span></span><br><span class="line">ID=ubuntu</span><br><span class="line">ID_LIKE=debian</span><br><span class="line">PRETTY_NAME=<span class="string">&quot;Ubuntu 18.04.1 LTS&quot;</span></span><br><span class="line">VERSION_ID=<span class="string">&quot;18.04&quot;</span></span><br><span class="line">HOME_URL=<span class="string">&quot;https://www.ubuntu.com/&quot;</span></span><br><span class="line">SUPPORT_URL=<span class="string">&quot;https://help.ubuntu.com/&quot;</span></span><br><span class="line">BUG_REPORT_URL=<span class="string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span></span><br><span class="line">PRIVACY_POLICY_URL=<span class="string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span></span><br><span class="line">VERSION_CODENAME=bionic</span><br><span class="line">UBUNTU_CODENAME=bionic</span><br></pre></td></tr></table></figure>
-<p><code>docker run</code>就是要运行容器的命令，这里简单说明一下上面用到的参数</p>
-<ul>
-<li><code>-it</code>：这是两个参数，一个是
-<code>-i</code>：交互式操作，一个是 <code>-t</code>
-终端。我们这里打算进入 <code>bash</code>
-执行一些命令并查看返回结果，因此我们需要交互式终端。</li>
-<li><code>--rm</code>：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动
-<code>docker rm</code>。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用
-<code>--rm</code> 可以避免浪费空间。</li>
-<li><code>ubuntu:18.04</code>：这是指用 <code>ubuntu:18.04</code>
-镜像为基础来启动容器。</li>
-<li><code>bash</code>：放在镜像名后的是
-<strong>命令</strong>，这里我们希望有个交互式 Shell，因此用的是
-<code>bash</code>。</li>
-</ul>
-<p>进入容器后就可以在 Shell
-下操作执行任何所需的命令。例如，上面就执行了<code>cat /etc/os-release</code>，这是Linux常用的查看当前系统版本的命令，从返回的结果可以看到容器内是<code>Ubuntu 18.04.1 LTS</code>系统。</p>
-<p>最后可以通过<code>exit</code>退出这个容器。</p>
-<h3 id="列出镜像">列出镜像</h3>
-<p>要想列出已经下载下来的镜像，可以使用 <code>docker image ls</code>
-命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span></span><br><span class="line">REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">redis                latest              5f515359c7f8        5 days ago          183 MB</span><br><span class="line">nginx                latest              05a60462f8ba        5 days ago          181 MB</span><br><span class="line">mongo                3.2                 fe9198c04d62        5 days ago          342 MB</span><br><span class="line">&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB</span><br><span class="line">ubuntu               18.04               329ed837d508        3 days ago          63.3MB</span><br><span class="line">ubuntu               bionic              329ed837d508        3 days ago          63.3MB</span><br></pre></td></tr></table></figure>
-<p>列表包含了
-<code>仓库名</code>、<code>标签</code>、<code>镜像 ID</code>、<code>创建时间</code>
-以及 <code>所占用的空间</code>。</p>
-<p>其中仓库名、标签在之前的基础概念章节已经介绍过了。<strong>镜像
-ID</strong> 则是镜像的唯一标识，一个镜像可以对应多个
-<strong>标签</strong>。因此，在上面的例子中，我们可以看到
-<code>ubuntu:18.04</code> 和 <code>ubuntu:bionic</code> 拥有相同的
-ID，因为它们对应的是同一个镜像。</p>
-<h4 id="镜像体积">镜像体积</h4>
-<p>Docker
-Hub上显示的镜像体积是压缩后的体积大小，在镜像上传和下载的过程中镜像是保持压缩状态的。而使用命令<code>docker image ls</code>显示的是镜像下载到本地后展开的大小，准确说，是展开后的各层所占空间的总和。</p>
-<p>另外一个需要注意的问题是，<code>docker image ls</code>
-列表中的镜像体积总和并非是所有镜像实际硬盘消耗。由于 Docker
-镜像是多层存储结构，并且可以继承、复用，因此不同镜像可能会因为使用相同的基础镜像，从而拥有共同的层。相同的层只需要保存一份即可。</p>
-<p>通过<code>docker system df</code>命令来查看镜像、容器、数据卷所占用的空间。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker system <span class="built_in">df</span></span><br><span class="line">TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE</span><br><span class="line">Images          2         1         390.2MB   390.2MB (99%)</span><br><span class="line">Containers      1         0         0B        0B</span><br><span class="line">Local Volumes   0         0         0B        0B</span><br><span class="line">Build Cache     18        0         789B      789B</span><br></pre></td></tr></table></figure>
-<h4 id="列出部分镜像">列出部分镜像</h4>
-<p>不加任何参数的情况下，<code>docker image ls</code>
-会列出所有顶层镜像，但是有时候我们只希望列出部分镜像。<code>docker image ls</code>
-有好几个参数可以帮助做到这个事情。</p>
-<p>根据仓库名列出仓库</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       latest    ba6acccedd29   23 months ago   72.8MB</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
-<p>列出特定的某个镜像，也就是说指定仓库名和标签</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu:18.04</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
-<h3 id="删除本地镜像">删除本地镜像</h3>
-<p>如果要删除本地的镜像，可以使用 <code>docker image rm</code>
-命令，其格式为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]</span><br></pre></td></tr></table></figure>
-<p>其中，<code>&lt;镜像&gt;</code> 可以是
-<code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者
-<code>镜像摘要</code>。</p>
-<p>我们可以用镜像的完整 ID，也称为
-<code>长 ID</code>，来删除镜像。使用脚本的时候可能会用长
-ID，但是人工输入就太累了，所以更多的时候是用 <code>短 ID</code>
-来删除镜像。<code>docker image ls</code> 默认列出的就已经是短 ID
-了，一般取前3个字符以上，只要足够区分于别的镜像就可以了。</p>
-<h2 id="操作容器">操作容器</h2>
-<h4 id="启动容器">启动容器、</h4>
-<p>启动容器有两种方式，一种是基于镜像新建一个容器并启动，另外一个是将在终止状态（<code>exited</code>）的容器重新启动。</p>
-<p>因为 Docker
-的容器实在太轻量级了，很多时候用户都是随时删除和新创建容器。</p>
-<h1 id="未完待续">未完待续</h1>
-<h1 id="参考文章">参考文章</h1>
-<p>更多详细教程请参考 <a
-href="https://docker-practice.github.io/zh-cn/">前言 · Docker --
-从入门到实践 (docker-practice.github.io)</a></p>
-<p><a
-href="https://blog.csdn.net/zhuzicc/article/details/118066353">Docker
-“pull“命令获取镜像，讲道理你真的会吗？_docker
-pull_zhuzicc的博客-CSDN博客</a></p>
-<p><a href="https://www.runoob.com/docker/docker-tutorial.html">Docker
-教程 | 菜鸟教程 (runoob.com)</a></p>
-<p><a
-href="https://zhuanlan.zhihu.com/p/435605760">全面的Docker快速入门教程 -
-知乎 (zhihu.com)</a></p>
-<p><a
-href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker
-入门教程 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>课表与进度表</title>
-    <url>//post/%E8%AF%BE%E8%A1%A8%E4%B8%8E%E8%BF%9B%E5%BA%A6%E8%A1%A8.html</url>
-    <content><![CDATA[<h1 id="课表">课表</h1>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/4c21a9ae60a1b086dd311b78cec092a1.jpg"
-alt="四天早八课表" />)</p>
-<h1 id="进度表">进度表</h1>
-<figure>
-<img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E6%95%99%E5%AD%A6%E8%BF%9B%E5%BA%A6%E4%BF%A1%E5%AE%892331.png"
-alt="进度表" />
-<figcaption aria-hidden="true">进度表</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
   </entry>
   <entry>
     <title>网络安全工具大全</title>
@@ -1479,185 +1010,259 @@ top10漏洞扫描和边界资产发现能力)</p>
       </tags>
   </entry>
   <entry>
-    <title>计算机网络练习题</title>
-    <url>//post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%83%E4%B9%A0%E9%A2%98.html</url>
-    <content><![CDATA[<h1 id="一填空题">一、填空题</h1>
-<ol type="1">
-<li>按照网络覆盖的地理范围，计算机网络可以分为<strong>局域网</strong>、<strong>城域网</strong>和<strong>广域网</strong>。</li>
-<li>广播网络传输方式有<strong>单播</strong>、<strong>广播</strong>和<strong>多播</strong>。</li>
-<li>从功能上来看将计算机网路逻辑划分为<strong>客户端</strong>和<strong>服务器端</strong>。</li>
-<li>从组网的层次角度来看，网络的组成结构是一个典型的三层网络机构，最上层称为<strong>核心层</strong>，中间层称为<strong>汇聚层</strong>，最下层称为<strong>接入层</strong>。</li>
-<li>影响网络的因素有<strong>带宽</strong>、<strong>延迟</strong>、<strong>抖动</strong>和<strong>丢包</strong>。</li>
-<li>OSI模型将网络分为<strong>物理层</strong>、<strong>数据链路层</strong>、<strong>网络层</strong>、<strong>传输层</strong>、<strong>会话层</strong>、<strong>表示层</strong>和<strong>应用层</strong>。</li>
-<li>TCP/IP协议有四层，由下往上分别为<strong>网络接口层</strong>、<strong>网络层</strong>、<strong>传输层</strong>和<strong>应用层</strong>。</li>
-<li>在TCP/IP协议中，网络层主要协议有<strong>IP</strong>、<strong>ICMP</strong>、<strong>ARP</strong>和<strong>RARP</strong>。</li>
-<li>在TCP/IP协议中，传输层主要协议有<strong>TCP</strong>和<strong>UDP</strong>。</li>
-<li>双绞线按结构可分为<strong>屏蔽双绞线</strong>和<strong>非屏蔽双绞线</strong>。</li>
-<li>按传输模式分，光纤可分为<strong>单模光纤</strong>和<strong>多模光纤</strong>两类。</li>
-<li>双绞线水晶头的制作标准有<strong>T568A</strong>和<strong>T568B</strong>两种。</li>
-<li>交换机的互联方式主要有<strong>串行互联</strong>、<strong>并行互联</strong>、<strong>总线互联</strong>和<strong>星型互联</strong>。</li>
-<li>局域网的体系结构涉及到了OSI模型的<strong>物理层</strong>和<strong>数据链路层</strong>两层。</li>
-<li>802标准把局域网的数据链路层分为<strong>LLC子层</strong>和<strong>MAC子层</strong>两个子层。</li>
-<li>常用的介质访问控制协议有三种：<strong>CSMA/CD</strong>、<strong>CSMA/CA</strong>和<strong>令牌环</strong>。</li>
-<li>令牌环介质访问控制方法，是通过在环型网上传输<strong>令牌</strong>的方式来实现对介质的访问控制的。</li>
-<li>IP地址由<strong>网络地址</strong>和<strong>主机地址</strong>两部分组成，前者用于该主机所在的网络，后者表示该主机在网络中的特定位置。</li>
-<li>IPv6由<strong>128</strong>位二进制数组成。</li>
-<li>以太网利用<strong>ARP</strong>协议获得主机IP地址与MAC地址的映射关系。</li>
-<li>TCP连接包括<strong>三次握手</strong>、<strong>数据传输</strong>和<strong>四次挥手</strong>三个过程。</li>
-<li>TCP采用<strong>滑动窗口</strong>机制实现流量控制功能。</li>
-<li>Telnet服务系统采用<strong>C/S</strong>工作模式，主要由<strong>Telnet服务器</strong>、<strong>Telnet客户端</strong>和<strong>网络</strong>组成。</li>
-<li>复用技术主要有<strong>频分复用</strong>、<strong>时分复用</strong>和<strong>码分复用</strong>三种。</li>
-<li>交换技术主要有<strong>电路交换</strong>、<strong>报文交换</strong>和<strong>分组交换</strong>三种。</li>
-<li>IPv6地址为2005：0610：0000：0001：0000：0000：0000：67ff，可压缩表示为<strong>2005:610::1:0:0:67ff</strong>。</li>
-</ol>
-<h1 id="二选择题">二、选择题</h1>
-<ol type="1">
-<li>一座大楼内的计算机网络系统属于（<strong>B．LAN</strong>）。</li>
-<li>世界上第一个计算机网络是（<strong>A．ARPANET</strong>）。</li>
-<li>计算机互联的主要目的是（<strong>D．资源共享</strong>）。</li>
-<li>计算机资源主要指计算机（<strong>C．硬件、软件与数据</strong>）。</li>
-<li>在一台计算机上向另一台计算机发送电子邮件信息时，下面哪一项正确的描述了数据封装的五个步骤？（<strong>A．Data
-Segment Packet Frame Bit</strong>）。</li>
-<li>将双绞线制作成交叉线，该双绞线连接的两个设备可为（<strong>A．网卡与网卡</strong>）。</li>
-<li>采用5类双绞线所连接的以太网，理论上任意两台PC机的最大间隔距离是多少？（<strong>A．100m</strong>）。</li>
-<li>以太网交换机根据（<strong>B．MAC地址</strong>）转发数据包。</li>
-<li>MAC地址通常存储在计算机的（<strong>A．网卡上</strong>）。</li>
-<li>在以太网中，冲突（<strong>C．是一种正常现象</strong>）。</li>
-<li>以下IP地址中，属于B类地址的是（<strong>B．166.166.166.166</strong>）。</li>
-<li>一个局域网中某台主机的IP地址为192.168.160.13，使用22位作为网络地址，那么该局域网的子网掩码为（<strong>D．255.255.240.0</strong>）。</li>
-<li>下列地址属于单播地址的是（<strong>C．192.168.25.59/30</strong>）。</li>
-<li>三次握手方法用于（<strong>A．传输层连接的建立</strong>）。</li>
-<li>TCP是因特网中的（<strong>可靠的</strong>）协议，使用（<strong>三</strong>）次握手协议建立连接。当主动方发出SYN连接请求后，等待对方回答（<strong>SYN+ACK</strong>）。这种建立连接的方法可以防止（<strong>重复连接</strong>）。TCP使用的流量控制协议是（<strong>滑动窗口</strong>）。</li>
-<li>在右图网络中，共有（ <strong>3</strong> ）个广播域，（
-<strong>3</strong> ）个冲突域。</li>
-</ol>
-<figure>
-<img
-src="https://picst.sunbangyan.cn/2023/12/24/ecdd0352d5b1b1b140be364ace1aab00.jpeg"
-alt="右图网络" />
-<figcaption aria-hidden="true">右图网络</figcaption>
-</figure>
-<h1 id="三简答题">三、简答题</h1>
-<ol type="1">
-<li>OSI的七层模型及每一层的数据形式：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 应用层（Application）：数据单位是报文（Message）</span><br><span class="line">- 表示层（Presentation）：数据单位是报文（Message）</span><br><span class="line">- 会话层（Session）：数据单位是报文（Message）</span><br><span class="line">- 传输层（Transport）：数据单位是段（Segment）</span><br><span class="line">- 网络层（Network）：数据单位是包（Packet）</span><br><span class="line">- 数据链路层（Data Link）：数据单位是帧（Frame）</span><br><span class="line">- 物理层（Physical）：数据单位是比特流（Bit）</span><br></pre></td></tr></table></figure>
-<ol start="2" type="1">
-<li>TCP/IP的四层模型及上三层主要协议：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 应用层：HTTP、FTP、SMTP、DNS等</span><br><span class="line">- 传输层：TCP、UDP</span><br><span class="line">- 网络层：IP、ICMP、ARP、RARP</span><br><span class="line">- 网络接口层</span><br></pre></td></tr></table></figure>
-<ol start="3" type="1">
-<li><p><strong>FTTH</strong>（Fiber To The
-Home）是一种光纤直接到户的宽带接入方式，它提供了极高的带宽，可以满足用户对高速互联网、数字电视、电话等多种业务的需求。
-<strong>ADSL</strong>（Asymmetric Digital Subscriber
-Line）是一种非对称数字用户线路，它利用电话线提供宽带接入服务，但上行和下行的带宽不对称。</p></li>
-<li><p><strong>HTTP</strong>（HyperText Transfer
-Protocol）是一种用于传输超文本的协议，主要用于网页浏览。
-<strong>DNS</strong>（Domain Name
-System）是一种用于将域名转换为IP地址的服务。 <strong>FTP</strong>（File
-Transfer Protocol）是一种用于在网络上进行文件传输的协议。
-<strong>DHCP</strong>（Dynamic Host Configuration
-Protocol）是一种动态主机配置协议，用于自动分配IP地址。</p></li>
-<li><p><strong>基带传输</strong>是指信号在传输过程中保持原始的形式和频率，通常用于短距离、高数据率的传输，如局域网。
-<strong>频带传输</strong>是指信号在传输过程中被调制到较高的频率，通常用于长距离、低数据率的传输，如电视广播。</p></li>
-<li><p><strong>DNS</strong>有两种域名查询方式：<strong>递归查询</strong>和<strong>迭代查询</strong>。递归查询是指客户端向DNS服务器发出请求后，DNS服务器必须给出一个明确的回答。如果DNS服务器不知道答案，它会向其他服务器查询，直到得到一个明确的答案。迭代查询是指客户端向DNS服务器发出请求后，如果DNS服务器不知道答案，它会告诉客户端去向哪个服务器查询。</p></li>
-<li><p><strong>VLAN</strong>的划分方式主要有以下几种：<strong>按端口划分</strong>、<strong>按MAC地址划分</strong>、<strong>按IP地址划分</strong>、<strong>按协议类型划分</strong>。</p></li>
-</ol>
-<h1 id="四计算题">四、计算题</h1>
-<ol type="1">
-<li><p>一个主机的IP地址是202.112.14.137，掩码为255.255.255.224，求这个主机所在网络的网络地址和广播地址。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IP地址：202.112.14.137 = 11001010.01110000.00001110.10001001</span><br><span class="line">子网掩码：255.255.255.224 = 11111111.11111111.11111111.11100000</span><br><span class="line">网络地址：将IP地址和子网掩码进行按位与运算，得到：</span><br><span class="line">11001010.01110000.00001110.10000000 = 202.112.14.128</span><br><span class="line">广播地址：将网络地址的主机位全部置为1，得到：</span><br><span class="line">11001010.01110000.00001110.10011111 = 202.112.14.159</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><strong>这个主机所在网络的网络地址是202.112.14.128，广播地址是202.112.14.159。</strong></p>
-<ol start="2" type="1">
-<li>如下图，通过设置静态路由实现主机A能ping通主机B，则在路由器R1、R2、R3上分别要设置怎样的静态路由。</li>
-</ol>
-<figure>
-<img
-src="https://picss.sunbangyan.cn/2023/12/24/77d7eb09d59f96cbcfaa7a8d7108aace.jpeg"
-alt="拓扑图" />
-<figcaption aria-hidden="true">拓扑图</figcaption>
-</figure>
-<p>R1</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Dest</th>
-<th>Mask</th>
-<th>GW</th>
-<th>Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">192.168.3.0</td>
-<td>255.255.255.0</td>
-<td>192.168.4.2</td>
-<td>e1_1</td>
-</tr>
-</tbody>
-</table>
-<p>R2</p>
-<table>
-<thead>
-<tr class="header">
-<th>Dest</th>
-<th>Mask</th>
-<th>GW</th>
-<th>Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>192.168.2.0</td>
-<td>255.255.255.0</td>
-<td>192.168.4.1</td>
-<td>e1_1</td>
-</tr>
-<tr class="even">
-<td>192.168.3.0</td>
-<td>255.255.255.0</td>
-<td>192.168.6.2</td>
-<td>e1_2</td>
-</tr>
-</tbody>
-</table>
-<p>R3</p>
-<table>
-<thead>
-<tr class="header">
-<th>Dest</th>
-<th>Mask</th>
-<th>GW</th>
-<th>Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>192.168.2.0</td>
-<td>255.255.255.0</td>
-<td>192.168.6.1</td>
-<td>e1_1</td>
-</tr>
-</tbody>
-</table>
-<h1 id="计算题解释">计算题解释</h1>
-<h2 id="计算网络地址和广播地址">1、计算网络地址和广播地址</h2>
-<ol type="1">
-<li><strong>计算网络地址</strong>：网络地址是通过将IP地址和子网掩码进行按位与运算得到的。按位与运算的规则是，如果两个对应的二进制位都为1，则结果为1，否则为0。因此，我们将IP地址和子网掩码对应的二进制位进行比较，如果都是1，则结果为1，否则为0。这样我们就得到了网络地址。</li>
-<li><strong>计算广播地址</strong>：广播地址是通过将网络地址的主机位全部置为1得到的。在子网掩码中，网络位对应的是1，主机位对应的是0。因此，我们将网络地址中，对应子网掩码中0的那些位，全部置为1，就得到了广播地址。</li>
-</ol>
-<h2 id="配置静态路由">2、配置静态路由</h2>
-<p>静态路由的设置是基于网络的拓扑结构和IP地址配置。在你的网络中，主机A需要通过路由器R1、R2、R3来访问主机B。因此，我们需要在每个路由器上设置适当的静态路由，以便数据包能够正确地从主机A路由到主机B。</p>
-<p>对于路由器R1，我们需要设置一个静态路由，使得所有目标为主机B所在网络的数据包都会被发送到下一跳路由器R2。因此，我们将目标网络设置为主机B所在的网络，子网掩码设置为主机B所在网络的子网掩码，网关设置为R1到R2的接口IP，接口设置为R1到R2的接口。</p>
-<p>对于路由器R2，我们需要设置两个静态路由。一个是使得所有目标为主机B所在网络的数据包都会被发送到下一跳路由器R3，另一个是使得所有目标为主机A所在网络的数据包都会被发送到下一跳路由器R1。因此，我们将目标网络设置为主机B和主机A所在的网络，子网掩码设置为主机B和主机A所在网络的子网掩码，网关设置为R2到R3和R2到R1的接口IP，接口设置为R2到R3和R2到R1的接口。</p>
-<p>对于路由器R3，我们需要设置一个静态路由，使得所有目标为主机A所在网络的数据包都会被发送到下一跳路由器R2。因此，我们将目标网络设置为主机A所在的网络，子网掩码设置为主机A所在网络的子网掩码，网关设置为R3到R2的接口IP，接口设置为R3到R2的接口。</p>
+    <title>如何正确的食用Docker</title>
+    <url>//post/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%A3%9F%E7%94%A8Docker.html</url>
+    <content><![CDATA[<h1 id="docker简介">Docker简介</h1>
+<h2 id="什么是docker">什么是Docker？</h2>
+<p>Docker 是一个开源的应用容器引擎，基于 <a
+href="https://www.runoob.com/go/go-tutorial.html">Go 语言</a> 并遵从
+Apache2.0 协议开源。</p>
+<p>Docker
+可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的
+Linux 机器上，也可以实现虚拟化。</p>
+<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的
+app）,更重要的是容器性能开销极低。</p>
+<h2 id="docker能干嘛">Docker能干嘛？</h2>
+<p>软件开发最大的麻烦事之一，就是环境配置。而Docker可以十分方便的配置它们。</p>
+<p>传统的虚拟机技术启动应用服务往往需要数分钟，而 <code>Docker</code>
+容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</p>
+<h2 id="docker的三个基本概念">Docker的三个基本概念</h2>
+<p>Docker 包括三个基本概念：</p>
+<ul>
+<li><strong>镜像（image）</strong>：Docker
+镜像（image），相当于是一个root文件系统。例如官方镜像 Ubuntu: 16.04
+就包含了完整的一套 Ubuntu 16.04 最小系统的root文件系统。</li>
+<li><strong>容器（Container）</strong>：容器（Container）<strong>由</strong>
+Docker 镜像（image）生成。一旦容器生成，就会同时存在两个文件： image
+文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</li>
+<li><strong>仓库（Repository）</strong>：镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a
+href="https://docker-practice.github.io/zh-cn/repository/registry.html">Docker
+Registry</a> 就是这样的服务。</li>
+</ul>
+<h1 id="安装docker">安装Docker</h1>
+<p>Docker 分为 <code>stable</code> <code>test</code> 和
+<code>nightly</code> 三个更新频道。</p>
+<p><a href="https://docs.docker.com/get-docker/">Get Docker | Docker
+Documentation</a></p>
+<h2 id="在ubuntu安装docker">在Ubuntu安装Docker</h2>
+<p>Docker 支持以下版本的 <a href="https://ubuntu.com/server">Ubuntu</a>
+操作系统：</p>
+<ul>
+<li>Ubuntu Hirsute 21.04</li>
+<li>Ubuntu Groovy 20.10</li>
+<li>Ubuntu Focal 20.04 (LTS)</li>
+<li>Ubuntu Bionic 18.04 (LTS)</li>
+</ul>
+<p>Docker 可以安装在 64 位的 x86 平台或 ARM 平台上。Ubuntu
+发行版中，LTS（Long-Term-Support）长期支持版本，会获得 5
+年的升级维护支持，这样的版本会更稳定，因此在生产环境中推荐使用 LTS
+版本。</p>
+<h3 id="卸载旧版本docker">卸载旧版本Docker</h3>
+<p>旧版本的 Docker 称为 <code>docker</code> 或者
+<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove docker \</span><br><span class="line">             docker-engine \</span><br><span class="line">             docker.io</span><br></pre></td></tr></table></figure>
+<h3 id="使用-apt-安装">使用 APT 安装</h3>
+<p>由于 <code>apt</code> 源使用 HTTPS
+以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS
+传输的软件包以及 CA 证书。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get udate</span><br><span class="line"></span><br><span class="line">sudo apt-get install \</span><br><span class="line">	apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg \</span><br><span class="line">    lsb-release</span><br></pre></td></tr></table></figure>
+<p>为了确认所下载软件包的合法性，需要添加软件源的 <code>GPG</code>
+密钥。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
+<p>向<code>sources.list</code>中添加 Docker 软件源</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> \</span><br><span class="line">  <span class="string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span></span><br><span class="line"><span class="string">  <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line"><span class="comment"># $ echo \</span></span><br><span class="line"><span class="comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装-docker">安装 Docker</h3>
+<p>更新 apt 软件包缓存，并安装 <code>docker-ce</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
+<h3 id="启动-docker">启动 Docker</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<h3 id="建立-docker-用户组">建立 Docker 用户组</h3>
+<p>默认情况下，<code>docker</code> 命令会使用 <a
+href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
+与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
+组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
+系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
+<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
+<p>建立<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
+<p>将当前用户加入<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+<h2 id="在centos安装docker">在CentOS安装Docker</h2>
+<p>切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker</p>
+<p>Docker 支持 64 位版本 CentOS 7/8，并且要求内核版本不低于 3.10。
+CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如
+<code>overlay2</code>
+存储层驱动）无法使用，并且部分功能可能不太稳定。</p>
+<h3 id="卸载旧版本docker-1">卸载旧版本Docker</h3>
+<p>旧版本的 Docker 称为 <code>docker</code> 或者
+<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                docker-client \</span><br><span class="line">                docker-client-latest \</span><br><span class="line">                docker-common \</span><br><span class="line">                docker-latest \</span><br><span class="line">                docker-latest-logrotate \</span><br><span class="line">                docker-logrotate \</span><br><span class="line">                docker-selinux \</span><br><span class="line">                docker-engine-selinux \</span><br><span class="line">                docker-engine</span><br></pre></td></tr></table></figure>
+<h3 id="使用-yum-安装">使用 yum 安装</h3>
+<p>安装依赖包：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br></pre></td></tr></table></figure>
+<p>添加<code>yum</code>软件源：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp \</span><br><span class="line">	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp</span><br><span class="line">	https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>如需测试版本的Docker：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> docker-ce-test</span><br></pre></td></tr></table></figure>
+<h3 id="安装-docker-1">安装 Docker</h3>
+<p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
+<h3 id="centos8的额外设置">CentOS8的额外设置</h3>
+<p>由于 CentOS8 防火墙使用了 <code>nftables</code>，但 Docker 尚未支持
+<code>nftables</code>， 我们可以使用如下设置使用
+<code>iptables</code>：</p>
+<p>更改 <code>/etc/firewalld/firewalld.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># FirewallBackend=nftables</span></span><br><span class="line">FirewallBackend=iptables</span><br></pre></td></tr></table></figure>
+<p>或执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=trusted --add-interface=docker0</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<h3 id="启动-docker-1">启动 Docker</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<h3 id="建立-docker-用户组-1">建立 Docker 用户组</h3>
+<p>默认情况下，<code>docker</code> 命令会使用 <a
+href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
+与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
+组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
+系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
+<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
+<p>建立 <code>docker</code> 组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
+<p>将当前用户加入<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docekr <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加内核参数">添加内核参数</h3>
+<p>如果在 CentOS 使用 Docker 看到下面的这些警告信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">WARNING: bridge-nf-call-iptables is disabled</span><br><span class="line">WARNING: bridge-nf-call-ip6tables is disabled</span><br></pre></td></tr></table></figure>
+<p>添加内核配置参数以启用这些功能</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="string">EOF</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+<p>重新加载<code>sysctl.conf</code>即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
+<h1 id="docker食用指南">Docker食用指南</h1>
+<h2 id="镜像使用指南">镜像使用指南</h2>
+<p>Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker
+会从镜像仓库下载该镜像。</p>
+<h3 id="获取镜像">获取镜像</h3>
+<p>从 Docker 镜像仓库获取镜像的命令是
+<code>docker pull</code>。命令格式是：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull [OPTIONS] NAME[:TAG|@DIGEST]</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>TAG：标签（版本）</li>
+<li>DIGEST：摘要</li>
+<li>OPTIONS：
+<ul>
+<li>-a ：下载镜像仓库中所有的指定镜像；</li>
+<li>–disable-content-trust：跳过镜像验证（默认值是true）；</li>
+<li>–platform： 如果服务具有多平台功能，则设置平台；</li>
+<li>-q：一直详细输出；</li>
+</ul></li>
+</ul>
+<p>具体选项可以通过<code>docker pull --help</code>命令查看。</p>
+<p><strong>例子如下：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker pull ubuntu:18.04</span><br><span class="line">18.04: Pulling from library/ubuntu</span><br><span class="line">92dc2a97ff99: Pull complete</span><br><span class="line">be13a9d27eb8: Pull complete</span><br><span class="line">c8299583700a: Pull complete</span><br><span class="line">Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> ubuntu:18.04</span><br><span class="line">docker.io/library/ubuntu:18.04</span><br></pre></td></tr></table></figure>
+<p>上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub
+（<code>docker.io</code>）获取镜像。而镜像名称是
+<code>ubuntu:18.04</code>，因此将会获取官方镜像
+<code>library/ubuntu</code> 仓库中标签为 <code>18.04</code>
+的镜像。<code>docker pull</code>
+命令的输出结果最后一行给出了镜像的完整名称，即：
+<code>docker.io/library/ubuntu:18.04</code>。</p>
+<ul>
+<li>Docker
+镜像仓库地址：地址的格式一般是<code>域名/IP[:端口号]</code>。默认地址是
+Docker Hub（<code>docker.io</code>）。</li>
+<li>仓库名：仓库名是两段式名称，即<code>&lt;用户名&gt;/&lt;软件名&gt;</code>。对于
+Docker
+Hub，如果没有指定用户名，则默认是<code>library</code>，也就是官方镜像。</li>
+</ul>
+<h4 id="运行">运行</h4>
+<p>有了镜像后，可以以这个镜像为基础启动并运行一个容器。以上面的<code>Ubuntu:18.04</code>为例，如果打算启动里面的<code>bash</code>并且进行交互式操作的话，可以执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker run -it --<span class="built_in">rm</span> ubuntu:18:04 bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下是容器内操作</span></span><br><span class="line">root@e7009c6ce357:/<span class="comment"># cat /etc/os-release</span></span><br><span class="line">NAME=<span class="string">&quot;Ubuntu&quot;</span></span><br><span class="line">VERSION=<span class="string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span></span><br><span class="line">ID=ubuntu</span><br><span class="line">ID_LIKE=debian</span><br><span class="line">PRETTY_NAME=<span class="string">&quot;Ubuntu 18.04.1 LTS&quot;</span></span><br><span class="line">VERSION_ID=<span class="string">&quot;18.04&quot;</span></span><br><span class="line">HOME_URL=<span class="string">&quot;https://www.ubuntu.com/&quot;</span></span><br><span class="line">SUPPORT_URL=<span class="string">&quot;https://help.ubuntu.com/&quot;</span></span><br><span class="line">BUG_REPORT_URL=<span class="string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span></span><br><span class="line">PRIVACY_POLICY_URL=<span class="string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span></span><br><span class="line">VERSION_CODENAME=bionic</span><br><span class="line">UBUNTU_CODENAME=bionic</span><br></pre></td></tr></table></figure>
+<p><code>docker run</code>就是要运行容器的命令，这里简单说明一下上面用到的参数</p>
+<ul>
+<li><code>-it</code>：这是两个参数，一个是
+<code>-i</code>：交互式操作，一个是 <code>-t</code>
+终端。我们这里打算进入 <code>bash</code>
+执行一些命令并查看返回结果，因此我们需要交互式终端。</li>
+<li><code>--rm</code>：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动
+<code>docker rm</code>。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用
+<code>--rm</code> 可以避免浪费空间。</li>
+<li><code>ubuntu:18.04</code>：这是指用 <code>ubuntu:18.04</code>
+镜像为基础来启动容器。</li>
+<li><code>bash</code>：放在镜像名后的是
+<strong>命令</strong>，这里我们希望有个交互式 Shell，因此用的是
+<code>bash</code>。</li>
+</ul>
+<p>进入容器后就可以在 Shell
+下操作执行任何所需的命令。例如，上面就执行了<code>cat /etc/os-release</code>，这是Linux常用的查看当前系统版本的命令，从返回的结果可以看到容器内是<code>Ubuntu 18.04.1 LTS</code>系统。</p>
+<p>最后可以通过<code>exit</code>退出这个容器。</p>
+<h3 id="列出镜像">列出镜像</h3>
+<p>要想列出已经下载下来的镜像，可以使用 <code>docker image ls</code>
+命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span></span><br><span class="line">REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">redis                latest              5f515359c7f8        5 days ago          183 MB</span><br><span class="line">nginx                latest              05a60462f8ba        5 days ago          181 MB</span><br><span class="line">mongo                3.2                 fe9198c04d62        5 days ago          342 MB</span><br><span class="line">&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB</span><br><span class="line">ubuntu               18.04               329ed837d508        3 days ago          63.3MB</span><br><span class="line">ubuntu               bionic              329ed837d508        3 days ago          63.3MB</span><br></pre></td></tr></table></figure>
+<p>列表包含了
+<code>仓库名</code>、<code>标签</code>、<code>镜像 ID</code>、<code>创建时间</code>
+以及 <code>所占用的空间</code>。</p>
+<p>其中仓库名、标签在之前的基础概念章节已经介绍过了。<strong>镜像
+ID</strong> 则是镜像的唯一标识，一个镜像可以对应多个
+<strong>标签</strong>。因此，在上面的例子中，我们可以看到
+<code>ubuntu:18.04</code> 和 <code>ubuntu:bionic</code> 拥有相同的
+ID，因为它们对应的是同一个镜像。</p>
+<h4 id="镜像体积">镜像体积</h4>
+<p>Docker
+Hub上显示的镜像体积是压缩后的体积大小，在镜像上传和下载的过程中镜像是保持压缩状态的。而使用命令<code>docker image ls</code>显示的是镜像下载到本地后展开的大小，准确说，是展开后的各层所占空间的总和。</p>
+<p>另外一个需要注意的问题是，<code>docker image ls</code>
+列表中的镜像体积总和并非是所有镜像实际硬盘消耗。由于 Docker
+镜像是多层存储结构，并且可以继承、复用，因此不同镜像可能会因为使用相同的基础镜像，从而拥有共同的层。相同的层只需要保存一份即可。</p>
+<p>通过<code>docker system df</code>命令来查看镜像、容器、数据卷所占用的空间。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker system <span class="built_in">df</span></span><br><span class="line">TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE</span><br><span class="line">Images          2         1         390.2MB   390.2MB (99%)</span><br><span class="line">Containers      1         0         0B        0B</span><br><span class="line">Local Volumes   0         0         0B        0B</span><br><span class="line">Build Cache     18        0         789B      789B</span><br></pre></td></tr></table></figure>
+<h4 id="列出部分镜像">列出部分镜像</h4>
+<p>不加任何参数的情况下，<code>docker image ls</code>
+会列出所有顶层镜像，但是有时候我们只希望列出部分镜像。<code>docker image ls</code>
+有好几个参数可以帮助做到这个事情。</p>
+<p>根据仓库名列出仓库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       latest    ba6acccedd29   23 months ago   72.8MB</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
+<p>列出特定的某个镜像，也就是说指定仓库名和标签</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu:18.04</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
+<h3 id="删除本地镜像">删除本地镜像</h3>
+<p>如果要删除本地的镜像，可以使用 <code>docker image rm</code>
+命令，其格式为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]</span><br></pre></td></tr></table></figure>
+<p>其中，<code>&lt;镜像&gt;</code> 可以是
+<code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者
+<code>镜像摘要</code>。</p>
+<p>我们可以用镜像的完整 ID，也称为
+<code>长 ID</code>，来删除镜像。使用脚本的时候可能会用长
+ID，但是人工输入就太累了，所以更多的时候是用 <code>短 ID</code>
+来删除镜像。<code>docker image ls</code> 默认列出的就已经是短 ID
+了，一般取前3个字符以上，只要足够区分于别的镜像就可以了。</p>
+<h2 id="操作容器">操作容器</h2>
+<h4 id="启动容器">启动容器、</h4>
+<p>启动容器有两种方式，一种是基于镜像新建一个容器并启动，另外一个是将在终止状态（<code>exited</code>）的容器重新启动。</p>
+<p>因为 Docker
+的容器实在太轻量级了，很多时候用户都是随时删除和新创建容器。</p>
+<h1 id="未完待续">未完待续</h1>
+<h1 id="参考文章">参考文章</h1>
+<p>更多详细教程请参考 <a
+href="https://docker-practice.github.io/zh-cn/">前言 · Docker --
+从入门到实践 (docker-practice.github.io)</a></p>
+<p><a
+href="https://blog.csdn.net/zhuzicc/article/details/118066353">Docker
+“pull“命令获取镜像，讲道理你真的会吗？_docker
+pull_zhuzicc的博客-CSDN博客</a></p>
+<p><a href="https://www.runoob.com/docker/docker-tutorial.html">Docker
+教程 | 菜鸟教程 (runoob.com)</a></p>
+<p><a
+href="https://zhuanlan.zhihu.com/p/435605760">全面的Docker快速入门教程 -
+知乎 (zhihu.com)</a></p>
+<p><a
+href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker
+入门教程 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
 ]]></content>
       <categories>
-        <category>计算机网络</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>笔记</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
