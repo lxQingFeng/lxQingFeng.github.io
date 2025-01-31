@@ -1,6 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux根目录下的各个目录的作用及各颜色类型</title>
+    <url>//post/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%90%84%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8.html</url>
+    <content><![CDATA[<h1 id="linux根目录下的各个目录都有特定的作用和含义"><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969">Linux根目录下的各个目录都有特定的作用和含义</a></h1>
+<ol type="1">
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/bin</code>：存放最常用命令</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/boot</code>：启动Linux的核心文件</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/dev</code>：设备文件，即设备的驱动程序</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/etc</code>：存放各种配置文件</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/home</code>：用户主目录</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/lib</code>：系统最基本的动态链接共享库</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/mnt</code>：一般是空的，用来临时挂载别的文件系统</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/proc</code>：虚拟目录，是内存的映射</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/sbin</code>：系统的管理命令，这里存放的是系统管理员使用的程序</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/tmp</code>：临时文件，重启后自动清空</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/var</code>：某些大文件的溢出区，比如各种服务的日志文件</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/media</code>：存放着可移除的设备，比如软盘，光盘</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/root</code>：超级用户的目录</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/opt</code>：这个是给第三方协力软件放置的目录</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/sys</code>：管理设备文件</a></li>
+<li><a
+href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/usr</code>：最大的目录，存放着应用程序和文件</a></li>
+</ol>
+<h1
+id="文件和目录的颜色代表了什么类型">文件和目录的颜色代表了什么类型</h1>
+<ul>
+<li><strong>蓝色</strong>：目录</li>
+<li><strong>绿色</strong>：可执行文件</li>
+<li><strong>红色</strong>：压缩文件</li>
+<li><strong>浅蓝色</strong>：链接文件</li>
+<li><strong>白色</strong>：普通文件或硬链接</li>
+<li><strong>红色闪烁</strong>：某文件被删除后，链接到该文件的软链接的颜色</li>
+<li><strong>黄色</strong>：设备文件，如键盘鼠标</li>
+<li><strong>灰色</strong>：其它文件</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu搭建思源笔记（Docker）</title>
+    <url>//post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html</url>
+    <content><![CDATA[<p>安装docker和docker-compose的过程不再赘叙</p>
+<h2 id="编写docker-compose.yaml">编写docker-compose.yaml</h2>
+<p>在任意位置新建<code>docker-compose.yaml</code>文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /siyuan &amp;&amp; cd /siyuan</span><br><span class="line">vim docker-compose.yaml</span><br></pre></td></tr></table></figure>
+<p>写入以下信息（授权码自己修改）</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">siyuan:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">b3log/siyuan:latest</span></span><br><span class="line">    <span class="attr">command:</span> [<span class="string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="string">&#x27;--accessAuthCode=授权码&#x27;</span>]</span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">siyuan</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">&#x27;1000:1000&#x27;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">6806</span><span class="string">:6806</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/siyuan/workspace:/siyuan/workspace</span></span><br></pre></td></tr></table></figure>
+<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
+<p>随后就可以通过<code>http://&lt;your_ip:6806&gt;</code>查看服务</p>
+<h2 id="自定义域名">自定义域名</h2>
+<p>使用<code>docker</code>安装运行<code>Nginx Proxy Manager</code></p>
+<p>在任意位置新建<code>docker-compose.yaml</code>文件并写入以下内容</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jc21/nginx-proxy-manager:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:80</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">81</span><span class="string">:81</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">443</span><span class="string">:443</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">DB_MYSQL_HOST:</span> <span class="string">db</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PORT:</span> <span class="number">3306</span></span><br><span class="line">      <span class="attr">DB_MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_NAME:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./letsencrypt:/etc/letsencrypt</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">yobasystems/alpine-mariadb:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/mysql:/var/lib/mysql</span></span><br></pre></td></tr></table></figure>
+<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
+<p>随后就可以通过<code>http://&lt;your_ip:81&gt;</code>查看服务</p>
+<h3 id="配置nginx-proxy-manager">配置Nginx Proxy Manager</h3>
+<p>通过<code>http://&lt;your_ip:81&gt;</code>打开浏览器查看服务</p>
+<p>输入默认账号密码登录服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">账号：admin@example.com</span><br><span class="line">密码：changeme</span><br></pre></td></tr></table></figure>
+<p>登录后点击界面上的<code>SSL Certificates</code>给服务添加证书</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" /></p>
+<p>随后依次点击<code>Add SSL Certificates</code> --&gt;
+<code>Let's Encrypt</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/71e3f0f25ef4da4e94b3582f94819dbfe9c242.webp" /></p>
+<p>输入自己的域名并同意条款后点击<code>Save</code>等待几分钟即可</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/e128f87851b254bd1943900b3708b35dd30bb5.webp" /></p>
+<p>随后点击<code>Hosts</code> --&gt; <code>Proxy Hosts</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/61571b806083cfc0474401d4d6f6de63220c19.webp" /></p>
+<p>点击<code>Add Proxy Host</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b392b7bf57bdd1724d0d6641f12a6e72.webp" /></p>
+<p>根据自己的情况依次填入信息</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" /></p>
+<p>其中<code>172.21.0.2</code>是容器IP 可以参考以下内容查看容器IP</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker inspect [容器ID] | grep IPAddress</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" /></p>
+<p>随后点击<code>SSL</code>添加刚刚申请的证书并启用<code>Force SSL</code>与<code>HTTP/2 Support</code></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b45547909dab5d903002d26bce5b801f6a.webp" /></p>
+<p>再点击<code>Save</code>保存即可通过域名访问思源笔记</p>
+<p>当然 前提是你的域名已经解析到了你的服务器</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C语言练习题</title>
     <url>//post/C%E8%AF%AD%E8%A8%80%E7%BB%83%E4%B9%A0%E9%A2%98.html</url>
     <content><![CDATA[<h1 id="打印输出1-30之间的所有素数">打印输出1-30之间的所有素数</h1>
@@ -75,63 +191,6 @@ id="输入6个整数仅用指针法实现按由大到小的顺序输出">输入6
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu搭建思源笔记（Docker）</title>
-    <url>//post/Ubuntu%E6%90%AD%E5%BB%BA%E6%80%9D%E6%BA%90%E7%AC%94%E8%AE%B0%EF%BC%88Docker%EF%BC%89.html</url>
-    <content><![CDATA[<p>安装docker和docker-compose的过程不再赘叙</p>
-<h2 id="编写docker-compose.yaml">编写docker-compose.yaml</h2>
-<p>在任意位置新建<code>docker-compose.yaml</code>文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /siyuan &amp;&amp; cd /siyuan</span><br><span class="line">vim docker-compose.yaml</span><br></pre></td></tr></table></figure>
-<p>写入以下信息（授权码自己修改）</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">siyuan:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">b3log/siyuan:latest</span></span><br><span class="line">    <span class="attr">command:</span> [<span class="string">&#x27;--workspace=/siyuan/workspace/&#x27;</span>, <span class="string">&#x27;--accessAuthCode=授权码&#x27;</span>]</span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">siyuan</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">&#x27;1000:1000&#x27;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">6806</span><span class="string">:6806</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/siyuan/workspace:/siyuan/workspace</span></span><br></pre></td></tr></table></figure>
-<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
-<p>随后就可以通过<code>http://&lt;your_ip:6806&gt;</code>查看服务</p>
-<h2 id="自定义域名">自定义域名</h2>
-<p>使用<code>docker</code>安装运行<code>Nginx Proxy Manager</code></p>
-<p>在任意位置新建<code>docker-compose.yaml</code>文件并写入以下内容</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jc21/nginx-proxy-manager:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:80</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">81</span><span class="string">:81</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">443</span><span class="string">:443</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">DB_MYSQL_HOST:</span> <span class="string">db</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PORT:</span> <span class="number">3306</span></span><br><span class="line">      <span class="attr">DB_MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">DB_MYSQL_NAME:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./letsencrypt:/etc/letsencrypt</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">yobasystems/alpine-mariadb:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">npm</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">npm</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data/mysql:/var/lib/mysql</span></span><br></pre></td></tr></table></figure>
-<p>保存退出后通过<code>docker-compose up -d</code>启动</p>
-<p>随后就可以通过<code>http://&lt;your_ip:81&gt;</code>查看服务</p>
-<h3 id="配置nginx-proxy-manager">配置Nginx Proxy Manager</h3>
-<p>通过<code>http://&lt;your_ip:81&gt;</code>打开浏览器查看服务</p>
-<p>输入默认账号密码登录服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">账号：admin@example.com</span><br><span class="line">密码：changeme</span><br></pre></td></tr></table></figure>
-<p>登录后点击界面上的<code>SSL Certificates</code>给服务添加证书</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/97e847c93aa2cb06df372139aa314c716e699f.webp" /></p>
-<p>随后依次点击<code>Add SSL Certificates</code> --&gt;
-<code>Let's Encrypt</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/71e3f0f25ef4da4e94b3582f94819dbfe9c242.webp" /></p>
-<p>输入自己的域名并同意条款后点击<code>Save</code>等待几分钟即可</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/e128f87851b254bd1943900b3708b35dd30bb5.webp" /></p>
-<p>随后点击<code>Hosts</code> --&gt; <code>Proxy Hosts</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/61571b806083cfc0474401d4d6f6de63220c19.webp" /></p>
-<p>点击<code>Add Proxy Host</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/224784b392b7bf57bdd1724d0d6641f12a6e72.webp" /></p>
-<p>根据自己的情况依次填入信息</p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/d546ee5692d745a8fa5341161a9ec9b3c5701a.webp" /></p>
-<p>其中<code>172.21.0.2</code>是容器IP 可以参考以下内容查看容器IP</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker inspect [容器ID] | grep IPAddress</span><br></pre></td></tr></table></figure>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/41d033b249351c9c96d721a9525c7a3853aa9f.webp" /></p>
-<p>随后点击<code>SSL</code>添加刚刚申请的证书并启用<code>Force SSL</code>与<code>HTTP/2 Support</code></p>
-<p><img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/0709b45547909dab5d903002d26bce5b801f6a.webp" /></p>
-<p>再点击<code>Save</code>保存即可通过域名访问思源笔记</p>
-<p>当然 前提是你的域名已经解析到了你的服务器</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>eNSP配置三层交换机</title>
     <url>//post/eNSP%E9%85%8D%E7%BD%AE%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA.html</url>
     <content><![CDATA[<h1 id="拓扑图">拓扑图</h1>
@@ -161,65 +220,6 @@ alt="ping" />
       </categories>
       <tags>
         <tag>eNSP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux根目录下的各个目录的作用及各颜色类型</title>
-    <url>//post/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%90%84%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8.html</url>
-    <content><![CDATA[<h1 id="linux根目录下的各个目录都有特定的作用和含义"><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969">Linux根目录下的各个目录都有特定的作用和含义</a></h1>
-<ol type="1">
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/bin</code>：存放最常用命令</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/boot</code>：启动Linux的核心文件</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/dev</code>：设备文件，即设备的驱动程序</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/etc</code>：存放各种配置文件</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/home</code>：用户主目录</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/lib</code>：系统最基本的动态链接共享库</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/mnt</code>：一般是空的，用来临时挂载别的文件系统</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/proc</code>：虚拟目录，是内存的映射</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/sbin</code>：系统的管理命令，这里存放的是系统管理员使用的程序</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/tmp</code>：临时文件，重启后自动清空</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/var</code>：某些大文件的溢出区，比如各种服务的日志文件</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/media</code>：存放着可移除的设备，比如软盘，光盘</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/root</code>：超级用户的目录</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/opt</code>：这个是给第三方协力软件放置的目录</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/sys</code>：管理设备文件</a></li>
-<li><a
-href="https://blog.csdn.net/alidada_blog/article/details/81778969"><code>/usr</code>：最大的目录，存放着应用程序和文件</a></li>
-</ol>
-<h1
-id="文件和目录的颜色代表了什么类型">文件和目录的颜色代表了什么类型</h1>
-<ul>
-<li><strong>蓝色</strong>：目录</li>
-<li><strong>绿色</strong>：可执行文件</li>
-<li><strong>红色</strong>：压缩文件</li>
-<li><strong>浅蓝色</strong>：链接文件</li>
-<li><strong>白色</strong>：普通文件或硬链接</li>
-<li><strong>红色闪烁</strong>：某文件被删除后，链接到该文件的软链接的颜色</li>
-<li><strong>黄色</strong>：设备文件，如键盘鼠标</li>
-<li><strong>灰色</strong>：其它文件</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -254,24 +254,6 @@ href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
       </categories>
       <tags>
         <tag>开始</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>imgTP图床测试</title>
-    <url>//post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html</url>
-    <content><![CDATA[<p>我是OP</p>
-<figure>
-<img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E6%B2%B9%E7%94%BBLH.jpg"
-alt="OP图片" />
-<figcaption aria-hidden="true">OP图片</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -437,6 +419,24 @@ Carpet - MC百科|最大的Minecraft中文MOD百科 (mcmod.cn)</a></p>
       </tags>
   </entry>
   <entry>
+    <title>imgTP图床测试</title>
+    <url>//post/imgTP%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95.html</url>
+    <content><![CDATA[<p>我是OP</p>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E6%B2%B9%E7%94%BBLH.jpg"
+alt="OP图片" />
+<figcaption aria-hidden="true">OP图片</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何使用tmux（终端工具）</title>
     <url>//post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8tmux%EF%BC%88%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%89.html</url>
     <content><![CDATA[<h1 id="什么是tmux">什么是tmux</h1>
@@ -590,6 +590,346 @@ href="https://blog.csdn.net/CSSDCC/article/details/121231906">https://blog.csdn.
       </categories>
       <tags>
         <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何正确的食用Docker</title>
+    <url>//post/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%A3%9F%E7%94%A8Docker.html</url>
+    <content><![CDATA[<h1 id="docker简介">Docker简介</h1>
+<h2 id="什么是docker">什么是Docker？</h2>
+<p>Docker 是一个开源的应用容器引擎，基于 <a
+href="https://www.runoob.com/go/go-tutorial.html">Go 语言</a> 并遵从
+Apache2.0 协议开源。</p>
+<p>Docker
+可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的
+Linux 机器上，也可以实现虚拟化。</p>
+<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的
+app）,更重要的是容器性能开销极低。</p>
+<h2 id="docker能干嘛">Docker能干嘛？</h2>
+<p>软件开发最大的麻烦事之一，就是环境配置。而Docker可以十分方便的配置它们。</p>
+<p>传统的虚拟机技术启动应用服务往往需要数分钟，而 <code>Docker</code>
+容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</p>
+<h2 id="docker的三个基本概念">Docker的三个基本概念</h2>
+<p>Docker 包括三个基本概念：</p>
+<ul>
+<li><strong>镜像（image）</strong>：Docker
+镜像（image），相当于是一个root文件系统。例如官方镜像 Ubuntu: 16.04
+就包含了完整的一套 Ubuntu 16.04 最小系统的root文件系统。</li>
+<li><strong>容器（Container）</strong>：容器（Container）<strong>由</strong>
+Docker 镜像（image）生成。一旦容器生成，就会同时存在两个文件： image
+文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</li>
+<li><strong>仓库（Repository）</strong>：镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a
+href="https://docker-practice.github.io/zh-cn/repository/registry.html">Docker
+Registry</a> 就是这样的服务。</li>
+</ul>
+<h1 id="安装docker">安装Docker</h1>
+<p>Docker 分为 <code>stable</code> <code>test</code> 和
+<code>nightly</code> 三个更新频道。</p>
+<p><a href="https://docs.docker.com/get-docker/">Get Docker | Docker
+Documentation</a></p>
+<h2 id="在ubuntu安装docker">在Ubuntu安装Docker</h2>
+<p>Docker 支持以下版本的 <a href="https://ubuntu.com/server">Ubuntu</a>
+操作系统：</p>
+<ul>
+<li>Ubuntu Hirsute 21.04</li>
+<li>Ubuntu Groovy 20.10</li>
+<li>Ubuntu Focal 20.04 (LTS)</li>
+<li>Ubuntu Bionic 18.04 (LTS)</li>
+</ul>
+<p>Docker 可以安装在 64 位的 x86 平台或 ARM 平台上。Ubuntu
+发行版中，LTS（Long-Term-Support）长期支持版本，会获得 5
+年的升级维护支持，这样的版本会更稳定，因此在生产环境中推荐使用 LTS
+版本。</p>
+<h3 id="卸载旧版本docker">卸载旧版本Docker</h3>
+<p>旧版本的 Docker 称为 <code>docker</code> 或者
+<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove docker \</span><br><span class="line">             docker-engine \</span><br><span class="line">             docker.io</span><br></pre></td></tr></table></figure>
+<h3 id="使用-apt-安装">使用 APT 安装</h3>
+<p>由于 <code>apt</code> 源使用 HTTPS
+以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS
+传输的软件包以及 CA 证书。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get udate</span><br><span class="line"></span><br><span class="line">sudo apt-get install \</span><br><span class="line">	apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg \</span><br><span class="line">    lsb-release</span><br></pre></td></tr></table></figure>
+<p>为了确认所下载软件包的合法性，需要添加软件源的 <code>GPG</code>
+密钥。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
+<p>向<code>sources.list</code>中添加 Docker 软件源</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> \</span><br><span class="line">  <span class="string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span></span><br><span class="line"><span class="string">  <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line"><span class="comment"># $ echo \</span></span><br><span class="line"><span class="comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装-docker">安装 Docker</h3>
+<p>更新 apt 软件包缓存，并安装 <code>docker-ce</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
+<h3 id="启动-docker">启动 Docker</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<h3 id="建立-docker-用户组">建立 Docker 用户组</h3>
+<p>默认情况下，<code>docker</code> 命令会使用 <a
+href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
+与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
+组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
+系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
+<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
+<p>建立<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
+<p>将当前用户加入<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+<h2 id="在centos安装docker">在CentOS安装Docker</h2>
+<p>切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker</p>
+<p>Docker 支持 64 位版本 CentOS 7/8，并且要求内核版本不低于 3.10。
+CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如
+<code>overlay2</code>
+存储层驱动）无法使用，并且部分功能可能不太稳定。</p>
+<h3 id="卸载旧版本docker-1">卸载旧版本Docker</h3>
+<p>旧版本的 Docker 称为 <code>docker</code> 或者
+<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                docker-client \</span><br><span class="line">                docker-client-latest \</span><br><span class="line">                docker-common \</span><br><span class="line">                docker-latest \</span><br><span class="line">                docker-latest-logrotate \</span><br><span class="line">                docker-logrotate \</span><br><span class="line">                docker-selinux \</span><br><span class="line">                docker-engine-selinux \</span><br><span class="line">                docker-engine</span><br></pre></td></tr></table></figure>
+<h3 id="使用-yum-安装">使用 yum 安装</h3>
+<p>安装依赖包：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br></pre></td></tr></table></figure>
+<p>添加<code>yum</code>软件源：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp \</span><br><span class="line">	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp</span><br><span class="line">	https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>如需测试版本的Docker：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> docker-ce-test</span><br></pre></td></tr></table></figure>
+<h3 id="安装-docker-1">安装 Docker</h3>
+<p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
+<h3 id="centos8的额外设置">CentOS8的额外设置</h3>
+<p>由于 CentOS8 防火墙使用了 <code>nftables</code>，但 Docker 尚未支持
+<code>nftables</code>， 我们可以使用如下设置使用
+<code>iptables</code>：</p>
+<p>更改 <code>/etc/firewalld/firewalld.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># FirewallBackend=nftables</span></span><br><span class="line">FirewallBackend=iptables</span><br></pre></td></tr></table></figure>
+<p>或执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=trusted --add-interface=docker0</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<h3 id="启动-docker-1">启动 Docker</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<h3 id="建立-docker-用户组-1">建立 Docker 用户组</h3>
+<p>默认情况下，<code>docker</code> 命令会使用 <a
+href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
+与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
+组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
+系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
+<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
+<p>建立 <code>docker</code> 组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
+<p>将当前用户加入<code>docker</code>组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docekr <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加内核参数">添加内核参数</h3>
+<p>如果在 CentOS 使用 Docker 看到下面的这些警告信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">WARNING: bridge-nf-call-iptables is disabled</span><br><span class="line">WARNING: bridge-nf-call-ip6tables is disabled</span><br></pre></td></tr></table></figure>
+<p>添加内核配置参数以启用这些功能</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="string">EOF</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+<p>重新加载<code>sysctl.conf</code>即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
+<h1 id="docker食用指南">Docker食用指南</h1>
+<h2 id="镜像使用指南">镜像使用指南</h2>
+<p>Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker
+会从镜像仓库下载该镜像。</p>
+<h3 id="获取镜像">获取镜像</h3>
+<p>从 Docker 镜像仓库获取镜像的命令是
+<code>docker pull</code>。命令格式是：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull [OPTIONS] NAME[:TAG|@DIGEST]</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>TAG：标签（版本）</li>
+<li>DIGEST：摘要</li>
+<li>OPTIONS：
+<ul>
+<li>-a ：下载镜像仓库中所有的指定镜像；</li>
+<li>–disable-content-trust：跳过镜像验证（默认值是true）；</li>
+<li>–platform： 如果服务具有多平台功能，则设置平台；</li>
+<li>-q：一直详细输出；</li>
+</ul></li>
+</ul>
+<p>具体选项可以通过<code>docker pull --help</code>命令查看。</p>
+<p><strong>例子如下：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker pull ubuntu:18.04</span><br><span class="line">18.04: Pulling from library/ubuntu</span><br><span class="line">92dc2a97ff99: Pull complete</span><br><span class="line">be13a9d27eb8: Pull complete</span><br><span class="line">c8299583700a: Pull complete</span><br><span class="line">Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> ubuntu:18.04</span><br><span class="line">docker.io/library/ubuntu:18.04</span><br></pre></td></tr></table></figure>
+<p>上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub
+（<code>docker.io</code>）获取镜像。而镜像名称是
+<code>ubuntu:18.04</code>，因此将会获取官方镜像
+<code>library/ubuntu</code> 仓库中标签为 <code>18.04</code>
+的镜像。<code>docker pull</code>
+命令的输出结果最后一行给出了镜像的完整名称，即：
+<code>docker.io/library/ubuntu:18.04</code>。</p>
+<ul>
+<li>Docker
+镜像仓库地址：地址的格式一般是<code>域名/IP[:端口号]</code>。默认地址是
+Docker Hub（<code>docker.io</code>）。</li>
+<li>仓库名：仓库名是两段式名称，即<code>&lt;用户名&gt;/&lt;软件名&gt;</code>。对于
+Docker
+Hub，如果没有指定用户名，则默认是<code>library</code>，也就是官方镜像。</li>
+</ul>
+<h4 id="运行">运行</h4>
+<p>有了镜像后，可以以这个镜像为基础启动并运行一个容器。以上面的<code>Ubuntu:18.04</code>为例，如果打算启动里面的<code>bash</code>并且进行交互式操作的话，可以执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker run -it --<span class="built_in">rm</span> ubuntu:18:04 bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下是容器内操作</span></span><br><span class="line">root@e7009c6ce357:/<span class="comment"># cat /etc/os-release</span></span><br><span class="line">NAME=<span class="string">&quot;Ubuntu&quot;</span></span><br><span class="line">VERSION=<span class="string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span></span><br><span class="line">ID=ubuntu</span><br><span class="line">ID_LIKE=debian</span><br><span class="line">PRETTY_NAME=<span class="string">&quot;Ubuntu 18.04.1 LTS&quot;</span></span><br><span class="line">VERSION_ID=<span class="string">&quot;18.04&quot;</span></span><br><span class="line">HOME_URL=<span class="string">&quot;https://www.ubuntu.com/&quot;</span></span><br><span class="line">SUPPORT_URL=<span class="string">&quot;https://help.ubuntu.com/&quot;</span></span><br><span class="line">BUG_REPORT_URL=<span class="string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span></span><br><span class="line">PRIVACY_POLICY_URL=<span class="string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span></span><br><span class="line">VERSION_CODENAME=bionic</span><br><span class="line">UBUNTU_CODENAME=bionic</span><br></pre></td></tr></table></figure>
+<p><code>docker run</code>就是要运行容器的命令，这里简单说明一下上面用到的参数</p>
+<ul>
+<li><code>-it</code>：这是两个参数，一个是
+<code>-i</code>：交互式操作，一个是 <code>-t</code>
+终端。我们这里打算进入 <code>bash</code>
+执行一些命令并查看返回结果，因此我们需要交互式终端。</li>
+<li><code>--rm</code>：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动
+<code>docker rm</code>。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用
+<code>--rm</code> 可以避免浪费空间。</li>
+<li><code>ubuntu:18.04</code>：这是指用 <code>ubuntu:18.04</code>
+镜像为基础来启动容器。</li>
+<li><code>bash</code>：放在镜像名后的是
+<strong>命令</strong>，这里我们希望有个交互式 Shell，因此用的是
+<code>bash</code>。</li>
+</ul>
+<p>进入容器后就可以在 Shell
+下操作执行任何所需的命令。例如，上面就执行了<code>cat /etc/os-release</code>，这是Linux常用的查看当前系统版本的命令，从返回的结果可以看到容器内是<code>Ubuntu 18.04.1 LTS</code>系统。</p>
+<p>最后可以通过<code>exit</code>退出这个容器。</p>
+<h3 id="列出镜像">列出镜像</h3>
+<p>要想列出已经下载下来的镜像，可以使用 <code>docker image ls</code>
+命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span></span><br><span class="line">REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">redis                latest              5f515359c7f8        5 days ago          183 MB</span><br><span class="line">nginx                latest              05a60462f8ba        5 days ago          181 MB</span><br><span class="line">mongo                3.2                 fe9198c04d62        5 days ago          342 MB</span><br><span class="line">&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB</span><br><span class="line">ubuntu               18.04               329ed837d508        3 days ago          63.3MB</span><br><span class="line">ubuntu               bionic              329ed837d508        3 days ago          63.3MB</span><br></pre></td></tr></table></figure>
+<p>列表包含了
+<code>仓库名</code>、<code>标签</code>、<code>镜像 ID</code>、<code>创建时间</code>
+以及 <code>所占用的空间</code>。</p>
+<p>其中仓库名、标签在之前的基础概念章节已经介绍过了。<strong>镜像
+ID</strong> 则是镜像的唯一标识，一个镜像可以对应多个
+<strong>标签</strong>。因此，在上面的例子中，我们可以看到
+<code>ubuntu:18.04</code> 和 <code>ubuntu:bionic</code> 拥有相同的
+ID，因为它们对应的是同一个镜像。</p>
+<h4 id="镜像体积">镜像体积</h4>
+<p>Docker
+Hub上显示的镜像体积是压缩后的体积大小，在镜像上传和下载的过程中镜像是保持压缩状态的。而使用命令<code>docker image ls</code>显示的是镜像下载到本地后展开的大小，准确说，是展开后的各层所占空间的总和。</p>
+<p>另外一个需要注意的问题是，<code>docker image ls</code>
+列表中的镜像体积总和并非是所有镜像实际硬盘消耗。由于 Docker
+镜像是多层存储结构，并且可以继承、复用，因此不同镜像可能会因为使用相同的基础镜像，从而拥有共同的层。相同的层只需要保存一份即可。</p>
+<p>通过<code>docker system df</code>命令来查看镜像、容器、数据卷所占用的空间。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker system <span class="built_in">df</span></span><br><span class="line">TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE</span><br><span class="line">Images          2         1         390.2MB   390.2MB (99%)</span><br><span class="line">Containers      1         0         0B        0B</span><br><span class="line">Local Volumes   0         0         0B        0B</span><br><span class="line">Build Cache     18        0         789B      789B</span><br></pre></td></tr></table></figure>
+<h4 id="列出部分镜像">列出部分镜像</h4>
+<p>不加任何参数的情况下，<code>docker image ls</code>
+会列出所有顶层镜像，但是有时候我们只希望列出部分镜像。<code>docker image ls</code>
+有好几个参数可以帮助做到这个事情。</p>
+<p>根据仓库名列出仓库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       latest    ba6acccedd29   23 months ago   72.8MB</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
+<p>列出特定的某个镜像，也就是说指定仓库名和标签</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu:18.04</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
+<h3 id="删除本地镜像">删除本地镜像</h3>
+<p>如果要删除本地的镜像，可以使用 <code>docker image rm</code>
+命令，其格式为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]</span><br></pre></td></tr></table></figure>
+<p>其中，<code>&lt;镜像&gt;</code> 可以是
+<code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者
+<code>镜像摘要</code>。</p>
+<p>我们可以用镜像的完整 ID，也称为
+<code>长 ID</code>，来删除镜像。使用脚本的时候可能会用长
+ID，但是人工输入就太累了，所以更多的时候是用 <code>短 ID</code>
+来删除镜像。<code>docker image ls</code> 默认列出的就已经是短 ID
+了，一般取前3个字符以上，只要足够区分于别的镜像就可以了。</p>
+<h2 id="操作容器">操作容器</h2>
+<h4 id="启动容器">启动容器、</h4>
+<p>启动容器有两种方式，一种是基于镜像新建一个容器并启动，另外一个是将在终止状态（<code>exited</code>）的容器重新启动。</p>
+<p>因为 Docker
+的容器实在太轻量级了，很多时候用户都是随时删除和新创建容器。</p>
+<h1 id="未完待续">未完待续</h1>
+<h1 id="参考文章">参考文章</h1>
+<p>更多详细教程请参考 <a
+href="https://docker-practice.github.io/zh-cn/">前言 · Docker --
+从入门到实践 (docker-practice.github.io)</a></p>
+<p><a
+href="https://blog.csdn.net/zhuzicc/article/details/118066353">Docker
+“pull“命令获取镜像，讲道理你真的会吗？_docker
+pull_zhuzicc的博客-CSDN博客</a></p>
+<p><a href="https://www.runoob.com/docker/docker-tutorial.html">Docker
+教程 | 菜鸟教程 (runoob.com)</a></p>
+<p><a
+href="https://zhuanlan.zhihu.com/p/435605760">全面的Docker快速入门教程 -
+知乎 (zhihu.com)</a></p>
+<p><a
+href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker
+入门教程 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>这是一篇用来测试的文章</title>
+    <url>//post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0.html</url>
+    <content><![CDATA[<p>此篇文章用来记录一些hexo的基本操作（纯新手）</p>
+<h1 id="插入图片">插入图片</h1>
+<h2 id="第一种方法">第一种方法</h2>
+<p><del>此时我在<strong>source</strong>文件夹下新建了一个名为
+“Article_Picture” 的文件夹用来存放图片。</del>
+<del>此时只需要按照以下格式在.md文件中写入即可。</del></p>
+<p>不用看以上方法了，没用。</p>
+<p>首先在hexo的配置文件<code>config.yaml</code>更改一下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>随后使用命令新建一篇文章时，hexo会在<code>_posts</code>中生成相同名字的文件夹，此时将图片放在该文件夹下，而后按照以下格式进行插入即可。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">图片加载失败时的描述</span>](<span class="link">图片链接</span>)</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E6%B5%8B%E8%AF%95%E6%88%AA%E5%9B%BE2.png"
+alt="这其实是一张图片" />
+<figcaption aria-hidden="true">这其实是一张图片</figcaption>
+</figure>
+<h2 id="第二种方法">第二种方法</h2>
+<p>略</p>
+<h1 id="插件的查看与卸载">插件的查看与卸载</h1>
+<h2 id="查看已安装插件">查看已安装插件</h2>
+<p>在blog目录下输入以下命令即可查看已安装插件 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm <span class="built_in">ls</span> <span class="literal">-dept</span> <span class="number">0</span></span><br></pre></td></tr></table></figure> <img
+src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/mingling.png"
+alt="这其实是一张图片" /></p>
+<h2 id="卸载插件">卸载插件</h2>
+<p>在blog目录下输入以下命令即可卸载已安装插件 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo<span class="literal">-asset-image</span>@<span class="number">0.0</span>.<span class="number">5</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure> 其中
+<strong>hexo-asset-image@0.0.5</strong> 为要卸载的插件的名称</p>
+<p>最后还需前往 <strong>node_modules</strong>
+文件夹删除相关配置和文件</p>
+<h1 id="插入数学公式">插入数学公式</h1>
+<h2 id="安装所需插件">安装所需插件</h2>
+<p>卸载 Hexo 自带的 renderer，安装 Pandoc renderer <a
+href="https://github.com/jgm/pandoc">下载pandoc并安装</a>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo<span class="literal">-renderer-marked</span> <span class="literal">--save</span></span><br><span class="line">npm install hexo<span class="literal">-renderer-pandoc</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="如何使用">如何使用</h2>
+<p><a
+href="https://corner430.github.io/2021/07/02/%E7%94%A8markdown%E4%B9%A6%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/#:~:text=%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%9C%AC%E8%A1%8C%E5%86%85%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz,%E7%8B%AC%E8%A1%8C%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%96%B0%E7%9A%84%E4%B8%80%E8%A1%8C%E5%86%85%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%B1%85%E4%B8%AD%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz">具体请参考这篇文章</a></p>
+<p>所有公式都应该包括在一对 “$” 符号中，例如： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$里面是公式内容$</span><br></pre></td></tr></table></figure> <span
+class="math inline">\(5^5-ads\)</span></p>
+<h1 id="如何使用-emoji-表情">如何使用 Emoji 表情</h1>
+<h2 id="使用表情符号简码">使用表情符号简码</h2>
+<p>一些Markdown应用程序允许您通过键入表情符号短代码来插入表情符号。这些以冒号开头和结尾，并包含表情符号的名称。
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">去露营了！ :tent: 很快回来。</span><br><span class="line">真好笑！ :joy:</span><br></pre></td></tr></table></figure> 呈现的输出如下所示： 去露营了！ :tent: 很快回来。 真好笑！
+:joy:</p>
+<p><a
+href="https://markdown.com.cn/extended-syntax/emoji.html">请参考Markdown的官方教程</a></p>
+<p><a
+href="https://gist.github.com/rxaviers/7360908">这是表情符号简码列表</a></p>
+<h1 id="插入表格">插入表格</h1>
+<h2 id="markdown默认方法">Markdown默认方法</h2>
+<p>表头内容默认居中对齐，单元格内容默认左对齐，Markdown 代码:
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 标题1 | 标题2 | 标题3 |</span><br><span class="line">| ------ | ------ | ------ |</span><br><span class="line">| 文本好短 | 文本不短也不长 | 文本好长文本好长文本好长 |</span><br><span class="line">| 文本好长文本好长文本好长 | 文本好短 | 文本不短也不长 |</span><br></pre></td></tr></table></figure> 显示效果：</p>
+<table>
+<thead>
+<tr class="header">
+<th>标题1</th>
+<th>标题2</th>
+<th>标题3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>123</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr class="even">
+<td>123</td>
+<td>123</td>
+<td>123</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -1007,346 +1347,6 @@ top10漏洞扫描和边界资产发现能力)</p>
       </categories>
       <tags>
         <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何正确的食用Docker</title>
-    <url>//post/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%A3%9F%E7%94%A8Docker.html</url>
-    <content><![CDATA[<h1 id="docker简介">Docker简介</h1>
-<h2 id="什么是docker">什么是Docker？</h2>
-<p>Docker 是一个开源的应用容器引擎，基于 <a
-href="https://www.runoob.com/go/go-tutorial.html">Go 语言</a> 并遵从
-Apache2.0 协议开源。</p>
-<p>Docker
-可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的
-Linux 机器上，也可以实现虚拟化。</p>
-<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的
-app）,更重要的是容器性能开销极低。</p>
-<h2 id="docker能干嘛">Docker能干嘛？</h2>
-<p>软件开发最大的麻烦事之一，就是环境配置。而Docker可以十分方便的配置它们。</p>
-<p>传统的虚拟机技术启动应用服务往往需要数分钟，而 <code>Docker</code>
-容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</p>
-<h2 id="docker的三个基本概念">Docker的三个基本概念</h2>
-<p>Docker 包括三个基本概念：</p>
-<ul>
-<li><strong>镜像（image）</strong>：Docker
-镜像（image），相当于是一个root文件系统。例如官方镜像 Ubuntu: 16.04
-就包含了完整的一套 Ubuntu 16.04 最小系统的root文件系统。</li>
-<li><strong>容器（Container）</strong>：容器（Container）<strong>由</strong>
-Docker 镜像（image）生成。一旦容器生成，就会同时存在两个文件： image
-文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</li>
-<li><strong>仓库（Repository）</strong>：镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a
-href="https://docker-practice.github.io/zh-cn/repository/registry.html">Docker
-Registry</a> 就是这样的服务。</li>
-</ul>
-<h1 id="安装docker">安装Docker</h1>
-<p>Docker 分为 <code>stable</code> <code>test</code> 和
-<code>nightly</code> 三个更新频道。</p>
-<p><a href="https://docs.docker.com/get-docker/">Get Docker | Docker
-Documentation</a></p>
-<h2 id="在ubuntu安装docker">在Ubuntu安装Docker</h2>
-<p>Docker 支持以下版本的 <a href="https://ubuntu.com/server">Ubuntu</a>
-操作系统：</p>
-<ul>
-<li>Ubuntu Hirsute 21.04</li>
-<li>Ubuntu Groovy 20.10</li>
-<li>Ubuntu Focal 20.04 (LTS)</li>
-<li>Ubuntu Bionic 18.04 (LTS)</li>
-</ul>
-<p>Docker 可以安装在 64 位的 x86 平台或 ARM 平台上。Ubuntu
-发行版中，LTS（Long-Term-Support）长期支持版本，会获得 5
-年的升级维护支持，这样的版本会更稳定，因此在生产环境中推荐使用 LTS
-版本。</p>
-<h3 id="卸载旧版本docker">卸载旧版本Docker</h3>
-<p>旧版本的 Docker 称为 <code>docker</code> 或者
-<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove docker \</span><br><span class="line">             docker-engine \</span><br><span class="line">             docker.io</span><br></pre></td></tr></table></figure>
-<h3 id="使用-apt-安装">使用 APT 安装</h3>
-<p>由于 <code>apt</code> 源使用 HTTPS
-以确保软件下载过程中不被篡改。因此，我们首先需要添加使用 HTTPS
-传输的软件包以及 CA 证书。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get udate</span><br><span class="line"></span><br><span class="line">sudo apt-get install \</span><br><span class="line">	apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg \</span><br><span class="line">    lsb-release</span><br></pre></td></tr></table></figure>
-<p>为了确认所下载软件包的合法性，需要添加软件源的 <code>GPG</code>
-密钥。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
-<p>向<code>sources.list</code>中添加 Docker 软件源</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> \</span><br><span class="line">  <span class="string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span></span><br><span class="line"><span class="string">  <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line"><span class="comment"># $ echo \</span></span><br><span class="line"><span class="comment">#   &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="comment">#   $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></span><br></pre></td></tr></table></figure>
-<h3 id="安装-docker">安装 Docker</h3>
-<p>更新 apt 软件包缓存，并安装 <code>docker-ce</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
-<h3 id="启动-docker">启动 Docker</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-<h3 id="建立-docker-用户组">建立 Docker 用户组</h3>
-<p>默认情况下，<code>docker</code> 命令会使用 <a
-href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
-与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
-组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
-系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
-<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
-<p>建立<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
-<p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
-<h2 id="在centos安装docker">在CentOS安装Docker</h2>
-<p>切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker</p>
-<p>Docker 支持 64 位版本 CentOS 7/8，并且要求内核版本不低于 3.10。
-CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如
-<code>overlay2</code>
-存储层驱动）无法使用，并且部分功能可能不太稳定。</p>
-<h3 id="卸载旧版本docker-1">卸载旧版本Docker</h3>
-<p>旧版本的 Docker 称为 <code>docker</code> 或者
-<code>docker-engine</code>，使用以下命令卸载旧版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                docker-client \</span><br><span class="line">                docker-client-latest \</span><br><span class="line">                docker-common \</span><br><span class="line">                docker-latest \</span><br><span class="line">                docker-latest-logrotate \</span><br><span class="line">                docker-logrotate \</span><br><span class="line">                docker-selinux \</span><br><span class="line">                docker-engine-selinux \</span><br><span class="line">                docker-engine</span><br></pre></td></tr></table></figure>
-<h3 id="使用-yum-安装">使用 yum 安装</h3>
-<p>安装依赖包：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br></pre></td></tr></table></figure>
-<p>添加<code>yum</code>软件源：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp \</span><br><span class="line">	https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/download.docker.com/mirrors.aliyun.com\/docker-ce/g&#x27;</span> /etc/yum.repos.d/docker-ce.repo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 官方源</span></span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">	--add-repp</span><br><span class="line">	https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-<p>如需测试版本的Docker：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> docker-ce-test</span><br></pre></td></tr></table></figure>
-<h3 id="安装-docker-1">安装 Docker</h3>
-<p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
-<h3 id="centos8的额外设置">CentOS8的额外设置</h3>
-<p>由于 CentOS8 防火墙使用了 <code>nftables</code>，但 Docker 尚未支持
-<code>nftables</code>， 我们可以使用如下设置使用
-<code>iptables</code>：</p>
-<p>更改 <code>/etc/firewalld/firewalld.conf</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># FirewallBackend=nftables</span></span><br><span class="line">FirewallBackend=iptables</span><br></pre></td></tr></table></figure>
-<p>或执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=trusted --add-interface=docker0</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<h3 id="启动-docker-1">启动 Docker</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-<h3 id="建立-docker-用户组-1">建立 Docker 用户组</h3>
-<p>默认情况下，<code>docker</code> 命令会使用 <a
-href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix socket</a>
-与 Docker 引擎通讯。而只有 <code>root</code> 用户和 <code>docker</code>
-组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux
-系统上不会直接使用 <code>root</code> 用户。因此，更好地做法是将需要使用
-<code>docker</code> 的用户加入 <code>docker</code> 用户组。</p>
-<p>建立 <code>docker</code> 组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
-<p>将当前用户加入<code>docker</code>组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo usermod -aG docekr <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
-<h3 id="添加内核参数">添加内核参数</h3>
-<p>如果在 CentOS 使用 Docker 看到下面的这些警告信息：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">WARNING: bridge-nf-call-iptables is disabled</span><br><span class="line">WARNING: bridge-nf-call-ip6tables is disabled</span><br></pre></td></tr></table></figure>
-<p>添加内核配置参数以启用这些功能</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">tee</span> -a /etc/sysctl.conf &lt;&lt;-<span class="string">EOF</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
-<p>重新加载<code>sysctl.conf</code>即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
-<h1 id="docker食用指南">Docker食用指南</h1>
-<h2 id="镜像使用指南">镜像使用指南</h2>
-<p>Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker
-会从镜像仓库下载该镜像。</p>
-<h3 id="获取镜像">获取镜像</h3>
-<p>从 Docker 镜像仓库获取镜像的命令是
-<code>docker pull</code>。命令格式是：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull [OPTIONS] NAME[:TAG|@DIGEST]</span><br></pre></td></tr></table></figure>
-<p><strong>参数说明：</strong></p>
-<ul>
-<li>TAG：标签（版本）</li>
-<li>DIGEST：摘要</li>
-<li>OPTIONS：
-<ul>
-<li>-a ：下载镜像仓库中所有的指定镜像；</li>
-<li>–disable-content-trust：跳过镜像验证（默认值是true）；</li>
-<li>–platform： 如果服务具有多平台功能，则设置平台；</li>
-<li>-q：一直详细输出；</li>
-</ul></li>
-</ul>
-<p>具体选项可以通过<code>docker pull --help</code>命令查看。</p>
-<p><strong>例子如下：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker pull ubuntu:18.04</span><br><span class="line">18.04: Pulling from library/ubuntu</span><br><span class="line">92dc2a97ff99: Pull complete</span><br><span class="line">be13a9d27eb8: Pull complete</span><br><span class="line">c8299583700a: Pull complete</span><br><span class="line">Digest: sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> ubuntu:18.04</span><br><span class="line">docker.io/library/ubuntu:18.04</span><br></pre></td></tr></table></figure>
-<p>上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub
-（<code>docker.io</code>）获取镜像。而镜像名称是
-<code>ubuntu:18.04</code>，因此将会获取官方镜像
-<code>library/ubuntu</code> 仓库中标签为 <code>18.04</code>
-的镜像。<code>docker pull</code>
-命令的输出结果最后一行给出了镜像的完整名称，即：
-<code>docker.io/library/ubuntu:18.04</code>。</p>
-<ul>
-<li>Docker
-镜像仓库地址：地址的格式一般是<code>域名/IP[:端口号]</code>。默认地址是
-Docker Hub（<code>docker.io</code>）。</li>
-<li>仓库名：仓库名是两段式名称，即<code>&lt;用户名&gt;/&lt;软件名&gt;</code>。对于
-Docker
-Hub，如果没有指定用户名，则默认是<code>library</code>，也就是官方镜像。</li>
-</ul>
-<h4 id="运行">运行</h4>
-<p>有了镜像后，可以以这个镜像为基础启动并运行一个容器。以上面的<code>Ubuntu:18.04</code>为例，如果打算启动里面的<code>bash</code>并且进行交互式操作的话，可以执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker run -it --<span class="built_in">rm</span> ubuntu:18:04 bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下是容器内操作</span></span><br><span class="line">root@e7009c6ce357:/<span class="comment"># cat /etc/os-release</span></span><br><span class="line">NAME=<span class="string">&quot;Ubuntu&quot;</span></span><br><span class="line">VERSION=<span class="string">&quot;18.04.1 LTS (Bionic Beaver)&quot;</span></span><br><span class="line">ID=ubuntu</span><br><span class="line">ID_LIKE=debian</span><br><span class="line">PRETTY_NAME=<span class="string">&quot;Ubuntu 18.04.1 LTS&quot;</span></span><br><span class="line">VERSION_ID=<span class="string">&quot;18.04&quot;</span></span><br><span class="line">HOME_URL=<span class="string">&quot;https://www.ubuntu.com/&quot;</span></span><br><span class="line">SUPPORT_URL=<span class="string">&quot;https://help.ubuntu.com/&quot;</span></span><br><span class="line">BUG_REPORT_URL=<span class="string">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span></span><br><span class="line">PRIVACY_POLICY_URL=<span class="string">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span></span><br><span class="line">VERSION_CODENAME=bionic</span><br><span class="line">UBUNTU_CODENAME=bionic</span><br></pre></td></tr></table></figure>
-<p><code>docker run</code>就是要运行容器的命令，这里简单说明一下上面用到的参数</p>
-<ul>
-<li><code>-it</code>：这是两个参数，一个是
-<code>-i</code>：交互式操作，一个是 <code>-t</code>
-终端。我们这里打算进入 <code>bash</code>
-执行一些命令并查看返回结果，因此我们需要交互式终端。</li>
-<li><code>--rm</code>：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动
-<code>docker rm</code>。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用
-<code>--rm</code> 可以避免浪费空间。</li>
-<li><code>ubuntu:18.04</code>：这是指用 <code>ubuntu:18.04</code>
-镜像为基础来启动容器。</li>
-<li><code>bash</code>：放在镜像名后的是
-<strong>命令</strong>，这里我们希望有个交互式 Shell，因此用的是
-<code>bash</code>。</li>
-</ul>
-<p>进入容器后就可以在 Shell
-下操作执行任何所需的命令。例如，上面就执行了<code>cat /etc/os-release</code>，这是Linux常用的查看当前系统版本的命令，从返回的结果可以看到容器内是<code>Ubuntu 18.04.1 LTS</code>系统。</p>
-<p>最后可以通过<code>exit</code>退出这个容器。</p>
-<h3 id="列出镜像">列出镜像</h3>
-<p>要想列出已经下载下来的镜像，可以使用 <code>docker image ls</code>
-命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span></span><br><span class="line">REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">redis                latest              5f515359c7f8        5 days ago          183 MB</span><br><span class="line">nginx                latest              05a60462f8ba        5 days ago          181 MB</span><br><span class="line">mongo                3.2                 fe9198c04d62        5 days ago          342 MB</span><br><span class="line">&lt;none&gt;               &lt;none&gt;              00285df0df87        5 days ago          342 MB</span><br><span class="line">ubuntu               18.04               329ed837d508        3 days ago          63.3MB</span><br><span class="line">ubuntu               bionic              329ed837d508        3 days ago          63.3MB</span><br></pre></td></tr></table></figure>
-<p>列表包含了
-<code>仓库名</code>、<code>标签</code>、<code>镜像 ID</code>、<code>创建时间</code>
-以及 <code>所占用的空间</code>。</p>
-<p>其中仓库名、标签在之前的基础概念章节已经介绍过了。<strong>镜像
-ID</strong> 则是镜像的唯一标识，一个镜像可以对应多个
-<strong>标签</strong>。因此，在上面的例子中，我们可以看到
-<code>ubuntu:18.04</code> 和 <code>ubuntu:bionic</code> 拥有相同的
-ID，因为它们对应的是同一个镜像。</p>
-<h4 id="镜像体积">镜像体积</h4>
-<p>Docker
-Hub上显示的镜像体积是压缩后的体积大小，在镜像上传和下载的过程中镜像是保持压缩状态的。而使用命令<code>docker image ls</code>显示的是镜像下载到本地后展开的大小，准确说，是展开后的各层所占空间的总和。</p>
-<p>另外一个需要注意的问题是，<code>docker image ls</code>
-列表中的镜像体积总和并非是所有镜像实际硬盘消耗。由于 Docker
-镜像是多层存储结构，并且可以继承、复用，因此不同镜像可能会因为使用相同的基础镜像，从而拥有共同的层。相同的层只需要保存一份即可。</p>
-<p>通过<code>docker system df</code>命令来查看镜像、容器、数据卷所占用的空间。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker system <span class="built_in">df</span></span><br><span class="line">TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE</span><br><span class="line">Images          2         1         390.2MB   390.2MB (99%)</span><br><span class="line">Containers      1         0         0B        0B</span><br><span class="line">Local Volumes   0         0         0B        0B</span><br><span class="line">Build Cache     18        0         789B      789B</span><br></pre></td></tr></table></figure>
-<h4 id="列出部分镜像">列出部分镜像</h4>
-<p>不加任何参数的情况下，<code>docker image ls</code>
-会列出所有顶层镜像，但是有时候我们只希望列出部分镜像。<code>docker image ls</code>
-有好几个参数可以帮助做到这个事情。</p>
-<p>根据仓库名列出仓库</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       latest    ba6acccedd29   23 months ago   72.8MB</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
-<p>列出特定的某个镜像，也就是说指定仓库名和标签</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">ls</span> ubuntu:18.04</span><br><span class="line">REPOSITORY   TAG       IMAGE ID       CREATED         SIZE</span><br><span class="line">ubuntu       18.04     5a214d77f5d7   23 months ago   63.1MB</span><br></pre></td></tr></table></figure>
-<h3 id="删除本地镜像">删除本地镜像</h3>
-<p>如果要删除本地的镜像，可以使用 <code>docker image rm</code>
-命令，其格式为：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image <span class="built_in">rm</span> [选项] &lt;镜像1&gt; [&lt;镜像2&gt; ...]</span><br></pre></td></tr></table></figure>
-<p>其中，<code>&lt;镜像&gt;</code> 可以是
-<code>镜像短 ID</code>、<code>镜像长 ID</code>、<code>镜像名</code> 或者
-<code>镜像摘要</code>。</p>
-<p>我们可以用镜像的完整 ID，也称为
-<code>长 ID</code>，来删除镜像。使用脚本的时候可能会用长
-ID，但是人工输入就太累了，所以更多的时候是用 <code>短 ID</code>
-来删除镜像。<code>docker image ls</code> 默认列出的就已经是短 ID
-了，一般取前3个字符以上，只要足够区分于别的镜像就可以了。</p>
-<h2 id="操作容器">操作容器</h2>
-<h4 id="启动容器">启动容器、</h4>
-<p>启动容器有两种方式，一种是基于镜像新建一个容器并启动，另外一个是将在终止状态（<code>exited</code>）的容器重新启动。</p>
-<p>因为 Docker
-的容器实在太轻量级了，很多时候用户都是随时删除和新创建容器。</p>
-<h1 id="未完待续">未完待续</h1>
-<h1 id="参考文章">参考文章</h1>
-<p>更多详细教程请参考 <a
-href="https://docker-practice.github.io/zh-cn/">前言 · Docker --
-从入门到实践 (docker-practice.github.io)</a></p>
-<p><a
-href="https://blog.csdn.net/zhuzicc/article/details/118066353">Docker
-“pull“命令获取镜像，讲道理你真的会吗？_docker
-pull_zhuzicc的博客-CSDN博客</a></p>
-<p><a href="https://www.runoob.com/docker/docker-tutorial.html">Docker
-教程 | 菜鸟教程 (runoob.com)</a></p>
-<p><a
-href="https://zhuanlan.zhihu.com/p/435605760">全面的Docker快速入门教程 -
-知乎 (zhihu.com)</a></p>
-<p><a
-href="https://ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker
-入门教程 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>这是一篇用来测试的文章</title>
-    <url>//post/%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%87%E7%AB%A0.html</url>
-    <content><![CDATA[<p>此篇文章用来记录一些hexo的基本操作（纯新手）</p>
-<h1 id="插入图片">插入图片</h1>
-<h2 id="第一种方法">第一种方法</h2>
-<p><del>此时我在<strong>source</strong>文件夹下新建了一个名为
-“Article_Picture” 的文件夹用来存放图片。</del>
-<del>此时只需要按照以下格式在.md文件中写入即可。</del></p>
-<p>不用看以上方法了，没用。</p>
-<p>首先在hexo的配置文件<code>config.yaml</code>更改一下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>随后使用命令新建一篇文章时，hexo会在<code>_posts</code>中生成相同名字的文件夹，此时将图片放在该文件夹下，而后按照以下格式进行插入即可。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">图片加载失败时的描述</span>](<span class="link">图片链接</span>)</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/%E6%B5%8B%E8%AF%95%E6%88%AA%E5%9B%BE2.png"
-alt="这其实是一张图片" />
-<figcaption aria-hidden="true">这其实是一张图片</figcaption>
-</figure>
-<h2 id="第二种方法">第二种方法</h2>
-<p>略</p>
-<h1 id="插件的查看与卸载">插件的查看与卸载</h1>
-<h2 id="查看已安装插件">查看已安装插件</h2>
-<p>在blog目录下输入以下命令即可查看已安装插件 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm <span class="built_in">ls</span> <span class="literal">-dept</span> <span class="number">0</span></span><br></pre></td></tr></table></figure> <img
-src="https://cdn.jsdelivr.net/gh/lxqingfeng/Object_storage@master/PicGO/mingling.png"
-alt="这其实是一张图片" /></p>
-<h2 id="卸载插件">卸载插件</h2>
-<p>在blog目录下输入以下命令即可卸载已安装插件 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo<span class="literal">-asset-image</span>@<span class="number">0.0</span>.<span class="number">5</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure> 其中
-<strong>hexo-asset-image@0.0.5</strong> 为要卸载的插件的名称</p>
-<p>最后还需前往 <strong>node_modules</strong>
-文件夹删除相关配置和文件</p>
-<h1 id="插入数学公式">插入数学公式</h1>
-<h2 id="安装所需插件">安装所需插件</h2>
-<p>卸载 Hexo 自带的 renderer，安装 Pandoc renderer <a
-href="https://github.com/jgm/pandoc">下载pandoc并安装</a>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo<span class="literal">-renderer-marked</span> <span class="literal">--save</span></span><br><span class="line">npm install hexo<span class="literal">-renderer-pandoc</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="如何使用">如何使用</h2>
-<p><a
-href="https://corner430.github.io/2021/07/02/%E7%94%A8markdown%E4%B9%A6%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/#:~:text=%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%9C%AC%E8%A1%8C%E5%86%85%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz,%E7%8B%AC%E8%A1%8C%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%B0%86%E5%85%AC%E5%BC%8F%E6%8F%92%E5%85%A5%E5%88%B0%E6%96%B0%E7%9A%84%E4%B8%80%E8%A1%8C%E5%86%85%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%B1%85%E4%B8%AD%EF%BC%8C%E7%AC%A6%E5%8F%B7%EF%BC%9A%20%24%24%E5%85%AC%E5%BC%8F%E5%86%85%E5%AE%B9%24%24%20%EF%BC%8C%E5%A6%82%EF%BC%9A%20xyz">具体请参考这篇文章</a></p>
-<p>所有公式都应该包括在一对 “$” 符号中，例如： <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$里面是公式内容$</span><br></pre></td></tr></table></figure> <span
-class="math inline">\(5^5-ads\)</span></p>
-<h1 id="如何使用-emoji-表情">如何使用 Emoji 表情</h1>
-<h2 id="使用表情符号简码">使用表情符号简码</h2>
-<p>一些Markdown应用程序允许您通过键入表情符号短代码来插入表情符号。这些以冒号开头和结尾，并包含表情符号的名称。
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">去露营了！ :tent: 很快回来。</span><br><span class="line">真好笑！ :joy:</span><br></pre></td></tr></table></figure> 呈现的输出如下所示： 去露营了！ :tent: 很快回来。 真好笑！
-:joy:</p>
-<p><a
-href="https://markdown.com.cn/extended-syntax/emoji.html">请参考Markdown的官方教程</a></p>
-<p><a
-href="https://gist.github.com/rxaviers/7360908">这是表情符号简码列表</a></p>
-<h1 id="插入表格">插入表格</h1>
-<h2 id="markdown默认方法">Markdown默认方法</h2>
-<p>表头内容默认居中对齐，单元格内容默认左对齐，Markdown 代码:
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 标题1 | 标题2 | 标题3 |</span><br><span class="line">| ------ | ------ | ------ |</span><br><span class="line">| 文本好短 | 文本不短也不长 | 文本好长文本好长文本好长 |</span><br><span class="line">| 文本好长文本好长文本好长 | 文本好短 | 文本不短也不长 |</span><br></pre></td></tr></table></figure> 显示效果：</p>
-<table>
-<thead>
-<tr class="header">
-<th>标题1</th>
-<th>标题2</th>
-<th>标题3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>123</td>
-<td>123</td>
-<td>123</td>
-</tr>
-<tr class="even">
-<td>123</td>
-<td>123</td>
-<td>123</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
 </search>
